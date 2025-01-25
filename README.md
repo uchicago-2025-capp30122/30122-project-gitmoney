@@ -14,10 +14,12 @@ We are baby Github users and terrified of branches and merging and rebasing, so 
 3) Comment your code! Add docstrings!
 4) Keep everyone updated on what you did via Slack
 
+![IMG_9980](https://github.com/user-attachments/assets/c6018a58-75f5-4260-95c5-61dfded03614)
+
 # To-Do
-311 - Riley
-Alderman - Libby & Getnet
-Alex -- attempts subproject 1
+311 - Riley <br>
+Alderman - Libby & Getnet <br>
+Alex -- attempts subproject 1 <br>
 
 # The Vision
 ## Everything Going to Plan
@@ -44,7 +46,7 @@ Stuff we would do if we had all the time in the world
 **EXTRA Task 2**: City of Chicago Contracts (Bulk Data)
 
 ## The Viz
-A map!
+A map! <br>
 - filter based on
   -  project category
   -  date/year
@@ -54,7 +56,7 @@ A map!
   - money spent on [top 5 311 calls]
 
 # Questions for James
-- Can our command line interface just 
+- Can our command line interface just produce a GUI? Or are you asking us to produce a map into the command line? (Please say GUI)
 
 # Agenda
 ## Due Sunday, Feb. 2
