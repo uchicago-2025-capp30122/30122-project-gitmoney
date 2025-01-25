@@ -14,7 +14,7 @@ We are baby Github users and terrified of branches and merging and rebasing, so 
 3) Comment your code! Add docstrings!
 4) Keep everyone updated on what you did via Slack
 
-![IMG_9980](https://github.com/user-attachments/assets/c6018a58-75f5-4260-95c5-61dfded03614)
+<img width="1015" alt="Screenshot 2025-01-25 at 5 46 26 PM" src="https://github.com/user-attachments/assets/2a4a6727-acf6-4c5d-9dcf-df3a5dbad6d4" />
 
 # To-Do
 311 - Riley <br>
