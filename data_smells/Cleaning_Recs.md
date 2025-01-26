@@ -4,7 +4,9 @@
 
 There are two negative numbers. They match what's on the PDFs.
 
-INSERT PICS BELOW
+<img width="1193" alt="Screenshot 2025-01-25 at 7 53 23 PM" src="https://github.com/user-attachments/assets/4f6756ec-37e2-4c3c-97b7-b3ae7824b0ac" />
+
+<img width="1139" alt="Screenshot 2025-01-25 at 7 53 49 PM" src="https://github.com/user-attachments/assets/12047149-8b1f-488b-8472-1e26cc651254" />
 
 We could either
 a) eliminate them
