@@ -1,10 +1,6 @@
-import httpx
-import numpy as np
-import pandas as pd
+
 from pathlib import Path
-import pathlib
 import os
-import pandas as pd
 import csv
 import json
 
@@ -90,17 +86,11 @@ def street_searcher(main_street, possible_cross):
     for street in cross_list:
         tcross = street['T_CROSS'].find(possible_cross)
         fcross = street['F_CROSS'].find(possible_cross)
-        print(f"fcross: {fcross}; tcross: {tcross}")
         if tcross or fcross:
             rlist.append(street)
 
 
     return rlist
-
-
-
-    
-        
 
 
 
