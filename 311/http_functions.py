@@ -1,6 +1,6 @@
-import httpx
 import re
 from pathlib import Path
+import httpx
 
 CACHE_DIR = Path(__file__).parent / "_cache"
 ALLOWED_CHARS = "abcdefghijklmnopqrstuvwxyz1234567890%+,^=._"
@@ -18,7 +18,6 @@ class FetchException(Exception):
         super().__init__(
             f"{response.status_code} retrieving {response.url}: {response.text}"
         )
-
 
 def combine_url_with_params(url, params):
     """
@@ -41,7 +40,6 @@ def combine_url_with_params(url, params):
     url = httpx.URL(url)
     params = dict(url.params) | params  # merge the dictionaries
     return str(url.copy_with(params=params))
-
 
 def url_to_cache_key(url: str) -> str:
     """
@@ -68,7 +66,7 @@ def url_to_cache_key(url: str) -> str:
     final = "".join(char_lst)
     return final
 
-    
+
 def cached_get(url, **kwargs) -> dict:
     """
     This function caches all GET requests it makes, by writing
