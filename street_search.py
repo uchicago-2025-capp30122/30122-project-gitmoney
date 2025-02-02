@@ -44,10 +44,17 @@ def generate_cross_streets(streets_data):
 
     # For each row, make a list containing all segments with same street name
     for row in streets_data:
+        row_necessities = {'FNODE_ID': row['FNODE_ID'],
+            'TNODE_ID': row['TNODE_ID'],
+            'OBJECTID': row['OBJECTID'],
+            'TRANS_ID': row['TRANS_ID'],
+            'STREET_NAM': row['STREET_NAM'],
+            'F_CROSS': row['F_CROSS'],
+            'T_CROSS': row['T_CROSS']}
         if row['STREET_NAM'] in street_dict.keys():
-            street_dict[row['STREET_NAM']].append(row)
+            street_dict[row['STREET_NAM']].append(row_necessities)
         else:
-            street_dict[row['STREET_NAM']] = [row]
+            street_dict[row['STREET_NAM']] = [row_necessities]
             
     # Write everything to a jsonfile
     with open(outpath, 'w', encoding = 'utf-8') as jsonfile:
