@@ -63,7 +63,8 @@ def url_to_cache_key(url: str) -> str:
             char_lst.append(char)
         else:
             char_lst.append('_')
-    final = "".join(char_lst)
+    penultimate = "".join(char_lst)
+    final = penultimate[-20:-1]
     return final
 
 
