@@ -1,662 +1,2378 @@
 [
-    [
-        "John Coughlin",
-        "April 16, 1923 –November 11, 1938",
-        "Democratic",
-        "Had been serving since 1892    Died in office"
-    ],
-    [
-        "Michael Kenna",
-        "April 12, 1939 –April 9, 1943",
-        "Democratic",
-        "Had previously served from 1897 to 1923"
-    ],
-    [
-        "John Budinger",
-        "April 9, 1943 –1951",
-        "Democratic",
-        "Had previously served (previous iteration of) the 4th ward from 1910 to 1912"
-    ],
-    [
-        "John D'Arco Sr.",
-        "1951 –1963",
-        "Democratic",
-        ""
-    ],
-    [
-        "Fred Roti",
-        "1968 –1991",
-        "Democratic",
-        ""
-    ],
-    [
-        "Ted Mazola",
-        "1991 –1995",
-        "Democratic",
-        ""
-    ],
-    [
-        "Jesse Granato",
-        "1995 –May 19, 2003",
-        "Democratic",
-        ""
-    ],
-    [
-        "Manuel Flores",
-        "May 19, 2003 –January 4, 2010",
-        "Democratic",
-        "Appointed to be Chairman of the  Illinois Commerce Commission"
-    ],
-    [
-        "Proco Joe Moreno",
-        "March 26, 2010 –May 20, 2019",
-        "Democratic",
-        ""
-    ],
-    [
-        "Daniel La Spata",
-        "May 20, 2019 –present",
-        "Democratic",
-        ""
-    ],
-    [
-        "Louis B. Anderson",
-        "April 16, 1923 –1933",
-        "Republican",
-        "Had been serving since 1917"
-    ],
-    [
-        "William L. Dawson",
-        "1933 –April 12, 1939",
-        "Republican",
-        ""
-    ],
-    [
-        "Earl B. Dickerson",
-        "April 12, 1939 –April 9, 1943",
-        "Democratic",
-        ""
-    ],
-    [
-        "William H. Harvey",
-        "April 9, 1943 –December 20, 1968",
-        "N/A",
-        "Became a  County Commissioner"
-    ],
-    [
-        "Fred D. Hubbard",
-        "March 11, 1969 –March 16, 1972",
-        "N/A",
-        ""
-    ],
-    [
-        "William Barnett",
-        "August 15, 1972 –1983",
-        "Democratic",
-        ""
-    ],
-    [
-        "Bobby Rush",
-        "1983 –1993",
-        "Democratic",
-        ""
-    ],
-    [
-        "Madeline Haithcock",
-        "1993 –May 21, 2007",
-        "Democratic",
-        ""
-    ],
-    [
-        "Robert Fioretti",
-        "May 21, 2007 –May 2015",
-        "Democratic",
-        ""
-    ],
-    [
-        "Brian K. Hopkins",
-        "May 2015 –present",
-        "Democratic",
-        ""
-    ],
-    [
-        "Robert R. Jackson",
-        "April 16, 1923 –April 12, 1939",
-        "Republican",
-        "Had been serving then-2nd ward since 1918"
-    ],
-    [
-        "Benjaim A. Grant",
-        "April 12, 1939 –April 9, 1943",
-        "N/A",
-        ""
-    ],
-    [
-        "Oscar Stanton De Priest",
-        "April 9, 1943 –1947",
-        "Republican",
-        "Had previously served then-2nd ward from 1915 to 1917"
-    ],
-    [
-        "Archibald Carey Jr.",
-        "1947 –1955",
-        "Republican",
-        ""
-    ],
-    [
-        "Ralph Metcalfe",
-        "1955 –December 1970",
-        "Democratic",
-        "Became a Congressman"
-    ],
-    [
-        "Tyrone T. Kenner",
-        "February 23, 1971 –February 11, 1985",
-        "N/A",
-        ""
-    ],
-    [
-        "Dorothy Tillman",
-        "February 11, 1985 –April 27, 2007",
-        "Democratic",
-        ""
-    ],
-    [
-        "Pat Dowell",
-        "April 27, 2007 –Present",
-        "Democratic",
-        ""
-    ],
-    [
-        "Abraham H. Cohen",
-        "April 12, 1939 –1955",
-        "N/A",
-        ""
-    ],
-    [
-        "Claude Holman",
-        "1955 –June 1, 1973",
-        "N/A",
-        "Died in office"
-    ],
-    [
-        "Timothy C. Evans",
-        "November 27, 1973 –1991",
-        "N/A",
-        ""
-    ],
-    [
-        "Toni Preckwinkle",
-        "1991 –2010",
-        "Democratic",
-        ""
-    ],
-    [
-        "William D. Burns",
-        "May 2011 –February 2016",
-        "Democratic",
-        ""
-    ],
-    [
-        "Sophia King",
-        "April 16, 2016 –present",
-        "Democratic",
-        ""
-    ],
-    [
-        "William R. O'Toole",
-        "April 16, 1923 –1931",
-        "Democratic",
-        "Had been serving then-30th ward since 1914"
-    ],
-    [
-        "James J. McDermott",
-        "1933 –December 3, 1942",
-        "Democratic",
-        "Elected to Cook County Board of Appeals"
-    ],
-    [
-        "Clarence P. Wagner",
-        "April 9, 1943 –July 10, 1953",
-        "N/A",
-        "Died in office"
-    ],
-    [
-        "Joseph P. Burke",
-        "November 3, 1953 – May 11, 1968",
-        "Democratic",
-        "Died in office"
-    ],
-    [
-        "Edward M. Burke",
-        "March 14, 1969 –Present",
-        "Democratic",
-        ""
-    ],
-    [
-        "Donald S. McKinlay",
-        "April 16, 1923 –1928",
-        "Democratic",
-        "Resigned to become a judge [ 3 ]"
-    ],
-    [
-        "O.E. Northrup",
-        "1929 –1935",
-        "Republican",
-        ""
-    ],
-    [
-        "John J. Duffy",
-        "1935 –December 1, 1950",
-        "N/A",
-        "Elected to the Cook County Board of Commissioners"
-    ],
-    [
-        "David T. McKiernan",
-        "1951 –May 25, 1957",
-        "N/A",
-        "Died in office"
-    ],
-    [
-        "Thomas F. Fitzpatrick",
-        "September 17, 1957 –April 1, 1975",
-        "N/A",
-        ""
-    ],
-    [
-        "Jeremiah E. Joyce",
-        "April 1, 1975 –February 1, 1979",
-        "Democratic",
-        "Elected to the  Illinois General Assembly  for the 28th district"
-    ],
-    [
-        "Michael F. Sheahan",
-        "April 16, 1979 –1991",
-        "Democratic",
-        ""
-    ],
-    [
-        "Virginia Rugai",
-        "1991 –2011",
-        "Democratic",
-        ""
-    ],
-    [
-        "Matthew O'Shea",
-        "2011 –present",
-        "Democratic",
-        ""
-    ],
-    [
-        "John Powers",
-        "April 16, 1923 –1927",
-        "Democratic",
-        "Had been serving then-19th ward since 1905 and previously from 1888 to 1904"
-    ],
-    [
-        "James Bowler",
-        "1927 –June 7, 1934   February 26, 1935  – July 11, 1953",
-        "Democratic",
-        "Had previously served then-19th ward between 1906 and 1923   Briefly vacated office to become a Public Vehicle License Commissioner   Became a Congressman representing  IL-7"
-    ],
-    [
-        "Vito Marzullo",
-        "November 3, 1953 –1985",
-        "Democratic",
-        ""
-    ],
-    [
-        "Daniel Solis",
-        "1996 –2019",
-        "Democratic",
-        ""
-    ],
-    [
-        "Byron Sigcho-Lopez",
-        "2019 –present",
-        "Democratic",
-        ""
-    ],
-    [
-        "Mathew William Bieszczat",
-        "February 5, 1945 –November 8, 1960",
-        "N/A",
-        "Elected bailiff of  Municipal Court of Chicago"
-    ],
-    [
-        "Stanley M. Zydlo",
-        "February 26, 1963 –April 16, 1979",
-        "N/A",
-        ""
-    ],
-    [
-        "Michael Nardulli",
-        "1979 –1986",
-        "N/A",
-        ""
-    ],
-    [
-        "Luis Gutiérrez",
-        "May 2, 1986 –December 12, 1992",
-        "Democratic",
-        ""
-    ],
-    [
-        "Billy Ocasio",
-        "1994 –2009",
-        "Democratic",
-        ""
-    ],
-    [
-        "Roberto Maldonado",
-        "2009 –present",
-        "Democratic",
-        ""
-    ],
-    [
-        "John J. Touhy",
-        "April 16, 1923 –December 1, 1926 [ dates 2 ]",
-        "Democratic",
-        "Had been serving then-18th ward since 1917 Resigned to take office as a Sanitary District Trustee [ dates 2 ]"
-    ],
-    [
-        "Harry C. Van Norman",
-        "1927 –October 11, 1929 [ dates 3 ]",
-        "Democratic",
-        "Died in office [ dates 3 ]"
-    ],
-    [
-        "Harry L. Sain",
-        "1933 –February 23, 1971",
-        "Democratic",
-        ""
-    ],
-    [
-        "Eugene Ray",
-        "February 23, 1971 –1983",
-        "Democratic",
-        ""
-    ],
-    [
-        "Rickey R. Hendon",
-        "1991 –January 13, 1993",
-        "Democratic",
-        "Elected to the  Illinois Senate  for the 5th district"
-    ],
-    [
-        "Walter Burnett Jr.",
-        "May 1995 –present",
-        "Democratic",
-        ""
-    ],
-    [
-        "Stanley Adamkiewicz",
-        "April 16, 1923 –1929",
-        "Democratic",
-        "Had previously served then-17th ward from 1917 to 1921"
-    ],
-    [
-        "Thomas Patrick Keane",
-        "1933 –July 13, 1945",
-        "Democratic",
-        "Redistricted from the 34th ward   Died in office"
-    ],
-    [
-        "Thomas E. Keane",
-        "September 4, 1945 –October 9, 1974",
-        "N/A",
-        "Convicted of mail fraud and conspiracy"
-    ],
-    [
-        "Ray Suarez",
-        "1991 –May 2015",
-        "N/A",
-        ""
-    ],
-    [
-        "Milly Santiago",
-        "May 2015 –May 20, 2019",
-        "N/A",
-        ""
-    ],
-    [
-        "Felix Cardona, Jr.",
-        "May 20, 2019 –Present",
-        "N/A",
-        ""
-    ],
-    [
-        "Bernard C. Prusinski",
-        "1955 –1959",
-        "N/A",
-        ""
-    ],
-    [
-        "Robert J. Sulski",
-        "1959 –November 28, 1968",
-        "N/A",
-        "Became a Circuit Court Judge"
-    ],
-    [
-        "Terry Gabinski",
-        "March 12, 1969 –May 21, 1998",
-        "Democratic",
-        ""
-    ],
-    [
-        "Theodore Matlak",
-        "May 21, 1998 –May 20, 2007",
-        "Democratic",
-        ""
-    ],
-    [
-        "Scott Waguespack",
-        "May 20, 2007 –present",
-        "Democratic",
-        ""
-    ],
-    [
-        "Max Adamowski",
-        "April 16, 1923 –July 16, 1929 [ dates 5 ]",
-        "Democratic",
-        "Had been serving then-22nd ward since 1916 Died in office [ dates 5 ]"
-    ],
-    [
-        "Patrick J. Cullerton",
-        "1935 –April 17, 1958",
-        "N/A",
-        "Elected Cook County Assessor"
-    ],
-    [
-        "William J. Cullerton",
-        "1959 –April 14, 1973",
-        "N/A",
-        "Died in office"
-    ],
-    [
-        "Thomas W. Cullerton",
-        "November 27, 1973 –1993",
-        "N/A",
-        "Died in office"
-    ],
-    [
-        "Thomas R. Allen",
-        "1993 –2010",
-        "N/A",
-        "Became a judge of the Cook County  Illinois Circuit Court"
-    ],
-    [
-        "Timothy Cullerton",
-        "2011 –2013",
-        "N/A",
-        ""
-    ],
-    [
-        "Nicholas Sposato",
-        "2013 –present",
-        "Democratic",
-        "Redistricted from 36th ward"
-    ],
-    [
-        "Dorsey Crowe",
-        "April 16, 1923 –July 1, 1962",
-        "Democratic",
-        "Had been serving then-21st ward since 1919    Died in office"
-    ],
-    [
-        "Mayer Goldberg",
-        "February 26, 1963 –November 29, 1968",
-        "Democratic",
-        "Became a Circuit Court Judge"
-    ],
-    [
-        "Burton Natarus",
-        "1971 –2007",
-        "Democratic",
-        ""
-    ],
-    [
-        "Brendan Reilly",
-        "2007 –Present",
-        "Democratic",
-        ""
-    ],
-    [
-        "Arthur F. Albert",
-        "April 16, 1923 –October 31, 1927",
-        "Republican",
-        "Had been serving then-22nd ward since 1921  Albert lost the first round of the  1927 election  to Haffa, but had been granted a runoff that he would win. However, the runoff was disputed and the Council unseated him in favor of Haffa, claiming that the judge who had granted the runoff had erred in counting spoiled ballots to determine the majority Haffa needed to avoid a runoff."
-    ],
-    [
-        "Arthur F. Albert",
-        "1929 –1931",
-        "Republican",
-        ""
-    ],
-    [
-        "James B. Waller",
-        "1931 –1933",
-        "Republican",
-        ""
-    ],
-    [
-        "Paddy Bauler",
-        "1933 –April 9, 1943",
-        "Democratic",
-        ""
-    ],
-    [
-        "James B. Waller",
-        "April 9, 1943 –1947",
-        "Republican",
-        ""
-    ],
-    [
-        "Paddy Bauler",
-        "1947 –1967",
-        "Democratic",
-        ""
-    ],
-    [
-        "William Singer",
-        "1971 –1975",
-        "N/A",
-        ""
-    ],
-    [
-        "Martin J. Oberman",
-        "1975 –1987",
-        "Democratic",
-        ""
-    ],
-    [
-        "Edwin Eisendrath",
-        "1987 –1993",
-        "Democratic",
-        ""
-    ],
-    [
-        "Charles Bernardini",
-        "1993 –1999",
-        "N/A",
-        ""
-    ],
-    [
-        "Vi Daley",
-        "1999 –May 16, 2011",
-        "N/A",
-        ""
-    ],
-    [
-        "Michele Smith",
-        "May 16, 2011 –August 12, 2022",
-        "Democratic",
-        ""
-    ],
-    [
-        "Timmy Knudsen",
-        "September 21, 2022 –Present",
-        "Democratic",
-        ""
-    ],
-    [
-        "John J. Hoellen Jr.",
-        "1947 –1975",
-        "Republican",
-        ""
-    ],
-    [
-        "Eugene Schulter",
-        "February 25, 1975 –May 16, 2011",
-        "Democratic",
-        ""
-    ],
-    [
-        "Ameya Pawar",
-        "May 16, 2011 –May 20, 2019",
-        "Democratic",
-        ""
-    ],
-    [
-        "Matt Martin",
-        "May 20, 2019 –Present",
-        "N/A",
-        ""
-    ],
-    [
-        "Esther Saperstein",
-        "February 25, 1975 –April 16, 1979",
-        "N/A",
-        ""
-    ],
-    [
-        "David Orr",
-        "1979 –1990",
-        "Democratic",
-        ""
-    ],
-    [
-        "Joe Moore",
-        "1991 –May 20, 2019",
-        "Democratic",
-        ""
-    ],
-    [
-        "Maria Hadden",
-        "May 20, 2019 –present",
-        "N/A",
-        ""
-    ],
-    [
-        "Bernard Stone",
-        "1973 –2011",
-        "Democratic",
-        ""
-    ],
-    [
-        "Debra Silverstein",
-        "2011 –present",
-        "N/A",
-        ""
-    ]
+    {
+        "Ward": "1st Ward",
+        "Alderperson": "John Coughlin",
+        "Start Date": "April 16, 1923",
+        "End Date": "November 11, 1938",
+        "Party": "Democratic",
+        "Notes": "Had been serving since 1892    Died in office"
+    },
+    {
+        "Ward": "1st Ward",
+        "Alderperson": "Michael Kenna",
+        "Start Date": "April 12, 1939",
+        "End Date": "April 9, 1943",
+        "Party": "Democratic",
+        "Notes": "Had previously served from 1897 to 1923"
+    },
+    {
+        "Ward": "1st Ward",
+        "Alderperson": "John Budinger",
+        "Start Date": "April 9, 1943",
+        "End Date": "1951",
+        "Party": "Democratic",
+        "Notes": "Had previously served (previous iteration of) the 4th ward from 1910 to 1912"
+    },
+    {
+        "Ward": "1st Ward",
+        "Alderperson": "John D'Arco Sr.",
+        "Start Date": "1951",
+        "End Date": "1963",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "1st Ward",
+        "Alderperson": "Fred Roti",
+        "Start Date": "1968",
+        "End Date": "1991",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "1st Ward",
+        "Alderperson": "Ted Mazola",
+        "Start Date": "1991",
+        "End Date": "1995",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "1st Ward",
+        "Alderperson": "Jesse Granato",
+        "Start Date": "1995",
+        "End Date": "May 19, 2003",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "1st Ward",
+        "Alderperson": "Manuel Flores",
+        "Start Date": "May 19, 2003",
+        "End Date": "January 4, 2010",
+        "Party": "Democratic",
+        "Notes": "Appointed to be Chairman of the  Illinois Commerce Commission"
+    },
+    {
+        "Ward": "1st Ward",
+        "Alderperson": "Proco Joe Moreno",
+        "Start Date": "March 26, 2010",
+        "End Date": "May 20, 2019",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "1st Ward",
+        "Alderperson": "Daniel La Spata",
+        "Start Date": "May 20, 2019",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "2nd Ward",
+        "Alderperson": "Louis B. Anderson",
+        "Start Date": "April 16, 1923",
+        "End Date": "1933",
+        "Party": "Republican",
+        "Notes": "Had been serving since 1917"
+    },
+    {
+        "Ward": "2nd Ward",
+        "Alderperson": "William L. Dawson",
+        "Start Date": "1933",
+        "End Date": "April 12, 1939",
+        "Party": "Republican",
+        "Notes": ""
+    },
+    {
+        "Ward": "2nd Ward",
+        "Alderperson": "Earl B. Dickerson",
+        "Start Date": "April 12, 1939",
+        "End Date": "April 9, 1943",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "2nd Ward",
+        "Alderperson": "William H. Harvey",
+        "Start Date": "April 9, 1943",
+        "End Date": "December 20, 1968",
+        "Party": "N/A",
+        "Notes": "Became a  County Commissioner"
+    },
+    {
+        "Ward": "2nd Ward",
+        "Alderperson": "Fred D. Hubbard",
+        "Start Date": "March 11, 1969",
+        "End Date": "March 16, 1972",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "2nd Ward",
+        "Alderperson": "William Barnett",
+        "Start Date": "August 15, 1972",
+        "End Date": "1983",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "2nd Ward",
+        "Alderperson": "Bobby Rush",
+        "Start Date": "1983",
+        "End Date": "1993",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "2nd Ward",
+        "Alderperson": "Madeline Haithcock",
+        "Start Date": "1993",
+        "End Date": "May 21, 2007",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "2nd Ward",
+        "Alderperson": "Robert Fioretti",
+        "Start Date": "May 21, 2007",
+        "End Date": "May 2015",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "2nd Ward",
+        "Alderperson": "Brian K. Hopkins",
+        "Start Date": "May 2015",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "3rd Ward",
+        "Alderperson": "Robert R. Jackson",
+        "Start Date": "April 16, 1923",
+        "End Date": "April 12, 1939",
+        "Party": "Republican",
+        "Notes": "Had been serving then-2nd ward since 1918"
+    },
+    {
+        "Ward": "3rd Ward",
+        "Alderperson": "Benjaim A. Grant",
+        "Start Date": "April 12, 1939",
+        "End Date": "April 9, 1943",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "3rd Ward",
+        "Alderperson": "Oscar Stanton De Priest",
+        "Start Date": "April 9, 1943",
+        "End Date": "1947",
+        "Party": "Republican",
+        "Notes": "Had previously served then-2nd ward from 1915 to 1917"
+    },
+    {
+        "Ward": "3rd Ward",
+        "Alderperson": "Archibald Carey Jr.",
+        "Start Date": "1947",
+        "End Date": "1955",
+        "Party": "Republican",
+        "Notes": ""
+    },
+    {
+        "Ward": "3rd Ward",
+        "Alderperson": "Ralph Metcalfe",
+        "Start Date": "1955",
+        "End Date": "December 1970",
+        "Party": "Democratic",
+        "Notes": "Became a Congressman"
+    },
+    {
+        "Ward": "3rd Ward",
+        "Alderperson": "Tyrone T. Kenner",
+        "Start Date": "February 23, 1971",
+        "End Date": "February 11, 1985",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "3rd Ward",
+        "Alderperson": "Dorothy Tillman",
+        "Start Date": "February 11, 1985",
+        "End Date": "April 27, 2007",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "3rd Ward",
+        "Alderperson": "Pat Dowell",
+        "Start Date": "April 27, 2007",
+        "End Date": "Present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "4th Ward",
+        "Alderperson": "Abraham H. Cohen",
+        "Start Date": "April 12, 1939",
+        "End Date": "1955",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "4th Ward",
+        "Alderperson": "Claude Holman",
+        "Start Date": "1955",
+        "End Date": "June 1, 1973",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "4th Ward",
+        "Alderperson": "Timothy C. Evans",
+        "Start Date": "November 27, 1973",
+        "End Date": "1991",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "4th Ward",
+        "Alderperson": "Toni Preckwinkle",
+        "Start Date": "1991",
+        "End Date": "2010",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "4th Ward",
+        "Alderperson": "William D. Burns",
+        "Start Date": "May 2011",
+        "End Date": "February 2016",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "4th Ward",
+        "Alderperson": "Sophia King",
+        "Start Date": "April 16, 2016",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "5th Ward",
+        "Alderperson": "William R. O'Toole",
+        "Start Date": "April 16, 1923",
+        "End Date": "1931",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-30th ward since 1914"
+    },
+    {
+        "Ward": "5th Ward",
+        "Alderperson": "James J. McDermott",
+        "Start Date": "1933",
+        "End Date": "December 3, 1942",
+        "Party": "Democratic",
+        "Notes": "Elected to Cook County Board of Appeals"
+    },
+    {
+        "Ward": "5th Ward",
+        "Alderperson": "Clarence P. Wagner",
+        "Start Date": "April 9, 1943",
+        "End Date": "July 10, 1953",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "5th Ward",
+        "Alderperson": "Joseph P. Burke",
+        "Start Date": "November 3, 1953",
+        "End Date": "May 11, 1968",
+        "Party": "Democratic",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "5th Ward",
+        "Alderperson": "Edward M. Burke",
+        "Start Date": "March 14, 1969",
+        "End Date": "Present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "6th Ward",
+        "Alderperson": "William R. O'Toole",
+        "Start Date": "April 16, 1923",
+        "End Date": "1931",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-30th ward since 1914"
+    },
+    {
+        "Ward": "6th Ward",
+        "Alderperson": "James J. McDermott",
+        "Start Date": "1933",
+        "End Date": "December 3, 1942",
+        "Party": "Democratic",
+        "Notes": "Elected to Cook County Board of Appeals"
+    },
+    {
+        "Ward": "6th Ward",
+        "Alderperson": "Clarence P. Wagner",
+        "Start Date": "April 9, 1943",
+        "End Date": "July 10, 1953",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "6th Ward",
+        "Alderperson": "Joseph P. Burke",
+        "Start Date": "November 3, 1953",
+        "End Date": "May 11, 1968",
+        "Party": "Democratic",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "6th Ward",
+        "Alderperson": "Edward M. Burke",
+        "Start Date": "March 14, 1969",
+        "End Date": "Present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "7th Ward",
+        "Alderperson": "William R. O'Toole",
+        "Start Date": "April 16, 1923",
+        "End Date": "1931",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-30th ward since 1914"
+    },
+    {
+        "Ward": "7th Ward",
+        "Alderperson": "James J. McDermott",
+        "Start Date": "1933",
+        "End Date": "December 3, 1942",
+        "Party": "Democratic",
+        "Notes": "Elected to Cook County Board of Appeals"
+    },
+    {
+        "Ward": "7th Ward",
+        "Alderperson": "Clarence P. Wagner",
+        "Start Date": "April 9, 1943",
+        "End Date": "July 10, 1953",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "7th Ward",
+        "Alderperson": "Joseph P. Burke",
+        "Start Date": "November 3, 1953",
+        "End Date": "May 11, 1968",
+        "Party": "Democratic",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "7th Ward",
+        "Alderperson": "Edward M. Burke",
+        "Start Date": "March 14, 1969",
+        "End Date": "Present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "8th Ward",
+        "Alderperson": "William R. O'Toole",
+        "Start Date": "April 16, 1923",
+        "End Date": "1931",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-30th ward since 1914"
+    },
+    {
+        "Ward": "8th Ward",
+        "Alderperson": "James J. McDermott",
+        "Start Date": "1933",
+        "End Date": "December 3, 1942",
+        "Party": "Democratic",
+        "Notes": "Elected to Cook County Board of Appeals"
+    },
+    {
+        "Ward": "8th Ward",
+        "Alderperson": "Clarence P. Wagner",
+        "Start Date": "April 9, 1943",
+        "End Date": "July 10, 1953",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "8th Ward",
+        "Alderperson": "Joseph P. Burke",
+        "Start Date": "November 3, 1953",
+        "End Date": "May 11, 1968",
+        "Party": "Democratic",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "8th Ward",
+        "Alderperson": "Edward M. Burke",
+        "Start Date": "March 14, 1969",
+        "End Date": "Present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "9th Ward",
+        "Alderperson": "William R. O'Toole",
+        "Start Date": "April 16, 1923",
+        "End Date": "1931",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-30th ward since 1914"
+    },
+    {
+        "Ward": "9th Ward",
+        "Alderperson": "James J. McDermott",
+        "Start Date": "1933",
+        "End Date": "December 3, 1942",
+        "Party": "Democratic",
+        "Notes": "Elected to Cook County Board of Appeals"
+    },
+    {
+        "Ward": "9th Ward",
+        "Alderperson": "Clarence P. Wagner",
+        "Start Date": "April 9, 1943",
+        "End Date": "July 10, 1953",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "9th Ward",
+        "Alderperson": "Joseph P. Burke",
+        "Start Date": "November 3, 1953",
+        "End Date": "May 11, 1968",
+        "Party": "Democratic",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "9th Ward",
+        "Alderperson": "Edward M. Burke",
+        "Start Date": "March 14, 1969",
+        "End Date": "Present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "10th Ward",
+        "Alderperson": "William R. O'Toole",
+        "Start Date": "April 16, 1923",
+        "End Date": "1931",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-30th ward since 1914"
+    },
+    {
+        "Ward": "10th Ward",
+        "Alderperson": "James J. McDermott",
+        "Start Date": "1933",
+        "End Date": "December 3, 1942",
+        "Party": "Democratic",
+        "Notes": "Elected to Cook County Board of Appeals"
+    },
+    {
+        "Ward": "10th Ward",
+        "Alderperson": "Clarence P. Wagner",
+        "Start Date": "April 9, 1943",
+        "End Date": "July 10, 1953",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "10th Ward",
+        "Alderperson": "Joseph P. Burke",
+        "Start Date": "November 3, 1953",
+        "End Date": "May 11, 1968",
+        "Party": "Democratic",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "10th Ward",
+        "Alderperson": "Edward M. Burke",
+        "Start Date": "March 14, 1969",
+        "End Date": "Present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "11th Ward",
+        "Alderperson": "William R. O'Toole",
+        "Start Date": "April 16, 1923",
+        "End Date": "1931",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-30th ward since 1914"
+    },
+    {
+        "Ward": "11th Ward",
+        "Alderperson": "James J. McDermott",
+        "Start Date": "1933",
+        "End Date": "December 3, 1942",
+        "Party": "Democratic",
+        "Notes": "Elected to Cook County Board of Appeals"
+    },
+    {
+        "Ward": "11th Ward",
+        "Alderperson": "Clarence P. Wagner",
+        "Start Date": "April 9, 1943",
+        "End Date": "July 10, 1953",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "11th Ward",
+        "Alderperson": "Joseph P. Burke",
+        "Start Date": "November 3, 1953",
+        "End Date": "May 11, 1968",
+        "Party": "Democratic",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "11th Ward",
+        "Alderperson": "Edward M. Burke",
+        "Start Date": "March 14, 1969",
+        "End Date": "Present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "12th Ward",
+        "Alderperson": "William R. O'Toole",
+        "Start Date": "April 16, 1923",
+        "End Date": "1931",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-30th ward since 1914"
+    },
+    {
+        "Ward": "12th Ward",
+        "Alderperson": "James J. McDermott",
+        "Start Date": "1933",
+        "End Date": "December 3, 1942",
+        "Party": "Democratic",
+        "Notes": "Elected to Cook County Board of Appeals"
+    },
+    {
+        "Ward": "12th Ward",
+        "Alderperson": "Clarence P. Wagner",
+        "Start Date": "April 9, 1943",
+        "End Date": "July 10, 1953",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "12th Ward",
+        "Alderperson": "Joseph P. Burke",
+        "Start Date": "November 3, 1953",
+        "End Date": "May 11, 1968",
+        "Party": "Democratic",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "12th Ward",
+        "Alderperson": "Edward M. Burke",
+        "Start Date": "March 14, 1969",
+        "End Date": "Present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "13th Ward",
+        "Alderperson": "William R. O'Toole",
+        "Start Date": "April 16, 1923",
+        "End Date": "1931",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-30th ward since 1914"
+    },
+    {
+        "Ward": "13th Ward",
+        "Alderperson": "James J. McDermott",
+        "Start Date": "1933",
+        "End Date": "December 3, 1942",
+        "Party": "Democratic",
+        "Notes": "Elected to Cook County Board of Appeals"
+    },
+    {
+        "Ward": "13th Ward",
+        "Alderperson": "Clarence P. Wagner",
+        "Start Date": "April 9, 1943",
+        "End Date": "July 10, 1953",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "13th Ward",
+        "Alderperson": "Joseph P. Burke",
+        "Start Date": "November 3, 1953",
+        "End Date": "May 11, 1968",
+        "Party": "Democratic",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "13th Ward",
+        "Alderperson": "Edward M. Burke",
+        "Start Date": "March 14, 1969",
+        "End Date": "Present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "14th Ward",
+        "Alderperson": "William R. O'Toole",
+        "Start Date": "April 16, 1923",
+        "End Date": "1931",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-30th ward since 1914"
+    },
+    {
+        "Ward": "14th Ward",
+        "Alderperson": "James J. McDermott",
+        "Start Date": "1933",
+        "End Date": "December 3, 1942",
+        "Party": "Democratic",
+        "Notes": "Elected to Cook County Board of Appeals"
+    },
+    {
+        "Ward": "14th Ward",
+        "Alderperson": "Clarence P. Wagner",
+        "Start Date": "April 9, 1943",
+        "End Date": "July 10, 1953",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "14th Ward",
+        "Alderperson": "Joseph P. Burke",
+        "Start Date": "November 3, 1953",
+        "End Date": "May 11, 1968",
+        "Party": "Democratic",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "14th Ward",
+        "Alderperson": "Edward M. Burke",
+        "Start Date": "March 14, 1969",
+        "End Date": "Present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "15th Ward",
+        "Alderperson": "Donald S. McKinlay",
+        "Start Date": "April 16, 1923",
+        "End Date": "1928",
+        "Party": "Democratic",
+        "Notes": "Resigned to become a judge [ 3 ]"
+    },
+    {
+        "Ward": "15th Ward",
+        "Alderperson": "O.E. Northrup",
+        "Start Date": "1929",
+        "End Date": "1935",
+        "Party": "Republican",
+        "Notes": ""
+    },
+    {
+        "Ward": "15th Ward",
+        "Alderperson": "John J. Duffy",
+        "Start Date": "1935",
+        "End Date": "December 1, 1950",
+        "Party": "N/A",
+        "Notes": "Elected to the Cook County Board of Commissioners"
+    },
+    {
+        "Ward": "15th Ward",
+        "Alderperson": "David T. McKiernan",
+        "Start Date": "1951",
+        "End Date": "May 25, 1957",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "15th Ward",
+        "Alderperson": "Thomas F. Fitzpatrick",
+        "Start Date": "September 17, 1957",
+        "End Date": "April 1, 1975",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "15th Ward",
+        "Alderperson": "Jeremiah E. Joyce",
+        "Start Date": "April 1, 1975",
+        "End Date": "February 1, 1979",
+        "Party": "Democratic",
+        "Notes": "Elected to the  Illinois General Assembly  for the 28th district"
+    },
+    {
+        "Ward": "15th Ward",
+        "Alderperson": "Michael F. Sheahan",
+        "Start Date": "April 16, 1979",
+        "End Date": "1991",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "15th Ward",
+        "Alderperson": "Virginia Rugai",
+        "Start Date": "1991",
+        "End Date": "2011",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "15th Ward",
+        "Alderperson": "Matthew O'Shea",
+        "Start Date": "2011",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "16th Ward",
+        "Alderperson": "Donald S. McKinlay",
+        "Start Date": "April 16, 1923",
+        "End Date": "1928",
+        "Party": "Democratic",
+        "Notes": "Resigned to become a judge [ 3 ]"
+    },
+    {
+        "Ward": "16th Ward",
+        "Alderperson": "O.E. Northrup",
+        "Start Date": "1929",
+        "End Date": "1935",
+        "Party": "Republican",
+        "Notes": ""
+    },
+    {
+        "Ward": "16th Ward",
+        "Alderperson": "John J. Duffy",
+        "Start Date": "1935",
+        "End Date": "December 1, 1950",
+        "Party": "N/A",
+        "Notes": "Elected to the Cook County Board of Commissioners"
+    },
+    {
+        "Ward": "16th Ward",
+        "Alderperson": "David T. McKiernan",
+        "Start Date": "1951",
+        "End Date": "May 25, 1957",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "16th Ward",
+        "Alderperson": "Thomas F. Fitzpatrick",
+        "Start Date": "September 17, 1957",
+        "End Date": "April 1, 1975",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "16th Ward",
+        "Alderperson": "Jeremiah E. Joyce",
+        "Start Date": "April 1, 1975",
+        "End Date": "February 1, 1979",
+        "Party": "Democratic",
+        "Notes": "Elected to the  Illinois General Assembly  for the 28th district"
+    },
+    {
+        "Ward": "16th Ward",
+        "Alderperson": "Michael F. Sheahan",
+        "Start Date": "April 16, 1979",
+        "End Date": "1991",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "16th Ward",
+        "Alderperson": "Virginia Rugai",
+        "Start Date": "1991",
+        "End Date": "2011",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "16th Ward",
+        "Alderperson": "Matthew O'Shea",
+        "Start Date": "2011",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "17th Ward",
+        "Alderperson": "Donald S. McKinlay",
+        "Start Date": "April 16, 1923",
+        "End Date": "1928",
+        "Party": "Democratic",
+        "Notes": "Resigned to become a judge [ 3 ]"
+    },
+    {
+        "Ward": "17th Ward",
+        "Alderperson": "O.E. Northrup",
+        "Start Date": "1929",
+        "End Date": "1935",
+        "Party": "Republican",
+        "Notes": ""
+    },
+    {
+        "Ward": "17th Ward",
+        "Alderperson": "John J. Duffy",
+        "Start Date": "1935",
+        "End Date": "December 1, 1950",
+        "Party": "N/A",
+        "Notes": "Elected to the Cook County Board of Commissioners"
+    },
+    {
+        "Ward": "17th Ward",
+        "Alderperson": "David T. McKiernan",
+        "Start Date": "1951",
+        "End Date": "May 25, 1957",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "17th Ward",
+        "Alderperson": "Thomas F. Fitzpatrick",
+        "Start Date": "September 17, 1957",
+        "End Date": "April 1, 1975",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "17th Ward",
+        "Alderperson": "Jeremiah E. Joyce",
+        "Start Date": "April 1, 1975",
+        "End Date": "February 1, 1979",
+        "Party": "Democratic",
+        "Notes": "Elected to the  Illinois General Assembly  for the 28th district"
+    },
+    {
+        "Ward": "17th Ward",
+        "Alderperson": "Michael F. Sheahan",
+        "Start Date": "April 16, 1979",
+        "End Date": "1991",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "17th Ward",
+        "Alderperson": "Virginia Rugai",
+        "Start Date": "1991",
+        "End Date": "2011",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "17th Ward",
+        "Alderperson": "Matthew O'Shea",
+        "Start Date": "2011",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "18th Ward",
+        "Alderperson": "Donald S. McKinlay",
+        "Start Date": "April 16, 1923",
+        "End Date": "1928",
+        "Party": "Democratic",
+        "Notes": "Resigned to become a judge [ 3 ]"
+    },
+    {
+        "Ward": "18th Ward",
+        "Alderperson": "O.E. Northrup",
+        "Start Date": "1929",
+        "End Date": "1935",
+        "Party": "Republican",
+        "Notes": ""
+    },
+    {
+        "Ward": "18th Ward",
+        "Alderperson": "John J. Duffy",
+        "Start Date": "1935",
+        "End Date": "December 1, 1950",
+        "Party": "N/A",
+        "Notes": "Elected to the Cook County Board of Commissioners"
+    },
+    {
+        "Ward": "18th Ward",
+        "Alderperson": "David T. McKiernan",
+        "Start Date": "1951",
+        "End Date": "May 25, 1957",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "18th Ward",
+        "Alderperson": "Thomas F. Fitzpatrick",
+        "Start Date": "September 17, 1957",
+        "End Date": "April 1, 1975",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "18th Ward",
+        "Alderperson": "Jeremiah E. Joyce",
+        "Start Date": "April 1, 1975",
+        "End Date": "February 1, 1979",
+        "Party": "Democratic",
+        "Notes": "Elected to the  Illinois General Assembly  for the 28th district"
+    },
+    {
+        "Ward": "18th Ward",
+        "Alderperson": "Michael F. Sheahan",
+        "Start Date": "April 16, 1979",
+        "End Date": "1991",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "18th Ward",
+        "Alderperson": "Virginia Rugai",
+        "Start Date": "1991",
+        "End Date": "2011",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "18th Ward",
+        "Alderperson": "Matthew O'Shea",
+        "Start Date": "2011",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "19th Ward",
+        "Alderperson": "Donald S. McKinlay",
+        "Start Date": "April 16, 1923",
+        "End Date": "1928",
+        "Party": "Democratic",
+        "Notes": "Resigned to become a judge [ 3 ]"
+    },
+    {
+        "Ward": "19th Ward",
+        "Alderperson": "O.E. Northrup",
+        "Start Date": "1929",
+        "End Date": "1935",
+        "Party": "Republican",
+        "Notes": ""
+    },
+    {
+        "Ward": "19th Ward",
+        "Alderperson": "John J. Duffy",
+        "Start Date": "1935",
+        "End Date": "December 1, 1950",
+        "Party": "N/A",
+        "Notes": "Elected to the Cook County Board of Commissioners"
+    },
+    {
+        "Ward": "19th Ward",
+        "Alderperson": "David T. McKiernan",
+        "Start Date": "1951",
+        "End Date": "May 25, 1957",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "19th Ward",
+        "Alderperson": "Thomas F. Fitzpatrick",
+        "Start Date": "September 17, 1957",
+        "End Date": "April 1, 1975",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "19th Ward",
+        "Alderperson": "Jeremiah E. Joyce",
+        "Start Date": "April 1, 1975",
+        "End Date": "February 1, 1979",
+        "Party": "Democratic",
+        "Notes": "Elected to the  Illinois General Assembly  for the 28th district"
+    },
+    {
+        "Ward": "19th Ward",
+        "Alderperson": "Michael F. Sheahan",
+        "Start Date": "April 16, 1979",
+        "End Date": "1991",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "19th Ward",
+        "Alderperson": "Virginia Rugai",
+        "Start Date": "1991",
+        "End Date": "2011",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "19th Ward",
+        "Alderperson": "Matthew O'Shea",
+        "Start Date": "2011",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "20th Ward",
+        "Alderperson": "John Powers",
+        "Start Date": "April 16, 1923",
+        "End Date": "1927",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-19th ward since 1905 and previously from 1888 to 1904"
+    },
+    {
+        "Ward": "20th Ward",
+        "Alderperson": "James Bowler",
+        "Start Date": "1927",
+        "End Date": "June 7, 1934   February 26, 1935",
+        "Party": "Democratic",
+        "Notes": "Had previously served then-19th ward between 1906 and 1923   Briefly vacated office to become a Public Vehicle License Commissioner   Became a Congressman representing  IL-7"
+    },
+    {
+        "Ward": "20th Ward",
+        "Alderperson": "Vito Marzullo",
+        "Start Date": "November 3, 1953",
+        "End Date": "1985",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "20th Ward",
+        "Alderperson": "Daniel Solis",
+        "Start Date": "1996",
+        "End Date": "2019",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "20th Ward",
+        "Alderperson": "Byron Sigcho-Lopez",
+        "Start Date": "2019",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "21st Ward",
+        "Alderperson": "John Powers",
+        "Start Date": "April 16, 1923",
+        "End Date": "1927",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-19th ward since 1905 and previously from 1888 to 1904"
+    },
+    {
+        "Ward": "21st Ward",
+        "Alderperson": "James Bowler",
+        "Start Date": "1927",
+        "End Date": "June 7, 1934   February 26, 1935",
+        "Party": "Democratic",
+        "Notes": "Had previously served then-19th ward between 1906 and 1923   Briefly vacated office to become a Public Vehicle License Commissioner   Became a Congressman representing  IL-7"
+    },
+    {
+        "Ward": "21st Ward",
+        "Alderperson": "Vito Marzullo",
+        "Start Date": "November 3, 1953",
+        "End Date": "1985",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "21st Ward",
+        "Alderperson": "Daniel Solis",
+        "Start Date": "1996",
+        "End Date": "2019",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "21st Ward",
+        "Alderperson": "Byron Sigcho-Lopez",
+        "Start Date": "2019",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "22nd Ward",
+        "Alderperson": "John Powers",
+        "Start Date": "April 16, 1923",
+        "End Date": "1927",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-19th ward since 1905 and previously from 1888 to 1904"
+    },
+    {
+        "Ward": "22nd Ward",
+        "Alderperson": "James Bowler",
+        "Start Date": "1927",
+        "End Date": "June 7, 1934   February 26, 1935",
+        "Party": "Democratic",
+        "Notes": "Had previously served then-19th ward between 1906 and 1923   Briefly vacated office to become a Public Vehicle License Commissioner   Became a Congressman representing  IL-7"
+    },
+    {
+        "Ward": "22nd Ward",
+        "Alderperson": "Vito Marzullo",
+        "Start Date": "November 3, 1953",
+        "End Date": "1985",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "22nd Ward",
+        "Alderperson": "Daniel Solis",
+        "Start Date": "1996",
+        "End Date": "2019",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "22nd Ward",
+        "Alderperson": "Byron Sigcho-Lopez",
+        "Start Date": "2019",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "23rd Ward",
+        "Alderperson": "John Powers",
+        "Start Date": "April 16, 1923",
+        "End Date": "1927",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-19th ward since 1905 and previously from 1888 to 1904"
+    },
+    {
+        "Ward": "23rd Ward",
+        "Alderperson": "James Bowler",
+        "Start Date": "1927",
+        "End Date": "June 7, 1934   February 26, 1935",
+        "Party": "Democratic",
+        "Notes": "Had previously served then-19th ward between 1906 and 1923   Briefly vacated office to become a Public Vehicle License Commissioner   Became a Congressman representing  IL-7"
+    },
+    {
+        "Ward": "23rd Ward",
+        "Alderperson": "Vito Marzullo",
+        "Start Date": "November 3, 1953",
+        "End Date": "1985",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "23rd Ward",
+        "Alderperson": "Daniel Solis",
+        "Start Date": "1996",
+        "End Date": "2019",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "23rd Ward",
+        "Alderperson": "Byron Sigcho-Lopez",
+        "Start Date": "2019",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "24th Ward",
+        "Alderperson": "John Powers",
+        "Start Date": "April 16, 1923",
+        "End Date": "1927",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-19th ward since 1905 and previously from 1888 to 1904"
+    },
+    {
+        "Ward": "24th Ward",
+        "Alderperson": "James Bowler",
+        "Start Date": "1927",
+        "End Date": "June 7, 1934   February 26, 1935",
+        "Party": "Democratic",
+        "Notes": "Had previously served then-19th ward between 1906 and 1923   Briefly vacated office to become a Public Vehicle License Commissioner   Became a Congressman representing  IL-7"
+    },
+    {
+        "Ward": "24th Ward",
+        "Alderperson": "Vito Marzullo",
+        "Start Date": "November 3, 1953",
+        "End Date": "1985",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "24th Ward",
+        "Alderperson": "Daniel Solis",
+        "Start Date": "1996",
+        "End Date": "2019",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "24th Ward",
+        "Alderperson": "Byron Sigcho-Lopez",
+        "Start Date": "2019",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "25th Ward",
+        "Alderperson": "John Powers",
+        "Start Date": "April 16, 1923",
+        "End Date": "1927",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-19th ward since 1905 and previously from 1888 to 1904"
+    },
+    {
+        "Ward": "25th Ward",
+        "Alderperson": "James Bowler",
+        "Start Date": "1927",
+        "End Date": "June 7, 1934   February 26, 1935",
+        "Party": "Democratic",
+        "Notes": "Had previously served then-19th ward between 1906 and 1923   Briefly vacated office to become a Public Vehicle License Commissioner   Became a Congressman representing  IL-7"
+    },
+    {
+        "Ward": "25th Ward",
+        "Alderperson": "Vito Marzullo",
+        "Start Date": "November 3, 1953",
+        "End Date": "1985",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "25th Ward",
+        "Alderperson": "Daniel Solis",
+        "Start Date": "1996",
+        "End Date": "2019",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "25th Ward",
+        "Alderperson": "Byron Sigcho-Lopez",
+        "Start Date": "2019",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "26th Ward",
+        "Alderperson": "Mathew William Bieszczat",
+        "Start Date": "February 5, 1945",
+        "End Date": "November 8, 1960",
+        "Party": "N/A",
+        "Notes": "Elected bailiff of  Municipal Court of Chicago"
+    },
+    {
+        "Ward": "26th Ward",
+        "Alderperson": "Stanley M. Zydlo",
+        "Start Date": "February 26, 1963",
+        "End Date": "April 16, 1979",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "26th Ward",
+        "Alderperson": "Michael Nardulli",
+        "Start Date": "1979",
+        "End Date": "1986",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "26th Ward",
+        "Alderperson": "Luis Gutiérrez",
+        "Start Date": "May 2, 1986",
+        "End Date": "December 12, 1992",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "26th Ward",
+        "Alderperson": "Billy Ocasio",
+        "Start Date": "1994",
+        "End Date": "2009",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "26th Ward",
+        "Alderperson": "Roberto Maldonado",
+        "Start Date": "2009",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "27th Ward",
+        "Alderperson": "John J. Touhy",
+        "Start Date": "April 16, 1923",
+        "End Date": "December 1, 1926 [ dates 2 ]",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-18th ward since 1917 Resigned to take office as a Sanitary District Trustee [ dates 2 ]"
+    },
+    {
+        "Ward": "27th Ward",
+        "Alderperson": "Harry C. Van Norman",
+        "Start Date": "1927",
+        "End Date": "October 11, 1929 [ dates 3 ]",
+        "Party": "Democratic",
+        "Notes": "Died in office [ dates 3 ]"
+    },
+    {
+        "Ward": "27th Ward",
+        "Alderperson": "Harry L. Sain",
+        "Start Date": "1933",
+        "End Date": "February 23, 1971",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "27th Ward",
+        "Alderperson": "Eugene Ray",
+        "Start Date": "February 23, 1971",
+        "End Date": "1983",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "27th Ward",
+        "Alderperson": "Rickey R. Hendon",
+        "Start Date": "1991",
+        "End Date": "January 13, 1993",
+        "Party": "Democratic",
+        "Notes": "Elected to the  Illinois Senate  for the 5th district"
+    },
+    {
+        "Ward": "27th Ward",
+        "Alderperson": "Walter Burnett Jr.",
+        "Start Date": "May 1995",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "28th Ward",
+        "Alderperson": "Stanley Adamkiewicz",
+        "Start Date": "April 16, 1923",
+        "End Date": "1929",
+        "Party": "Democratic",
+        "Notes": "Had previously served then-17th ward from 1917 to 1921"
+    },
+    {
+        "Ward": "28th Ward",
+        "Alderperson": "Thomas Patrick Keane",
+        "Start Date": "1933",
+        "End Date": "July 13, 1945",
+        "Party": "Democratic",
+        "Notes": "Redistricted from the 34th ward   Died in office"
+    },
+    {
+        "Ward": "28th Ward",
+        "Alderperson": "Thomas E. Keane",
+        "Start Date": "September 4, 1945",
+        "End Date": "October 9, 1974",
+        "Party": "N/A",
+        "Notes": "Convicted of mail fraud and conspiracy"
+    },
+    {
+        "Ward": "28th Ward",
+        "Alderperson": "Ray Suarez",
+        "Start Date": "1991",
+        "End Date": "May 2015",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "28th Ward",
+        "Alderperson": "Milly Santiago",
+        "Start Date": "May 2015",
+        "End Date": "May 20, 2019",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "28th Ward",
+        "Alderperson": "Felix Cardona, Jr.",
+        "Start Date": "May 20, 2019",
+        "End Date": "Present",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "29th Ward",
+        "Alderperson": "Stanley Adamkiewicz",
+        "Start Date": "April 16, 1923",
+        "End Date": "1929",
+        "Party": "Democratic",
+        "Notes": "Had previously served then-17th ward from 1917 to 1921"
+    },
+    {
+        "Ward": "29th Ward",
+        "Alderperson": "Thomas Patrick Keane",
+        "Start Date": "1933",
+        "End Date": "July 13, 1945",
+        "Party": "Democratic",
+        "Notes": "Redistricted from the 34th ward   Died in office"
+    },
+    {
+        "Ward": "29th Ward",
+        "Alderperson": "Thomas E. Keane",
+        "Start Date": "September 4, 1945",
+        "End Date": "October 9, 1974",
+        "Party": "N/A",
+        "Notes": "Convicted of mail fraud and conspiracy"
+    },
+    {
+        "Ward": "29th Ward",
+        "Alderperson": "Ray Suarez",
+        "Start Date": "1991",
+        "End Date": "May 2015",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "29th Ward",
+        "Alderperson": "Milly Santiago",
+        "Start Date": "May 2015",
+        "End Date": "May 20, 2019",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "29th Ward",
+        "Alderperson": "Felix Cardona, Jr.",
+        "Start Date": "May 20, 2019",
+        "End Date": "Present",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "30th Ward",
+        "Alderperson": "Stanley Adamkiewicz",
+        "Start Date": "April 16, 1923",
+        "End Date": "1929",
+        "Party": "Democratic",
+        "Notes": "Had previously served then-17th ward from 1917 to 1921"
+    },
+    {
+        "Ward": "30th Ward",
+        "Alderperson": "Thomas Patrick Keane",
+        "Start Date": "1933",
+        "End Date": "July 13, 1945",
+        "Party": "Democratic",
+        "Notes": "Redistricted from the 34th ward   Died in office"
+    },
+    {
+        "Ward": "30th Ward",
+        "Alderperson": "Thomas E. Keane",
+        "Start Date": "September 4, 1945",
+        "End Date": "October 9, 1974",
+        "Party": "N/A",
+        "Notes": "Convicted of mail fraud and conspiracy"
+    },
+    {
+        "Ward": "30th Ward",
+        "Alderperson": "Ray Suarez",
+        "Start Date": "1991",
+        "End Date": "May 2015",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "30th Ward",
+        "Alderperson": "Milly Santiago",
+        "Start Date": "May 2015",
+        "End Date": "May 20, 2019",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "30th Ward",
+        "Alderperson": "Felix Cardona, Jr.",
+        "Start Date": "May 20, 2019",
+        "End Date": "Present",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "31st Ward",
+        "Alderperson": "Stanley Adamkiewicz",
+        "Start Date": "April 16, 1923",
+        "End Date": "1929",
+        "Party": "Democratic",
+        "Notes": "Had previously served then-17th ward from 1917 to 1921"
+    },
+    {
+        "Ward": "31st Ward",
+        "Alderperson": "Thomas Patrick Keane",
+        "Start Date": "1933",
+        "End Date": "July 13, 1945",
+        "Party": "Democratic",
+        "Notes": "Redistricted from the 34th ward   Died in office"
+    },
+    {
+        "Ward": "31st Ward",
+        "Alderperson": "Thomas E. Keane",
+        "Start Date": "September 4, 1945",
+        "End Date": "October 9, 1974",
+        "Party": "N/A",
+        "Notes": "Convicted of mail fraud and conspiracy"
+    },
+    {
+        "Ward": "31st Ward",
+        "Alderperson": "Ray Suarez",
+        "Start Date": "1991",
+        "End Date": "May 2015",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "31st Ward",
+        "Alderperson": "Milly Santiago",
+        "Start Date": "May 2015",
+        "End Date": "May 20, 2019",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "31st Ward",
+        "Alderperson": "Felix Cardona, Jr.",
+        "Start Date": "May 20, 2019",
+        "End Date": "Present",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "32nd Ward",
+        "Alderperson": "Bernard C. Prusinski",
+        "Start Date": "1955",
+        "End Date": "1959",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "32nd Ward",
+        "Alderperson": "Robert J. Sulski",
+        "Start Date": "1959",
+        "End Date": "November 28, 1968",
+        "Party": "N/A",
+        "Notes": "Became a Circuit Court Judge"
+    },
+    {
+        "Ward": "32nd Ward",
+        "Alderperson": "Terry Gabinski",
+        "Start Date": "March 12, 1969",
+        "End Date": "May 21, 1998",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "32nd Ward",
+        "Alderperson": "Theodore Matlak",
+        "Start Date": "May 21, 1998",
+        "End Date": "May 20, 2007",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "32nd Ward",
+        "Alderperson": "Scott Waguespack",
+        "Start Date": "May 20, 2007",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "33rd Ward",
+        "Alderperson": "Max Adamowski",
+        "Start Date": "April 16, 1923",
+        "End Date": "July 16, 1929 [ dates 5 ]",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-22nd ward since 1916 Died in office [ dates 5 ]"
+    },
+    {
+        "Ward": "33rd Ward",
+        "Alderperson": "Patrick J. Cullerton",
+        "Start Date": "1935",
+        "End Date": "April 17, 1958",
+        "Party": "N/A",
+        "Notes": "Elected Cook County Assessor"
+    },
+    {
+        "Ward": "33rd Ward",
+        "Alderperson": "William J. Cullerton",
+        "Start Date": "1959",
+        "End Date": "April 14, 1973",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "33rd Ward",
+        "Alderperson": "Thomas W. Cullerton",
+        "Start Date": "November 27, 1973",
+        "End Date": "1993",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "33rd Ward",
+        "Alderperson": "Thomas R. Allen",
+        "Start Date": "1993",
+        "End Date": "2010",
+        "Party": "N/A",
+        "Notes": "Became a judge of the Cook County  Illinois Circuit Court"
+    },
+    {
+        "Ward": "33rd Ward",
+        "Alderperson": "Timothy Cullerton",
+        "Start Date": "2011",
+        "End Date": "2013",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "33rd Ward",
+        "Alderperson": "Nicholas Sposato",
+        "Start Date": "2013",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": "Redistricted from 36th ward"
+    },
+    {
+        "Ward": "34th Ward",
+        "Alderperson": "Max Adamowski",
+        "Start Date": "April 16, 1923",
+        "End Date": "July 16, 1929 [ dates 5 ]",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-22nd ward since 1916 Died in office [ dates 5 ]"
+    },
+    {
+        "Ward": "34th Ward",
+        "Alderperson": "Patrick J. Cullerton",
+        "Start Date": "1935",
+        "End Date": "April 17, 1958",
+        "Party": "N/A",
+        "Notes": "Elected Cook County Assessor"
+    },
+    {
+        "Ward": "34th Ward",
+        "Alderperson": "William J. Cullerton",
+        "Start Date": "1959",
+        "End Date": "April 14, 1973",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "34th Ward",
+        "Alderperson": "Thomas W. Cullerton",
+        "Start Date": "November 27, 1973",
+        "End Date": "1993",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "34th Ward",
+        "Alderperson": "Thomas R. Allen",
+        "Start Date": "1993",
+        "End Date": "2010",
+        "Party": "N/A",
+        "Notes": "Became a judge of the Cook County  Illinois Circuit Court"
+    },
+    {
+        "Ward": "34th Ward",
+        "Alderperson": "Timothy Cullerton",
+        "Start Date": "2011",
+        "End Date": "2013",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "34th Ward",
+        "Alderperson": "Nicholas Sposato",
+        "Start Date": "2013",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": "Redistricted from 36th ward"
+    },
+    {
+        "Ward": "35th Ward",
+        "Alderperson": "Max Adamowski",
+        "Start Date": "April 16, 1923",
+        "End Date": "July 16, 1929 [ dates 5 ]",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-22nd ward since 1916 Died in office [ dates 5 ]"
+    },
+    {
+        "Ward": "35th Ward",
+        "Alderperson": "Patrick J. Cullerton",
+        "Start Date": "1935",
+        "End Date": "April 17, 1958",
+        "Party": "N/A",
+        "Notes": "Elected Cook County Assessor"
+    },
+    {
+        "Ward": "35th Ward",
+        "Alderperson": "William J. Cullerton",
+        "Start Date": "1959",
+        "End Date": "April 14, 1973",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "35th Ward",
+        "Alderperson": "Thomas W. Cullerton",
+        "Start Date": "November 27, 1973",
+        "End Date": "1993",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "35th Ward",
+        "Alderperson": "Thomas R. Allen",
+        "Start Date": "1993",
+        "End Date": "2010",
+        "Party": "N/A",
+        "Notes": "Became a judge of the Cook County  Illinois Circuit Court"
+    },
+    {
+        "Ward": "35th Ward",
+        "Alderperson": "Timothy Cullerton",
+        "Start Date": "2011",
+        "End Date": "2013",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "35th Ward",
+        "Alderperson": "Nicholas Sposato",
+        "Start Date": "2013",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": "Redistricted from 36th ward"
+    },
+    {
+        "Ward": "36th Ward",
+        "Alderperson": "Max Adamowski",
+        "Start Date": "April 16, 1923",
+        "End Date": "July 16, 1929 [ dates 5 ]",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-22nd ward since 1916 Died in office [ dates 5 ]"
+    },
+    {
+        "Ward": "36th Ward",
+        "Alderperson": "Patrick J. Cullerton",
+        "Start Date": "1935",
+        "End Date": "April 17, 1958",
+        "Party": "N/A",
+        "Notes": "Elected Cook County Assessor"
+    },
+    {
+        "Ward": "36th Ward",
+        "Alderperson": "William J. Cullerton",
+        "Start Date": "1959",
+        "End Date": "April 14, 1973",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "36th Ward",
+        "Alderperson": "Thomas W. Cullerton",
+        "Start Date": "November 27, 1973",
+        "End Date": "1993",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "36th Ward",
+        "Alderperson": "Thomas R. Allen",
+        "Start Date": "1993",
+        "End Date": "2010",
+        "Party": "N/A",
+        "Notes": "Became a judge of the Cook County  Illinois Circuit Court"
+    },
+    {
+        "Ward": "36th Ward",
+        "Alderperson": "Timothy Cullerton",
+        "Start Date": "2011",
+        "End Date": "2013",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "36th Ward",
+        "Alderperson": "Nicholas Sposato",
+        "Start Date": "2013",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": "Redistricted from 36th ward"
+    },
+    {
+        "Ward": "37th Ward",
+        "Alderperson": "Max Adamowski",
+        "Start Date": "April 16, 1923",
+        "End Date": "July 16, 1929 [ dates 5 ]",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-22nd ward since 1916 Died in office [ dates 5 ]"
+    },
+    {
+        "Ward": "37th Ward",
+        "Alderperson": "Patrick J. Cullerton",
+        "Start Date": "1935",
+        "End Date": "April 17, 1958",
+        "Party": "N/A",
+        "Notes": "Elected Cook County Assessor"
+    },
+    {
+        "Ward": "37th Ward",
+        "Alderperson": "William J. Cullerton",
+        "Start Date": "1959",
+        "End Date": "April 14, 1973",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "37th Ward",
+        "Alderperson": "Thomas W. Cullerton",
+        "Start Date": "November 27, 1973",
+        "End Date": "1993",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "37th Ward",
+        "Alderperson": "Thomas R. Allen",
+        "Start Date": "1993",
+        "End Date": "2010",
+        "Party": "N/A",
+        "Notes": "Became a judge of the Cook County  Illinois Circuit Court"
+    },
+    {
+        "Ward": "37th Ward",
+        "Alderperson": "Timothy Cullerton",
+        "Start Date": "2011",
+        "End Date": "2013",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "37th Ward",
+        "Alderperson": "Nicholas Sposato",
+        "Start Date": "2013",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": "Redistricted from 36th ward"
+    },
+    {
+        "Ward": "38th Ward",
+        "Alderperson": "Max Adamowski",
+        "Start Date": "April 16, 1923",
+        "End Date": "July 16, 1929 [ dates 5 ]",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-22nd ward since 1916 Died in office [ dates 5 ]"
+    },
+    {
+        "Ward": "38th Ward",
+        "Alderperson": "Patrick J. Cullerton",
+        "Start Date": "1935",
+        "End Date": "April 17, 1958",
+        "Party": "N/A",
+        "Notes": "Elected Cook County Assessor"
+    },
+    {
+        "Ward": "38th Ward",
+        "Alderperson": "William J. Cullerton",
+        "Start Date": "1959",
+        "End Date": "April 14, 1973",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "38th Ward",
+        "Alderperson": "Thomas W. Cullerton",
+        "Start Date": "November 27, 1973",
+        "End Date": "1993",
+        "Party": "N/A",
+        "Notes": "Died in office"
+    },
+    {
+        "Ward": "38th Ward",
+        "Alderperson": "Thomas R. Allen",
+        "Start Date": "1993",
+        "End Date": "2010",
+        "Party": "N/A",
+        "Notes": "Became a judge of the Cook County  Illinois Circuit Court"
+    },
+    {
+        "Ward": "38th Ward",
+        "Alderperson": "Timothy Cullerton",
+        "Start Date": "2011",
+        "End Date": "2013",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "38th Ward",
+        "Alderperson": "Nicholas Sposato",
+        "Start Date": "2013",
+        "End Date": "present",
+        "Party": "Democratic",
+        "Notes": "Redistricted from 36th ward"
+    },
+    {
+        "Ward": "39th Ward",
+        "Alderperson": "Dorsey Crowe",
+        "Start Date": "April 16, 1923",
+        "End Date": "July 1, 1962",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-21st ward since 1919    Died in office"
+    },
+    {
+        "Ward": "39th Ward",
+        "Alderperson": "Mayer Goldberg",
+        "Start Date": "February 26, 1963",
+        "End Date": "November 29, 1968",
+        "Party": "Democratic",
+        "Notes": "Became a Circuit Court Judge"
+    },
+    {
+        "Ward": "39th Ward",
+        "Alderperson": "Burton Natarus",
+        "Start Date": "1971",
+        "End Date": "2007",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "39th Ward",
+        "Alderperson": "Brendan Reilly",
+        "Start Date": "2007",
+        "End Date": "Present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "40th Ward",
+        "Alderperson": "Dorsey Crowe",
+        "Start Date": "April 16, 1923",
+        "End Date": "July 1, 1962",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-21st ward since 1919    Died in office"
+    },
+    {
+        "Ward": "40th Ward",
+        "Alderperson": "Mayer Goldberg",
+        "Start Date": "February 26, 1963",
+        "End Date": "November 29, 1968",
+        "Party": "Democratic",
+        "Notes": "Became a Circuit Court Judge"
+    },
+    {
+        "Ward": "40th Ward",
+        "Alderperson": "Burton Natarus",
+        "Start Date": "1971",
+        "End Date": "2007",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "40th Ward",
+        "Alderperson": "Brendan Reilly",
+        "Start Date": "2007",
+        "End Date": "Present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "41st Ward",
+        "Alderperson": "Dorsey Crowe",
+        "Start Date": "April 16, 1923",
+        "End Date": "July 1, 1962",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-21st ward since 1919    Died in office"
+    },
+    {
+        "Ward": "41st Ward",
+        "Alderperson": "Mayer Goldberg",
+        "Start Date": "February 26, 1963",
+        "End Date": "November 29, 1968",
+        "Party": "Democratic",
+        "Notes": "Became a Circuit Court Judge"
+    },
+    {
+        "Ward": "41st Ward",
+        "Alderperson": "Burton Natarus",
+        "Start Date": "1971",
+        "End Date": "2007",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "41st Ward",
+        "Alderperson": "Brendan Reilly",
+        "Start Date": "2007",
+        "End Date": "Present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "42nd Ward",
+        "Alderperson": "Dorsey Crowe",
+        "Start Date": "April 16, 1923",
+        "End Date": "July 1, 1962",
+        "Party": "Democratic",
+        "Notes": "Had been serving then-21st ward since 1919    Died in office"
+    },
+    {
+        "Ward": "42nd Ward",
+        "Alderperson": "Mayer Goldberg",
+        "Start Date": "February 26, 1963",
+        "End Date": "November 29, 1968",
+        "Party": "Democratic",
+        "Notes": "Became a Circuit Court Judge"
+    },
+    {
+        "Ward": "42nd Ward",
+        "Alderperson": "Burton Natarus",
+        "Start Date": "1971",
+        "End Date": "2007",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "42nd Ward",
+        "Alderperson": "Brendan Reilly",
+        "Start Date": "2007",
+        "End Date": "Present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "43rd Ward",
+        "Alderperson": "Arthur F. Albert",
+        "Start Date": "April 16, 1923",
+        "End Date": "October 31, 1927",
+        "Party": "Republican",
+        "Notes": "Had been serving then-22nd ward since 1921  Albert lost the first round of the  1927 election  to Haffa, but had been granted a runoff that he would win. However, the runoff was disputed and the Council unseated him in favor of Haffa, claiming that the judge who had granted the runoff had erred in counting spoiled ballots to determine the majority Haffa needed to avoid a runoff."
+    },
+    {
+        "Ward": "43rd Ward",
+        "Alderperson": "Arthur F. Albert",
+        "Start Date": "1929",
+        "End Date": "1931",
+        "Party": "Republican",
+        "Notes": ""
+    },
+    {
+        "Ward": "43rd Ward",
+        "Alderperson": "James B. Waller",
+        "Start Date": "1931",
+        "End Date": "1933",
+        "Party": "Republican",
+        "Notes": ""
+    },
+    {
+        "Ward": "43rd Ward",
+        "Alderperson": "Paddy Bauler",
+        "Start Date": "1933",
+        "End Date": "April 9, 1943",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "43rd Ward",
+        "Alderperson": "James B. Waller",
+        "Start Date": "April 9, 1943",
+        "End Date": "1947",
+        "Party": "Republican",
+        "Notes": ""
+    },
+    {
+        "Ward": "43rd Ward",
+        "Alderperson": "Paddy Bauler",
+        "Start Date": "1947",
+        "End Date": "1967",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "43rd Ward",
+        "Alderperson": "William Singer",
+        "Start Date": "1971",
+        "End Date": "1975",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "43rd Ward",
+        "Alderperson": "Martin J. Oberman",
+        "Start Date": "1975",
+        "End Date": "1987",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "43rd Ward",
+        "Alderperson": "Edwin Eisendrath",
+        "Start Date": "1987",
+        "End Date": "1993",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "43rd Ward",
+        "Alderperson": "Charles Bernardini",
+        "Start Date": "1993",
+        "End Date": "1999",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "43rd Ward",
+        "Alderperson": "Vi Daley",
+        "Start Date": "1999",
+        "End Date": "May 16, 2011",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "43rd Ward",
+        "Alderperson": "Michele Smith",
+        "Start Date": "May 16, 2011",
+        "End Date": "August 12, 2022",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "43rd Ward",
+        "Alderperson": "Timmy Knudsen",
+        "Start Date": "September 21, 2022",
+        "End Date": "Present",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "44th Ward",
+        "Alderperson": "John J. Hoellen Jr.",
+        "Start Date": "1947",
+        "End Date": "1975",
+        "Party": "Republican",
+        "Notes": ""
+    },
+    {
+        "Ward": "44th Ward",
+        "Alderperson": "Eugene Schulter",
+        "Start Date": "February 25, 1975",
+        "End Date": "May 16, 2011",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "44th Ward",
+        "Alderperson": "Ameya Pawar",
+        "Start Date": "May 16, 2011",
+        "End Date": "May 20, 2019",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "44th Ward",
+        "Alderperson": "Matt Martin",
+        "Start Date": "May 20, 2019",
+        "End Date": "Present",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "45th Ward",
+        "Alderperson": "John J. Hoellen Jr.",
+        "Start Date": "1947",
+        "End Date": "1975",
+        "Party": "Republican",
+        "Notes": ""
+    },
+    {
+        "Ward": "45th Ward",
+        "Alderperson": "Eugene Schulter",
+        "Start Date": "February 25, 1975",
+        "End Date": "May 16, 2011",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "45th Ward",
+        "Alderperson": "Ameya Pawar",
+        "Start Date": "May 16, 2011",
+        "End Date": "May 20, 2019",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "45th Ward",
+        "Alderperson": "Matt Martin",
+        "Start Date": "May 20, 2019",
+        "End Date": "Present",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "46th ward",
+        "Alderperson": "John J. Hoellen Jr.",
+        "Start Date": "1947",
+        "End Date": "1975",
+        "Party": "Republican",
+        "Notes": ""
+    },
+    {
+        "Ward": "46th ward",
+        "Alderperson": "Eugene Schulter",
+        "Start Date": "February 25, 1975",
+        "End Date": "May 16, 2011",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "46th ward",
+        "Alderperson": "Ameya Pawar",
+        "Start Date": "May 16, 2011",
+        "End Date": "May 20, 2019",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "46th ward",
+        "Alderperson": "Matt Martin",
+        "Start Date": "May 20, 2019",
+        "End Date": "Present",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "47th Ward",
+        "Alderperson": "John J. Hoellen Jr.",
+        "Start Date": "1947",
+        "End Date": "1975",
+        "Party": "Republican",
+        "Notes": ""
+    },
+    {
+        "Ward": "47th Ward",
+        "Alderperson": "Eugene Schulter",
+        "Start Date": "February 25, 1975",
+        "End Date": "May 16, 2011",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "47th Ward",
+        "Alderperson": "Ameya Pawar",
+        "Start Date": "May 16, 2011",
+        "End Date": "May 20, 2019",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "47th Ward",
+        "Alderperson": "Matt Martin",
+        "Start Date": "May 20, 2019",
+        "End Date": "Present",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "48th Ward",
+        "Alderperson": "Esther Saperstein",
+        "Start Date": "February 25, 1975",
+        "End Date": "April 16, 1979",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "48th Ward",
+        "Alderperson": "David Orr",
+        "Start Date": "1979",
+        "End Date": "1990",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "48th Ward",
+        "Alderperson": "Joe Moore",
+        "Start Date": "1991",
+        "End Date": "May 20, 2019",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "48th Ward",
+        "Alderperson": "Maria Hadden",
+        "Start Date": "May 20, 2019",
+        "End Date": "present",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "49th Ward",
+        "Alderperson": "Esther Saperstein",
+        "Start Date": "February 25, 1975",
+        "End Date": "April 16, 1979",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "49th Ward",
+        "Alderperson": "David Orr",
+        "Start Date": "1979",
+        "End Date": "1990",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "49th Ward",
+        "Alderperson": "Joe Moore",
+        "Start Date": "1991",
+        "End Date": "May 20, 2019",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "49th Ward",
+        "Alderperson": "Maria Hadden",
+        "Start Date": "May 20, 2019",
+        "End Date": "present",
+        "Party": "N/A",
+        "Notes": ""
+    },
+    {
+        "Ward": "50th Ward",
+        "Alderperson": "Bernard Stone",
+        "Start Date": "1973",
+        "End Date": "2011",
+        "Party": "Democratic",
+        "Notes": ""
+    },
+    {
+        "Ward": "50th Ward",
+        "Alderperson": "Debra Silverstein",
+        "Start Date": "2011",
+        "End Date": "present",
+        "Party": "N/A",
+        "Notes": ""
+    }
 ]
