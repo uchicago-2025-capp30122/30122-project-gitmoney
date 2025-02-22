@@ -3,10 +3,34 @@ from urllib.parse import quote
 import json
 import time
 
-allowed_short_codes = ['GRAF','SFD','PHF','SGA','SIE','SEF','SCP','SEL','SFB',
-                       'PCE','SEE','SEC','WCA2','SCB','SFA','SED','SDR','PHB',
-                       'PBS','SCT','SDP','PCB','SFK','PCC','WCA3','VBL','SFN',
-                       'SFQ','WCA','NAA','CAFE','HDF','PBLDR','PBE']
+allowed_short_codes = ['GRAF','SFD','PHF','SIE','SCP','SFB','PCE','SEE','SFA',
+                       'SED','SDR','PHB','PBS','SCT','SDP','PCB','SFK','PCC',
+                       'VBL','SFN','SFQ','SFC','NAA','PBLDR','PBE']
+sc_cat_dict = {'GRAF':'Beautification',
+               'SFD':'Streets & Transportation',
+               'PHF':'Streets & Transportation',
+               'SIE':'Beautification',
+               'SCP':'Beautification',
+               'SFB':'Streets & Transportation',
+               'PCE':'Streets & Transportation',
+               'SEE':'Plants, Gardens, & Sustainability',
+               'SFA':'Lighting',
+               'SED':'Plants, Gardens, & Sustainability',
+               'SDR':'Security Cameras',
+               'PHB':'Streets & Transportation',
+               'PBS':'Streets & Transportation',
+               'SCT':'Beautification',
+               'SDP':'Streets & Transportation',
+               'PCB':'Streets & Transportation',
+               'SFK':'Streets & Transportation',
+               'PCC':'Streets & Transportation',
+               'VBL':'Bike Infrastructure',
+               'SFN':'Streets & Transportation',
+               'SFQ':'Streets & Transportation',
+               'SFC':'Lighting',
+               'NAA':'Parks & Rec',
+               'PBLDR':'Bike Infrastructure',
+               'PBE':'Streets & Transportation'}
 
 def get_311():
     """
@@ -59,6 +83,7 @@ def clean_311():
                 call['latitude'] = call['location'].get('latitude',None)
                 call['longitude'] = call['location'].get('longitude',None)
             del call['location']
+            call['cat'] = sc_cat_dict[code]
             clean_copy.append(call)
         count += 1
         if count % 100 == 0:
