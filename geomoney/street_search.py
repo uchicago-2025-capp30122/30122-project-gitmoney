@@ -5,8 +5,6 @@ import csv
 import json
 
 
-
-
 def load_csv(path_to_csv: Path):
     """
     Read a .csv file from a filepath. This is used to load menu_money and 
@@ -21,13 +19,14 @@ def load_csv(path_to_csv: Path):
     data = []
     with open(path_to_csv, 'r', encoding="utf-8") as filereader:
         csvreader = csv.DictReader(filereader)
-        #counter = 0
+        # counter = 0
         for row in csvreader:
-            #counter += 1
-            #if counter >= 100:
-                #break
+            # counter += 1
+            # if counter >= 100:
+            # break
             data.append(row)
         return data
+
 
 def generate_cross_streets(streets_data):
     """
@@ -41,21 +40,20 @@ def generate_cross_streets(streets_data):
     # For each row, make a list containing all segments with same street name
     for row in streets_data:
         row_necessities = {'FNODE_ID': row['FNODE_ID'],
-            'TNODE_ID': row['TNODE_ID'],
-            'OBJECTID': row['OBJECTID'],
-            'TRANS_ID': row['TRANS_ID'],
-            'STREET_NAM': row['STREET_NAM'],
-            'F_CROSS': row['F_CROSS'],
-            'T_CROSS': row['T_CROSS']}
-        if row['STREET_NAM'] in street_dict.keys():
+                           'TNODE_ID': row['TNODE_ID'],
+                           'OBJECTID': row['OBJECTID'],
+                           'TRANS_ID': row['TRANS_ID'],
+                           'STREET_NAM': row['STREET_NAM'],
+                           'F_CROSS': row['F_CROSS'],
+                           'T_CROSS': row['T_CROSS']}
+        if row['STREET_NAM'] in street_dict:
             street_dict[row['STREET_NAM']].append(row_necessities)
         else:
             street_dict[row['STREET_NAM']] = [row_necessities]
             
     # Write everything to a jsonfile
-    with open(outpath, 'w', encoding = 'utf-8') as jsonfile:
-        json.dump(street_dict, jsonfile, indent = True)
-
+    with open(outpath, 'w', encoding='utf-8') as jsonfile:
+        json.dump(street_dict, jsonfile, indent=True)
 
 
 def street_searcher(main_street, possible_cross):
@@ -75,7 +73,7 @@ def street_searcher(main_street, possible_cross):
     json_fp = Path(os.getcwd()) / "data/streets.json"
 
     # Opens streets.json and reads the json
-    with open(json_fp, 'r', encoding = "utf-8") as jsonfile:
+    with open(json_fp, 'r', encoding="utf-8") as jsonfile:
         streets = json.load(jsonfile)
 
     # Use the main street name to retrieve the list of cross streets
@@ -93,17 +91,24 @@ def street_searcher(main_street, possible_cross):
     return rlist
 
 
+def new_menu_matcher():
+    rlst = []
+    for row in new_menu_money_data:
+        if len(row['addresses']) == 
+        for item in row['addresses']:
+            rlst.append(street_searcher(item))
+        
 
 
 if __name__ == "__main__":
 
-
     cwd = os.getcwd()
     streets_fp = Path(cwd) / 'data/streets.csv'
     menu_money = Path(cwd) / 'data/menu_money.csv'
-    csv_rows = load_csv(streets_fp)
-
-
-
-    menu_money = load_csv(menu_money)
-    generate_cross_streets(csv_rows)
+    new_menu_money = Path(cwd) / 'data/new_menu_money.csv'
+    street_data = load_csv(streets_fp)
+    menu_money_data = load_csv(menu_money)
+    cross_dict = generate_cross_streets(street_data)
+    new_menu_money_data = load_csv(new_menu_money)
+    
+    
