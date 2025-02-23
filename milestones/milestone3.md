@@ -11,7 +11,16 @@ Riley put together an awesome API retrieval script! But the data unfortunately c
 Getnet and Libby scraped wikipedia! There were some small flaws in our individual scraping efforts, and we worked together to resolve them. A joined dataset of aldermen between 2012 and 2023 is in [data/wiki/alders_2012_2023.csv](https://github.com/uchicago-2025-capp30122/30122-project-gitmoney/blob/main/data/wiki/alders_2012_2023.csv). Libby is currently writing a little something to check that we can account for an alderperson for every year of interest. But she misses R so much and wishes pandas were as intuitive to her. 
 
 ## Menu Money
-
+In terms of geolocating data, we are successfully extracting addresses from the
+menu_money dataset. The data has a few different formats for which we need to 
+account. The first is when no street is extracted. We can do little about this, 
+but this actually makes up a small amount of the data. When one entity is 
+extracted, we will need to extract the full address. When two entities are 
+extracted, we can use the intersection based on the cross streets. Three entities
+have the form ON <main street> FROM <cross1> TO <cross2>, which will make it easy
+pinpoint the block. Finally we have four entities extracted, which are the 
+bounding intersections. Given this, we are close to being able to fully link
+the menu money data to the Chicago streets shapefile data at the block level.
 
 # What's below? 
 
