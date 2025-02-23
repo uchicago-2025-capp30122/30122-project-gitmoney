@@ -24,8 +24,7 @@ the menu money data to the Chicago streets shapefile data at the block level.
 
 # What's below? 
 
-
-
+After joining, we will then query data to ask questions that will fuel our visualizations. These are the questions we have for the data, how we plan to query them, and a **rough** idea of visualizations that could alongside it. 
 
 # GOALS
 Visualizing problem areas, where people have concerns
