@@ -49,6 +49,3 @@ if __name__ == "__main__":
         csvwriter.writeheader()
         for row in new_money_menu:
             csvwriter.writerow(row)
-        
-
-    
