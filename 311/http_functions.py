@@ -114,7 +114,7 @@ def cached_get(url, headers, **kwargs) -> dict:
     # non-200, raise 'FetchException'
     else:
         actual_url = combine_url_with_params(url,kwargs)
-        response = httpx.get(actual_url, headers=headers, follow_redirects = True, timeout = 30)
+        response = httpx.get(actual_url, headers=headers, follow_redirects = True)
         print(response.headers)
         if response.status_code == 200:
             with open(path, "w") as f:
