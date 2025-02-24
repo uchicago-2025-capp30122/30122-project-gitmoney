@@ -385,14 +385,6 @@
     },
     {
         "Ward": "23",
-        "Alderperson": "Bill Lipinski",
-        "Start Date": "1975",
-        "End Date": "1983",
-        "Party": null,
-        "Notes": null
-    },
-    {
-        "Ward": "23",
         "Alderperson": "Michael R. Zalewski",
         "Start Date": "May 1995",
         "End Date": "May 31, 2018",
@@ -412,14 +404,6 @@
         "Alderperson": "Benjamin F. Lewis",
         "Start Date": "April 8, 1958",
         "End Date": "February 28, 1963",
-        "Party": null,
-        "Notes": null
-    },
-    {
-        "Ward": "24",
-        "Alderperson": "Sharon Denise Dixon",
-        "Start Date": "May 21, 2007",
-        "End Date": "May 2011",
         "Party": null,
         "Notes": null
     },
@@ -586,7 +570,7 @@
     {
         "Ward": "39",
         "Alderperson": "Samantha Nugent",
-        "Start Date": "May 15, 2023",
+        "Start Date": "May 20, 2019",
         "End Date": "present",
         "Party": null,
         "Notes": null
