@@ -1,9 +1,6 @@
-import json
-import polars as pl
+import pandas as pd
 
-def count_wards_years():
-    with open("311_clean.json",'r') as file:
-        reader = json.load(file)
-
-    df = pl.DataFrame(reader).with_row_index("index")
-    print(df)
+def analyze_311():
+    data = pd.read_csv("clean_csv_311_all_cols")
+    group_data = data.groupby(['YEAR','CAT','WARD']).size()
+    group_data.to_csv("grouped_311",index=False)
