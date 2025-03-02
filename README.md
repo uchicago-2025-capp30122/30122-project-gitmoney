@@ -1,24 +1,38 @@
-# Project Repository Template
+# Project Name
 
-This template is intentionally mostly empty, to give you experience starting a project from scratch.
+Pick a Tag
 
-A good first command would be to run `uv init` and add some libraries and tools that you are using.
+🚩🛑: WORK IN PROGRESS. See wiki for details 
 
-Before the final milestone submission, you will need to replace this file with a README as described here: https://capp30122.netlify.app/coursework/project/#readmemd
+✅🚴: Good to go. Follow instructions to run
 
-# Rules for Github Management/Project Management
-We are baby Github users and terrified of branches and merging and rebasing, so we are creating rules for ourselves. 
+🟡🚧: Done but scripts require lots of hand checking so approach with caution. See instructions
 
-1) Text the group to let them know what file you're working on.
-2) Put real comments in the Git commits —- have clear messages so we understand what we do
-3) Comment your code! Add docstrings!
-4) Keep everyone updated on what you did via Slack
+# Goals
 
-<img width="1015" alt="Screenshot 2025-01-25 at 5 46 26 PM" src="https://github.com/user-attachments/assets/2a4a6727-acf6-4c5d-9dcf-df3a5dbad6d4" />
+# Data Source
+How can you get the data?
 
-# Agenda
-## Due Sunday, Feb. 2
-**Milestone 2**
+# Regrets
+If you were to re-do the project, would you change anything?
 
-## Due Sunday, Feb. 23
-**Milestone 3**
+# How to Run
+
+## Tools
+* R/RStudio
+* R packages
+> * tidyverse:  for data manipulation
+> * janitor: for cleaning
+> * readxl: for working with Excel files
+> * skimr # for initially understanding data -- > skim function
+
+Run this code in the R Console to install packages
+```
+install.packages(c("tidyverse", "janitor", "readxl", "skimr"))
+```
+## Files
+What are they? 
+
+# Formal Methodology
+
+# Kudos
