@@ -229,8 +229,6 @@ if __name__ == "__main__":
     final_menu_money = []
 
     for i, row in enumerate(new_menu_money_data):
-        if i >= 100:
-            break
         print(f"Processing row {i}: {row}")
         menu_addrs = ast.literal_eval(row['addresses'])
         if len(menu_addrs) == 0:
