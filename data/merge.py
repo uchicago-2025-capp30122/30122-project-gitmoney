@@ -1,7 +1,7 @@
 import pandas as pd
 
 def group_menu():
-    menlsu = pd.read_csv("menu_money.csv")
+    menu = pd.read_csv("menu_money.csv")
     group_menu_project_num = menu.groupby(['year','ward','category']).size()\
     .reset_index(name='num_projects')
     menu['cost'] = menu['cost'].replace(r'\$|,','',regex=True)
