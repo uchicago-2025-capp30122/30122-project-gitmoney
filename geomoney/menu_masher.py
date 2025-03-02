@@ -33,25 +33,17 @@ def exclusions():
 
 def extract_street_names(text):
     """
-
+    Extract street names from the given text.
     """
     # Remove directional words and parenthetical numbers
-    text = re.sub(r'\b(ON|FROM|TO|Dead End)\b\s*',
-                  '',
-                  text,
-                  flags=re.IGNORECASE)
+    text = re.sub(r'\b(ON|FROM|TO|Dead End)\b\s*', '', text, flags=re.IGNORECASE)
     text = re.sub(r'\([^)]*\)', '', text)
-    exclusion_list = exclusions()
+    
+    # Define patterns to match street names
     patterns = [
-        (r'[NSEW]\s+'                    # Direction prefix
-        r'[A-Z]+(?:\s+[A-Z]+)*'         # Street name words
-        r'\s+(?:RD|AV|AVE?|ST|BLVD|BV|DR|CT|PL|PKY|PKWY|CIR)'),
-
-        (r'[NSEW]\s+'                    # Direction prefix
-        r'(?:\d+(?:ST|ND|RD|TH)?\s+)'   # 1-3 digit number with optional 
-        r'(?:ST|PL)'),                  # Street or Place suffix
-        
-        (r'[NSEW]\s+AVENUE\s+[A-Z]\b')
+        r'\b[NSEW]?\s*[A-Z]+(?:\s+[A-Z]+)*\s+(?:RD|AV|AVE?|ST|BLVD|BV|DR|CT|PL|PKY|PKWY|CIR)\b',
+        r'\b[NSEW]?\s*\d+(?:ST|ND|RD|TH)?\s+(?:ST|PL)\b',
+        r'\b[NSEW]?\s*AVENUE\s+[A-Z]\b'
     ]
     
     # Store all matches with their positions
@@ -70,20 +62,79 @@ def extract_street_names(text):
     seen = set()
     
     for _, street in all_matches:
-        
         if street not in seen and len(street) > 1 and street:
             seen.add(street)
             if re.search(r'\s[NSEW]\s', street):
                 parts = re.split(r'\s+(?=[NSEW]\s)', street)
                 for part in parts:
-                    if part.strip() and part.strip() not in seen:
+                    if part.strip() and part.strip() not in seen and len(part.strip()) > 2:
                         seen.add(part.strip())
-                        if part not in exclusion_list:
-                            streets.append(part.strip())
+                        streets.append(convert_street_number_suffix(convert_street_abbreviation(part.strip())))
             else:
-                streets.append(street)
+                streets.append(convert_street_number_suffix(convert_street_abbreviation(street)))
     
     return streets
+def convert_street_number_suffix(street_name):
+    """
+    Convert street number suffix to the correct ordinal form.
+    """
+    def ordinal(n):
+        """
+        Convert an integer to its ordinal representation.
+        """
+        if 10 <= n % 100 <= 20:
+            suffix = 'TH'
+        else:
+            suffix = {1: 'ST', 2: 'ND', 3: 'RD'}.get(n % 10, 'TH')
+        return str(n) + suffix
+
+    # Define a pattern to match the street number and type
+    pattern = r'\b(\d+)\b'
+    
+    # Replace number suffixes with correct ordinal forms
+    def replace(match):
+        number = int(match.group(1))
+        return ordinal(number)
+    
+    street_name = re.sub(pattern, replace, street_name)
+    
+    return street_name
+
+def extract_single_addresses(text):
+    """
+    Extract full addresses from the given text.
+    """
+    # Define patterns to match full addresses
+    patterns = [
+        r'\b\d+\s+[NSEW]?\s*[A-Z]+(?:\s+[A-Z]+)*\s+(?:RD|AV|AVE?|ST|BLVD|BV|DR|CT|PL|PKY|PKWY|CIR|DR MARTIN LUTHER KING JR DR)\b'
+    ]
+    
+    # Store all matches
+    addresses = []
+    
+    # Process each pattern and collect all matches
+    for pattern in patterns:
+        for match in re.finditer(pattern, text):
+            addresses.append(match.group().strip())
+    
+    return addresses
+
+def convert_street_abbreviation(street_name):
+    """
+    Convert street abbreviation to full form, ensuring no double replacements.
+    """
+    # Define a dictionary for abbreviation replacements
+    replacements = {
+        ' AV ': ' AVE ',
+        ' AV': ' AVE'
+    }
+    
+    # Replace abbreviations with full forms, ensuring no double replacements
+    for abbr, full in replacements.items():
+        if abbr in street_name and not street_name.endswith(full):
+            street_name = street_name.replace(abbr, full)
+    
+    return street_name
 
 
 if __name__ == "__main__":
@@ -104,6 +155,8 @@ if __name__ == "__main__":
     for row in menu_money:
         loc_string = row['description']
         row['addresses'] = extract_street_names(loc_string)
+        if len(row) == 1:
+            row['addresses'] = extract_single_addresses(loc_string)
         new_menu_money.append(row)
 
     fieldname = ['year',
