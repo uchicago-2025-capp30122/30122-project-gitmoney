@@ -2,6 +2,8 @@ from http_functions import cached_get
 from urllib.parse import quote
 import json
 import time
+import polars as pl
+import pandas as pd
 
 app_token = "w1qakhnBp7aseBx9AJX24qTWD"
 
@@ -33,6 +35,24 @@ sc_cat_dict = {'GRAF':'Beautification',
                'NAA':'Parks & Rec',
                'PBLDR':'Bike Infrastructure',
                'PBE':'Streets & Transportation'}
+
+def csv_to_clean_csv_311():
+    """
+    Turn the 311 csv into a json with only the rows we want
+    """
+    allowed = set(allowed_short_codes)
+    df = pd.read_csv("311_Service_Requests_raw.csv")
+    print(df.columns)
+    df = df[['SR_NUMBER', 'SR_TYPE', 'SR_SHORT_CODE', 'STATUS', 'CREATED_DATE',
+             'LAST_MODIFIED_DATE', 'CLOSED_DATE', 'STREET_ADDRESS', 
+             'STREET_NUMBER', 'STREET_DIRECTION', 'STREET_NAME', 'DUPLICATE', 
+             'LEGACY_SR_NUMBER', 'PARENT_SR_NUMBER', 'WARD', 'LATITUDE', 
+             'LONGITUDE']]
+    df = df[df["SR_SHORT_CODE"].isin(allowed) & df["LATITUDE"].notnull()]
+    df['DATE'] = pd.to_datetime(df['CREATED_DATE'], format='%m/%d/%Y %I:%M:%S %p')
+    df['YEAR'] = df['DATE'].dt.year
+    df['CAT'] = df['SR_SHORT_CODE'].map(sc_cat_dict)
+    df.to_csv("clean_csv_311_all_cols",index=False)
 
 
 def get_311():
