@@ -9,6 +9,7 @@ file_wards_fp = cwd/'data/wards.csv'
 
 data = pd.read_csv(file_cm_fp)
 data = data[(data['year'] > 2017) & (data['year'] < 2024)]
+data = data.drop(data[data['category'] == 'Miscellaneous'].index)
 
 ward_year = data.groupby(['ward','category']).agg({
     'calls':"sum",
@@ -28,7 +29,7 @@ colors = {'Beautification':'red','Bike Infrastructure':'blue',
           'Streets & Transportation':'black', 'Miscellaneous':'grey'}
 ward_year['Color'] = ward_year['category'].map(colors)
 
-scatter = plt.scatter(ward_year['calls_cost_dif'],ward_year['cost_pct'],
+scatter = plt.scatter(ward_year['cost_pct'],ward_year['calls_pct'],
             c=ward_year['Color'])
 
 categories = ward_year['category'].unique()
@@ -36,10 +37,10 @@ for category in categories:
     plt.scatter([],[],c=colors[category],label=category)
 
 plt.legend(title='Category')
-plt.axvline(x=30)
-plt.axhline(y=50)
-plt.text(50,10,"Overfunded",fontsize=15)
-plt.text(5,90,"Underfunded",fontsize=15)
+plt.axvline(x=50)
+plt.axhline(y=30)
+plt.text(60,15,"Overfunded",fontsize=15)
+plt.text(15,55,"Underfunded",fontsize=15)
 
 plt.title('Ward Menu Money Spending and 311 Calls by Category')
 plt.xlabel('% Menu Money Spent')
