@@ -5,13 +5,6 @@ import pandas as pd
 import re
 import json
 
-# Libby Adds
-
-# Define key elements
-url = "https://en.wikipedia.org/wiki/List_of_Chicago_alderpersons_since_1923"
-url_text = httpx.get(url)
-root = lxml.html.fromstring(url_text.text)
-
 # Libby Functions
 
 def compile_aldermen_for_wards(ul_element, ward_number, aldermen_dict):
@@ -52,7 +45,8 @@ def compile_aldermen_for_wards(ul_element, ward_number, aldermen_dict):
         # I will then add this dictionary to a list. This list will then be the 
         # value of final dictionary where the key is the ward
         
-        # clean name courtesy of: https://stackoverflow.com/questions/640001/how-can-i-remove-text-within-parentheses-with-a-regex
+# clean name courtesy of: 
+# https://stackoverflow.com/questions/640001/how-can-i-remove-text-within-parentheses-with-a-regex
         clean_name = re.sub(r'\([^)]*\)', '', bullet.text_content())
         person_tuple = (str.strip(clean_name), profile_link)
         ward_aldermen.append(person_tuple)
@@ -64,6 +58,9 @@ def compile_aldermen_for_wards(ul_element, ward_number, aldermen_dict):
 def find_ward():
 
     aldermen_dict = {}
+    url = "https://en.wikipedia.org/wiki/List_of_Chicago_alderpersons_since_1923"
+    url_text = httpx.get(url)
+    root = lxml.html.fromstring(url_text.text)
 
     body_content = root.cssselect('div.mw-body-content')[0]
     heading = body_content.cssselect('div.mw-heading.mw-heading3')
@@ -118,37 +115,60 @@ def find_alder_link(aldermen_dict):
                         info_elements = info_box[0].cssselect('th.infobox-header')
                         for element in info_elements:
                             # we want to find the row header that is associated 
-                            # with being a Chicago alderperson — and not the council president 
-                            if re.search("ward", element.text_content(), re.IGNORECASE) \
-                                or re.search("alder", element.text_content(), \
-                                    re.IGNORECASE) or re.search("Chicago City Council", \
-                                        element.text_content(), re.IGNORECASE) and \
-                                        re.search("^ President", element.text_content(), re.IGNORECASE):
-                                # We want to find the row itself this is associated 
-                                # with rather than the actual header     
-                                row_parent = element.getparent()
+                            # with being a Chicago alderperson — and not the 
+                            # council president                             
+                            if re.search("ward", element.text_content(), \
+                                re.IGNORECASE) or re.search("alder", \
+                                element.text_content(), re.IGNORECASE) or \
+                                re.search("Chicago City Council", \
+                                element.text_content(), re.IGNORECASE) and \
+                                re.search("^ President", element.text_content(), \
+                                    re.IGNORECASE):
+                                # We also want to see if they have the correct
+                                # ward listed -- if there is one. 
+                                if re.search("\\d+", element.text_content(), 
+                                        re.IGNORECASE) is None or ward in \
+                                            element.text_content():
+                                # We want to find the row itself this is 
+                                # associated  with rather than the actual header     
+                                    row_parent = element.getparent()
                                 # The header we want is in the next two rows
-                                header_option1 = row_parent.getnext()
-                                header_option2 = header_option1.getnext()
-                                if re.search("office", header_option1.text_content(), re.IGNORECASE):
-                                    dates_raw = header_option1.text_content()
-                                    dates_raw = re.sub("In office", "", dates_raw)
-                                    dates_raw = re.sub("Assumed office", "", dates_raw)
-                # clean name courtesy of: https://stackoverflow.com/questions/640001/how-can-i-remove-text-within-parentheses-with-a-regex
-                                    dates_raw = re.sub(r'\([^)]*\)', ' ', dates_raw)
-                                    dates_raw = re.sub(r'\xa0', ' ', dates_raw)
-                                    dates = str.strip(re.sub(r'\[[^)]*\]', ' ', dates_raw))
-                                elif re.search("office", header_option2.text_content(), re.IGNORECASE):
-                                    dates_raw = header_option2.text_content()
-                                    dates_raw = re.sub("In office", "", dates_raw)
-                                    dates_raw = re.sub("Assumed office", "", dates_raw)
-                # clean name courtesy of: https://stackoverflow.com/questions/640001/how-can-i-remove-text-within-parentheses-with-a-regex
-                                    dates_raw = re.sub(r'\([^)]*\)', ' ', dates_raw)
-                                    dates_raw = re.sub(r'\xa0', ' ', dates_raw)
-                                    dates = str.strip(re.sub(r'\[[^)]*\]', '', dates_raw))
-                                else:
-                                    dates = "unknown from link"
-                                break
+                                    header_option1 = row_parent.getnext()
+                                    header_option2 = header_option1.getnext()
+                                    if re.search("office", \
+                                        header_option1.text_content(), \
+                                            re.IGNORECASE):
+                                        dates_raw = header_option1.text_content()
+                                        dates_raw = re.sub("In office", "", \
+                                            dates_raw)
+                                        dates_raw = re.sub("Assumed office", \
+                                            "", dates_raw)
+    # clean name courtesy of: 
+    # https://stackoverflow.com/questions/640001/how-can-i-remove-text-within-parentheses-with-a-regex
+                                        dates_raw = re.sub(r'\([^)]*\)', ' ', \
+                                            dates_raw)
+                                        dates_raw = re.sub(r'\xa0', ' ', \
+                                            dates_raw)
+                                        dates = str.strip(re.sub(r'\[[^)]*\]', \
+                                            ' ', dates_raw))
+                                    elif re.search("office", \
+                                    header_option2.text_content(), re.IGNORECASE):
+                                        dates_raw = header_option2.text_content()
+                                        dates_raw = re.sub("In office", "", \
+                                            dates_raw)
+                                        dates_raw = re.sub("Assumed office", \
+                                            "", dates_raw)
+    # clean name courtesy of: 
+    # https://stackoverflow.com/questions/640001/how-can-i-remove-text-within-parentheses-with-a-regex
+                                        dates_raw = re.sub(r'\([^)]*\)', \
+                                            ' ', dates_raw)
+                                        dates_raw = re.sub(r'\xa0', ' ', \
+                                            dates_raw)
+                                        dates = str.strip(re.sub(r'\[[^)]*\]', \
+                                            '', dates_raw))
+                                    else:
+                                        dates = "unknown from link"
+                                    break
                     else:
                         dates = "ERROR, BOX ELEMENT"
                     
@@ -162,5 +182,5 @@ def find_alder_link(aldermen_dict):
             
         aldermen_dates_dict[ward] = all_info
             
-        return aldermen_dates_dict
+    return aldermen_dates_dict
 
