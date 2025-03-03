@@ -56,6 +56,18 @@ def compile_aldermen_for_wards(ul_element, ward_number, aldermen_dict):
     return aldermen_dict
 
 def find_ward():
+    """
+    Create a dictionary with each a ward, each alderperson, and a link to their 
+    webpage if available. 
+    
+    inputs: None
+    
+    outputs: 
+        aldermen_dict: dictionary to contain ward_numbers as the key, values 
+        will be a list of dictionaries. Key is an alderman's name, value is any 
+        link associated with them
+    
+    """
 
     aldermen_dict = {}
     url = "https://en.wikipedia.org/wiki/List_of_Chicago_alderpersons_since_1923"
@@ -95,6 +107,24 @@ def find_ward():
     return aldermen_dict
         
 def find_alder_link(aldermen_dict):
+    """
+    Use the aldermen_dict to go to available websites and grab the dates the 
+    alderperson served. Return a dictionary where the key is the ward, and the 
+    value is list of tuples. Each tuple contains the alderperson's name and 
+    their dates. 
+    
+    inputs: 
+        aldermen_dict: dictionary to contain ward_numbers as the key, values 
+        will be a list of dictionaries. Key is an alderman's name, value is any 
+        link associated with them
+    
+    outputs: 
+        aldermen_date_dict = a dictionary where the key is the ward, and the 
+    value is list of tuples. Each tuple contains the alderperson's name and 
+    their dates. 
+    
+    """
+    
     aldermen_dates_dict = {}
     for ward, aldermen_and_links in aldermen_dict.items():
         all_info = []
