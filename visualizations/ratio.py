@@ -2,6 +2,7 @@ from pathlib import Path
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 cwd = Path(os.getcwd()).parent
 file_cm_fp = cwd/'data/calls_money'
@@ -35,12 +36,19 @@ scatter = plt.scatter(ward_year['cost_pct'],ward_year['calls_pct'],
 categories = ward_year['category'].unique()
 for category in categories:
     plt.scatter([],[],c=colors[category],label=category)
+x=[0,80]
+y=[20,70]
+a=[20,100]
+b=[0,50]
+plt.plot(x,y)
+plt.plot(a,b)
 
 plt.legend(title='Category')
-plt.axvline(x=50)
-plt.axhline(y=30)
+
+
 plt.text(60,15,"Overfunded",fontsize=15)
 plt.text(15,55,"Underfunded",fontsize=15)
+plt.text(40,30,"Proportional",fontsize=15)
 
 plt.title('Ward Menu Money Spending and 311 Calls by Category')
 plt.xlabel('% Menu Money Spent')
