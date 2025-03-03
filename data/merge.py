@@ -14,6 +14,8 @@ def group_menu():
     
     calls = pd.read_csv("grouped_311")
     calls = calls.rename(columns={'YEAR':'year','CAT':'category','WARD':'ward'})
+    calls['category'] = calls['category'].replace('Parks & Rec', 
+                                                  'Parks & Recreation')
     merge_311_menu = pd.merge(calls,menu_merge,on=['year','category','ward'],
                               how ='outer').fillna(0)
     merge_311_menu = merge_311_menu.rename(columns={'Count':'calls'})
