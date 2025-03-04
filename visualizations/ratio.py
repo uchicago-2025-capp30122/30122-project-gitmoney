@@ -5,12 +5,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 cwd = Path(os.getcwd()).parent
-file_cm_fp = cwd/'data/calls_money'
+file_cm_fp = cwd/'data/calls_money.csv'
 file_wards_fp = cwd/'data/wards.csv'
 
 data = pd.read_csv(file_cm_fp)
 data = data[(data['year'] > 2017) & (data['year'] < 2024)]
-data = data.drop(data[data['category'] == 'Miscellaneous'].index)
 
 ward_year = data.groupby(['ward','category']).agg({
     'calls':"sum",
@@ -27,7 +26,7 @@ colors = {'Beautification':'red','Bike Infrastructure':'blue',
           'Lighting':'yellow','Parks & Recreation':'pink',
           'Plants, Gardens, & Sustainability': 'green',
           'Schools & Libraries': 'purple', 'Security Cameras':'orange',
-          'Streets & Transportation':'black', 'Miscellaneous':'grey'}
+          'Streets & Transportation':'black'}
 ward_year['Color'] = ward_year['category'].map(colors)
 
 scatter = plt.scatter(ward_year['cost_pct'],ward_year['calls_pct'],

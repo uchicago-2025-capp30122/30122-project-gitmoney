@@ -1,27 +1,6 @@
-,Ward,Alderperson,Start Date,End Date,Party,Notes,Clean Ward,Start Year,End Year,End Year for Fill
-0,1st,Daniel La Spata,"May 20, 2019",present,Democratic,,1,2019,,2019.0
-1,25th,Byron Sigcho-Lopez,2019,present,Democratic,,25,2019,,2019.0
-2,31st,"Felix Cardona, Jr.","May 20, 2019",Present,N/A,,31,2019,,2019.0
-3,43rd,Timmy Knudsen,"September 21, 2022",Present,Democratic,,43,2022,,2022.0
-4,47th,Matt Martin,"May 20, 2019",Present,N/A,,47,2019,,2019.0
-5,49th,Maria Hadden,"May 20, 2019",present,N/A,,49,2019,,2019.0
-6,11,Nicole Lee,"March 28, 2022",present,,,11,2022,,2022.0
-7,12,Anabel Abarca,"December 14, 2022","May 15, 2023",,,12,2022,2023.0,2022.0
-8,12,Julia Ramirez,"May 15, 2023",present,,,12,2023,,2023.0
-9,16,Stephanie Coleman,"May 20, 2019",present,,,16,2019,,2019.0
-10,20,Jeanette Taylor,"May 20, 2019",present,,,20,2019,,2019.0
-11,22,Michael D. Rodriguez,"May 20, 2019",present,,,22,2019,,2019.0
-12,23,Silvana Tabares,"June 28, 2018",present,,,23,2018,,2018.0
-13,33,Rossana Rodriguez-Sanchez,"May 20, 2019",present,,,33,2019,,2019.0
-14,34,Bill Conway,"May 15, 2023",present,,,34,2023,,2023.0
-15,39,Samantha Nugent,"May 20, 2019",present,,,39,2019,,2019.0
-16,40,Andre Vasquez,"May 20, 2019",present,,,40,2019,,2019.0
-17,44,Bennett Lawson,"May 15, 2023",present,,,44,2023,,2023.0
-18,45,Jim Gardiner,"May 20, 2019",present,,,45,2019,,2019.0
-19,46,Angela Clay,"May 15, 2023",present,,,46,2023,,2023.0
-20,48,Leni Manaa-Hoppenworth,"May 15, 2023",present,,,48,2023,,2023.0
-21,24,Monique Scott,"June 22, 2022",present,,,24,2022,,2022.0
+,Ward,Alderperson,Start Date,End Date,Party,Notes,Clean Ward,Start Year,End Year,filled_year
 22,1st,Proco Joe Moreno,"March 26, 2010","May 20, 2019",Democratic,,1,2010,2019.0,2018.0
+0,1st,Daniel La Spata,"May 20, 2019",present,Democratic,,1,2019,,2019.0
 23,1st,Daniel La Spata,"May 20, 2019",present,Democratic,,1,2019,,2020.0
 24,1st,Daniel La Spata,"May 20, 2019",present,Democratic,,1,2019,,2021.0
 25,1st,Daniel La Spata,"May 20, 2019",present,Democratic,,1,2019,,2022.0
@@ -44,79 +23,6 @@
 42,4th,Sophia King,"April 16, 2016",present,Democratic,,4,2016,,2021.0
 43,4th,Sophia King,"April 16, 2016",present,Democratic,,4,2016,,2022.0
 44,4th,Sophia King,"April 16, 2016",present,Democratic,,4,2016,,2023.0
-45,14th,Edward M. Burke,"March 14, 1969",Present,Democratic,,14,1969,,2018.0
-46,14th,Edward M. Burke,"March 14, 1969",Present,Democratic,,14,1969,,2019.0
-47,14th,Edward M. Burke,"March 14, 1969",Present,Democratic,,14,1969,,2020.0
-48,14th,Edward M. Burke,"March 14, 1969",Present,Democratic,,14,1969,,2021.0
-49,14th,Edward M. Burke,"March 14, 1969",Present,Democratic,,14,1969,,2022.0
-50,14th,Edward M. Burke,"March 14, 1969",Present,Democratic,,14,1969,,2023.0
-51,19th,Matthew O'Shea,2011,present,Democratic,,19,2011,,2018.0
-52,19th,Matthew O'Shea,2011,present,Democratic,,19,2011,,2019.0
-53,19th,Matthew O'Shea,2011,present,Democratic,,19,2011,,2020.0
-54,19th,Matthew O'Shea,2011,present,Democratic,,19,2011,,2021.0
-55,19th,Matthew O'Shea,2011,present,Democratic,,19,2011,,2022.0
-56,19th,Matthew O'Shea,2011,present,Democratic,,19,2011,,2023.0
-57,25th,Daniel Solis,1996,2019,Democratic,,25,1996,2019.0,2018.0
-58,25th,Byron Sigcho-Lopez,2019,present,Democratic,,25,2019,,2020.0
-59,25th,Byron Sigcho-Lopez,2019,present,Democratic,,25,2019,,2021.0
-60,25th,Byron Sigcho-Lopez,2019,present,Democratic,,25,2019,,2022.0
-61,25th,Byron Sigcho-Lopez,2019,present,Democratic,,25,2019,,2023.0
-62,26th,Roberto Maldonado,2009,present,Democratic,,26,2009,,2018.0
-63,26th,Roberto Maldonado,2009,present,Democratic,,26,2009,,2019.0
-64,26th,Roberto Maldonado,2009,present,Democratic,,26,2009,,2020.0
-65,26th,Roberto Maldonado,2009,present,Democratic,,26,2009,,2021.0
-66,26th,Roberto Maldonado,2009,present,Democratic,,26,2009,,2022.0
-67,26th,Roberto Maldonado,2009,present,Democratic,,26,2009,,2023.0
-68,27th,Walter Burnett Jr.,May 1995,present,Democratic,,27,1995,,2018.0
-69,27th,Walter Burnett Jr.,May 1995,present,Democratic,,27,1995,,2019.0
-70,27th,Walter Burnett Jr.,May 1995,present,Democratic,,27,1995,,2020.0
-71,27th,Walter Burnett Jr.,May 1995,present,Democratic,,27,1995,,2021.0
-72,27th,Walter Burnett Jr.,May 1995,present,Democratic,,27,1995,,2022.0
-73,27th,Walter Burnett Jr.,May 1995,present,Democratic,,27,1995,,2023.0
-74,31st,Milly Santiago,May 2015,"May 20, 2019",N/A,,31,2015,2019.0,2018.0
-75,31st,"Felix Cardona, Jr.","May 20, 2019",Present,N/A,,31,2019,,2020.0
-76,31st,"Felix Cardona, Jr.","May 20, 2019",Present,N/A,,31,2019,,2021.0
-77,31st,"Felix Cardona, Jr.","May 20, 2019",Present,N/A,,31,2019,,2022.0
-78,31st,"Felix Cardona, Jr.","May 20, 2019",Present,N/A,,31,2019,,2023.0
-79,32nd,Scott Waguespack,"May 20, 2007",present,Democratic,,32,2007,,2018.0
-80,32nd,Scott Waguespack,"May 20, 2007",present,Democratic,,32,2007,,2019.0
-81,32nd,Scott Waguespack,"May 20, 2007",present,Democratic,,32,2007,,2020.0
-82,32nd,Scott Waguespack,"May 20, 2007",present,Democratic,,32,2007,,2021.0
-83,32nd,Scott Waguespack,"May 20, 2007",present,Democratic,,32,2007,,2022.0
-84,32nd,Scott Waguespack,"May 20, 2007",present,Democratic,,32,2007,,2023.0
-85,38th,Nicholas Sposato,2013,present,Democratic,Redistricted from 36th ward,38,2013,,2018.0
-86,38th,Nicholas Sposato,2013,present,Democratic,Redistricted from 36th ward,38,2013,,2019.0
-87,38th,Nicholas Sposato,2013,present,Democratic,Redistricted from 36th ward,38,2013,,2020.0
-88,38th,Nicholas Sposato,2013,present,Democratic,Redistricted from 36th ward,38,2013,,2021.0
-89,38th,Nicholas Sposato,2013,present,Democratic,Redistricted from 36th ward,38,2013,,2022.0
-90,38th,Nicholas Sposato,2013,present,Democratic,Redistricted from 36th ward,38,2013,,2023.0
-91,42nd,Brendan Reilly,2007,Present,Democratic,,42,2007,,2018.0
-92,42nd,Brendan Reilly,2007,Present,Democratic,,42,2007,,2019.0
-93,42nd,Brendan Reilly,2007,Present,Democratic,,42,2007,,2020.0
-94,42nd,Brendan Reilly,2007,Present,Democratic,,42,2007,,2021.0
-95,42nd,Brendan Reilly,2007,Present,Democratic,,42,2007,,2022.0
-96,42nd,Brendan Reilly,2007,Present,Democratic,,42,2007,,2023.0
-97,43rd,Michele Smith,"May 16, 2011","August 12, 2022",Democratic,,43,2011,2022.0,2018.0
-98,43rd,Michele Smith,"May 16, 2011","August 12, 2022",Democratic,,43,2011,2022.0,2019.0
-99,43rd,Michele Smith,"May 16, 2011","August 12, 2022",Democratic,,43,2011,2022.0,2020.0
-100,43rd,Michele Smith,"May 16, 2011","August 12, 2022",Democratic,,43,2011,2022.0,2021.0
-101,43rd,Timmy Knudsen,"September 21, 2022",Present,Democratic,,43,2022,,2023.0
-102,47th,Ameya Pawar,"May 16, 2011","May 20, 2019",Democratic,,47,2011,2019.0,2018.0
-103,47th,Matt Martin,"May 20, 2019",Present,N/A,,47,2019,,2020.0
-104,47th,Matt Martin,"May 20, 2019",Present,N/A,,47,2019,,2021.0
-105,47th,Matt Martin,"May 20, 2019",Present,N/A,,47,2019,,2022.0
-106,47th,Matt Martin,"May 20, 2019",Present,N/A,,47,2019,,2023.0
-107,49th,Joe Moore,1991,"May 20, 2019",Democratic,,49,1991,2019.0,2018.0
-108,49th,Maria Hadden,"May 20, 2019",present,N/A,,49,2019,,2020.0
-109,49th,Maria Hadden,"May 20, 2019",present,N/A,,49,2019,,2021.0
-110,49th,Maria Hadden,"May 20, 2019",present,N/A,,49,2019,,2022.0
-111,49th,Maria Hadden,"May 20, 2019",present,N/A,,49,2019,,2023.0
-112,50th,Debra Silverstein,2011,present,N/A,,50,2011,,2018.0
-113,50th,Debra Silverstein,2011,present,N/A,,50,2011,,2019.0
-114,50th,Debra Silverstein,2011,present,N/A,,50,2011,,2020.0
-115,50th,Debra Silverstein,2011,present,N/A,,50,2011,,2021.0
-116,50th,Debra Silverstein,2011,present,N/A,,50,2011,,2022.0
-117,50th,Debra Silverstein,2011,present,N/A,,50,2011,,2023.0
 118,5,Leslie Hairston,May 1999,"May 15, 2023",,,5,1999,2023.0,2018.0
 119,5,Leslie Hairston,May 1999,"May 15, 2023",,,5,1999,2023.0,2019.0
 120,5,Leslie Hairston,May 1999,"May 15, 2023",,,5,1999,2023.0,2020.0
@@ -157,17 +63,26 @@
 155,11,Patrick Daley Thompson,"May 18, 2015","February 14, 2022",,,11,2015,2022.0,2019.0
 156,11,Patrick Daley Thompson,"May 18, 2015","February 14, 2022",,,11,2015,2022.0,2020.0
 157,11,Patrick Daley Thompson,"May 18, 2015","February 14, 2022",,,11,2015,2022.0,2021.0
+6,11,Nicole Lee,"March 28, 2022",present,,,11,2022,,2022.0
 158,11,Nicole Lee,"March 28, 2022",present,,,11,2022,,2023.0
 159,12,George Cardenas,2003,2022,,,12,2003,2022.0,2018.0
 160,12,George Cardenas,2003,2022,,,12,2003,2022.0,2019.0
 161,12,George Cardenas,2003,2022,,,12,2003,2022.0,2020.0
 162,12,George Cardenas,2003,2022,,,12,2003,2022.0,2021.0
+7,12,Anabel Abarca,"December 14, 2022","May 15, 2023",,,12,2022,2023.0,2022.0
+8,12,Julia Ramirez,"May 15, 2023",present,,,12,2023,,2023.0
 163,13,Marty Quinn,May 2011,present,,,13,2011,,2018.0
 164,13,Marty Quinn,May 2011,present,,,13,2011,,2019.0
 165,13,Marty Quinn,May 2011,present,,,13,2011,,2020.0
 166,13,Marty Quinn,May 2011,present,,,13,2011,,2021.0
 167,13,Marty Quinn,May 2011,present,,,13,2011,,2022.0
 168,13,Marty Quinn,May 2011,present,,,13,2011,,2023.0
+45,14th,Edward M. Burke,"March 14, 1969",Present,Democratic,,14,1969,,2018.0
+46,14th,Edward M. Burke,"March 14, 1969",Present,Democratic,,14,1969,,2019.0
+47,14th,Edward M. Burke,"March 14, 1969",Present,Democratic,,14,1969,,2020.0
+48,14th,Edward M. Burke,"March 14, 1969",Present,Democratic,,14,1969,,2021.0
+49,14th,Edward M. Burke,"March 14, 1969",Present,Democratic,,14,1969,,2022.0
+50,14th,Edward M. Burke,"March 14, 1969",Present,Democratic,,14,1969,,2023.0
 169,15,Raymond Lopez,"May 18, 2015",present,,,15,2015,,2018.0
 170,15,Raymond Lopez,"May 18, 2015",present,,,15,2015,,2019.0
 171,15,Raymond Lopez,"May 18, 2015",present,,,15,2015,,2020.0
@@ -175,6 +90,7 @@
 173,15,Raymond Lopez,"May 18, 2015",present,,,15,2015,,2022.0
 174,15,Raymond Lopez,"May 18, 2015",present,,,15,2015,,2023.0
 175,16,Toni Foulkes,2015,2019,,,16,2015,2019.0,2018.0
+9,16,Stephanie Coleman,"May 20, 2019",present,,,16,2019,,2019.0
 176,16,Stephanie Coleman,"May 20, 2019",present,,,16,2019,,2020.0
 177,16,Stephanie Coleman,"May 20, 2019",present,,,16,2019,,2021.0
 178,16,Stephanie Coleman,"May 20, 2019",present,,,16,2019,,2022.0
@@ -191,7 +107,14 @@
 189,18,Derrick Curtis,"May 18, 2015",present,,,18,2015,,2021.0
 190,18,Derrick Curtis,"May 18, 2015",present,,,18,2015,,2022.0
 191,18,Derrick Curtis,"May 18, 2015",present,,,18,2015,,2023.0
+51,19th,Matthew O'Shea,2011,present,Democratic,,19,2011,,2018.0
+52,19th,Matthew O'Shea,2011,present,Democratic,,19,2011,,2019.0
+53,19th,Matthew O'Shea,2011,present,Democratic,,19,2011,,2020.0
+54,19th,Matthew O'Shea,2011,present,Democratic,,19,2011,,2021.0
+55,19th,Matthew O'Shea,2011,present,Democratic,,19,2011,,2022.0
+56,19th,Matthew O'Shea,2011,present,Democratic,,19,2011,,2023.0
 192,20,Willie Cochran,2007,2019,,,20,2007,2019.0,2018.0
+10,20,Jeanette Taylor,"May 20, 2019",present,,,20,2019,,2019.0
 193,20,Jeanette Taylor,"May 20, 2019",present,,,20,2019,,2020.0
 194,20,Jeanette Taylor,"May 20, 2019",present,,,20,2019,,2021.0
 195,20,Jeanette Taylor,"May 20, 2019",present,,,20,2019,,2022.0
@@ -203,10 +126,12 @@
 201,21,Howard Brookins Jr.,May 2003,"May 15, 2023",,,21,2003,2023.0,2022.0
 202,21,Howard Brookins Jr.,May 2003,"May 15, 2023",,,21,2003,2023.0,2023.0
 203,22,Ricardo Muñoz,January 1993,"May 20, 2019",,,22,1993,2019.0,2018.0
+11,22,Michael D. Rodriguez,"May 20, 2019",present,,,22,2019,,2019.0
 204,22,Michael D. Rodriguez,"May 20, 2019",present,,,22,2019,,2020.0
 205,22,Michael D. Rodriguez,"May 20, 2019",present,,,22,2019,,2021.0
 206,22,Michael D. Rodriguez,"May 20, 2019",present,,,22,2019,,2022.0
 207,22,Michael D. Rodriguez,"May 20, 2019",present,,,22,2019,,2023.0
+12,23,Silvana Tabares,"June 28, 2018",present,,,23,2018,,2018.0
 208,23,Silvana Tabares,"June 28, 2018",present,,,23,2018,,2019.0
 209,23,Silvana Tabares,"June 28, 2018",present,,,23,2018,,2020.0
 210,23,Silvana Tabares,"June 28, 2018",present,,,23,2018,,2021.0
@@ -216,6 +141,26 @@
 214,24,Michael Scott Jr.,"May 18, 2015","June 3, 2022",,,24,2015,2022.0,2019.0
 215,24,Michael Scott Jr.,"May 18, 2015","June 3, 2022",,,24,2015,2022.0,2020.0
 216,24,Michael Scott Jr.,"May 18, 2015","June 3, 2022",,,24,2015,2022.0,2021.0
+21,24,Monique Scott,"June 22, 2022",present,,,24,2022,,2022.0
+299,24,Monique Scott,"June 22, 2022",present,,,24,2022,,2023.0
+57,25th,Daniel Solis,1996,2019,Democratic,,25,1996,2019.0,2018.0
+1,25th,Byron Sigcho-Lopez,2019,present,Democratic,,25,2019,,2019.0
+58,25th,Byron Sigcho-Lopez,2019,present,Democratic,,25,2019,,2020.0
+59,25th,Byron Sigcho-Lopez,2019,present,Democratic,,25,2019,,2021.0
+60,25th,Byron Sigcho-Lopez,2019,present,Democratic,,25,2019,,2022.0
+61,25th,Byron Sigcho-Lopez,2019,present,Democratic,,25,2019,,2023.0
+62,26th,Roberto Maldonado,2009,present,Democratic,,26,2009,,2018.0
+63,26th,Roberto Maldonado,2009,present,Democratic,,26,2009,,2019.0
+64,26th,Roberto Maldonado,2009,present,Democratic,,26,2009,,2020.0
+65,26th,Roberto Maldonado,2009,present,Democratic,,26,2009,,2021.0
+66,26th,Roberto Maldonado,2009,present,Democratic,,26,2009,,2022.0
+67,26th,Roberto Maldonado,2009,present,Democratic,,26,2009,,2023.0
+68,27th,Walter Burnett Jr.,May 1995,present,Democratic,,27,1995,,2018.0
+69,27th,Walter Burnett Jr.,May 1995,present,Democratic,,27,1995,,2019.0
+70,27th,Walter Burnett Jr.,May 1995,present,Democratic,,27,1995,,2020.0
+71,27th,Walter Burnett Jr.,May 1995,present,Democratic,,27,1995,,2021.0
+72,27th,Walter Burnett Jr.,May 1995,present,Democratic,,27,1995,,2022.0
+73,27th,Walter Burnett Jr.,May 1995,present,Democratic,,27,1995,,2023.0
 217,28,Jason Ervin,"January 13, 2011",present,,,28,2011,,2018.0
 218,28,Jason Ervin,"January 13, 2011",present,,,28,2011,,2019.0
 219,28,Jason Ervin,"January 13, 2011",present,,,28,2011,,2020.0
@@ -234,7 +179,20 @@
 232,30,Ariel Reboyras,May 2003,"May 15, 2023",,,30,2003,2023.0,2021.0
 233,30,Ariel Reboyras,May 2003,"May 15, 2023",,,30,2003,2023.0,2022.0
 234,30,Ariel Reboyras,May 2003,"May 15, 2023",,,30,2003,2023.0,2023.0
+74,31st,Milly Santiago,May 2015,"May 20, 2019",N/A,,31,2015,2019.0,2018.0
+2,31st,"Felix Cardona, Jr.","May 20, 2019",Present,N/A,,31,2019,,2019.0
+75,31st,"Felix Cardona, Jr.","May 20, 2019",Present,N/A,,31,2019,,2020.0
+76,31st,"Felix Cardona, Jr.","May 20, 2019",Present,N/A,,31,2019,,2021.0
+77,31st,"Felix Cardona, Jr.","May 20, 2019",Present,N/A,,31,2019,,2022.0
+78,31st,"Felix Cardona, Jr.","May 20, 2019",Present,N/A,,31,2019,,2023.0
+79,32nd,Scott Waguespack,"May 20, 2007",present,Democratic,,32,2007,,2018.0
+80,32nd,Scott Waguespack,"May 20, 2007",present,Democratic,,32,2007,,2019.0
+81,32nd,Scott Waguespack,"May 20, 2007",present,Democratic,,32,2007,,2020.0
+82,32nd,Scott Waguespack,"May 20, 2007",present,Democratic,,32,2007,,2021.0
+83,32nd,Scott Waguespack,"May 20, 2007",present,Democratic,,32,2007,,2022.0
+84,32nd,Scott Waguespack,"May 20, 2007",present,Democratic,,32,2007,,2023.0
 235,33,Deb Mell,"July 24, 2013","May 20, 2019",,,33,2013,2019.0,2018.0
+13,33,Rossana Rodriguez-Sanchez,"May 20, 2019",present,,,33,2019,,2019.0
 236,33,Rossana Rodriguez-Sanchez,"May 20, 2019",present,,,33,2019,,2020.0
 237,33,Rossana Rodriguez-Sanchez,"May 20, 2019",present,,,33,2019,,2021.0
 238,33,Rossana Rodriguez-Sanchez,"May 20, 2019",present,,,33,2019,,2022.0
@@ -244,6 +202,7 @@
 242,34,Carrie Austin,"August 5, 1994","March 1, 2023",,,34,1994,2023.0,2020.0
 243,34,Carrie Austin,"August 5, 1994","March 1, 2023",,,34,1994,2023.0,2021.0
 244,34,Carrie Austin,"August 5, 1994","March 1, 2023",,,34,1994,2023.0,2022.0
+14,34,Bill Conway,"May 15, 2023",present,,,34,2023,,2023.0
 245,35,Carlos Ramirez-Rosa,"May 18, 2015",present,,,35,2015,,2018.0
 246,35,Carlos Ramirez-Rosa,"May 18, 2015",present,,,35,2015,,2019.0
 247,35,Carlos Ramirez-Rosa,"May 18, 2015",present,,,35,2015,,2020.0
@@ -262,12 +221,20 @@
 260,37,Emma Mitts,"January 7, 2000",present,,,37,2000,,2021.0
 261,37,Emma Mitts,"January 7, 2000",present,,,37,2000,,2022.0
 262,37,Emma Mitts,"January 7, 2000",present,,,37,2000,,2023.0
+85,38th,Nicholas Sposato,2013,present,Democratic,Redistricted from 36th ward,38,2013,,2018.0
+86,38th,Nicholas Sposato,2013,present,Democratic,Redistricted from 36th ward,38,2013,,2019.0
+87,38th,Nicholas Sposato,2013,present,Democratic,Redistricted from 36th ward,38,2013,,2020.0
+88,38th,Nicholas Sposato,2013,present,Democratic,Redistricted from 36th ward,38,2013,,2021.0
+89,38th,Nicholas Sposato,2013,present,Democratic,Redistricted from 36th ward,38,2013,,2022.0
+90,38th,Nicholas Sposato,2013,present,Democratic,Redistricted from 36th ward,38,2013,,2023.0
 263,39,Margaret Laurino,"July 24, 1994","May 20, 2019",,,39,1994,2019.0,2018.0
+15,39,Samantha Nugent,"May 20, 2019",present,,,39,2019,,2019.0
 264,39,Samantha Nugent,"May 20, 2019",present,,,39,2019,,2020.0
 265,39,Samantha Nugent,"May 20, 2019",present,,,39,2019,,2021.0
 266,39,Samantha Nugent,"May 20, 2019",present,,,39,2019,,2022.0
 267,39,Samantha Nugent,"May 20, 2019",present,,,39,2019,,2023.0
 268,40,Patrick J. O'Connor,May 1983,May 2019,,,40,1983,2019.0,2018.0
+16,40,Andre Vasquez,"May 20, 2019",present,,,40,2019,,2019.0
 269,40,Andre Vasquez,"May 20, 2019",present,,,40,2019,,2020.0
 270,40,Andre Vasquez,"May 20, 2019",present,,,40,2019,,2021.0
 271,40,Andre Vasquez,"May 20, 2019",present,,,40,2019,,2022.0
@@ -278,12 +245,26 @@
 276,41,Anthony Napolitano,"May 18, 2015",present,,,41,2015,,2021.0
 277,41,Anthony Napolitano,"May 18, 2015",present,,,41,2015,,2022.0
 278,41,Anthony Napolitano,"May 18, 2015",present,,,41,2015,,2023.0
+91,42nd,Brendan Reilly,2007,Present,Democratic,,42,2007,,2018.0
+92,42nd,Brendan Reilly,2007,Present,Democratic,,42,2007,,2019.0
+93,42nd,Brendan Reilly,2007,Present,Democratic,,42,2007,,2020.0
+94,42nd,Brendan Reilly,2007,Present,Democratic,,42,2007,,2021.0
+95,42nd,Brendan Reilly,2007,Present,Democratic,,42,2007,,2022.0
+96,42nd,Brendan Reilly,2007,Present,Democratic,,42,2007,,2023.0
+97,43rd,Michele Smith,"May 16, 2011","August 12, 2022",Democratic,,43,2011,2022.0,2018.0
+98,43rd,Michele Smith,"May 16, 2011","August 12, 2022",Democratic,,43,2011,2022.0,2019.0
+99,43rd,Michele Smith,"May 16, 2011","August 12, 2022",Democratic,,43,2011,2022.0,2020.0
+100,43rd,Michele Smith,"May 16, 2011","August 12, 2022",Democratic,,43,2011,2022.0,2021.0
+3,43rd,Timmy Knudsen,"September 21, 2022",Present,Democratic,,43,2022,,2022.0
+101,43rd,Timmy Knudsen,"September 21, 2022",Present,Democratic,,43,2022,,2023.0
 279,44,Tom Tunney,"January 16, 2003","May 15, 2023",,,44,2003,2023.0,2018.0
 280,44,Tom Tunney,"January 16, 2003","May 15, 2023",,,44,2003,2023.0,2019.0
 281,44,Tom Tunney,"January 16, 2003","May 15, 2023",,,44,2003,2023.0,2020.0
 282,44,Tom Tunney,"January 16, 2003","May 15, 2023",,,44,2003,2023.0,2021.0
 283,44,Tom Tunney,"January 16, 2003","May 15, 2023",,,44,2003,2023.0,2022.0
+17,44,Bennett Lawson,"May 15, 2023",present,,,44,2023,,2023.0
 284,45,John Arena,May 2011,May 2019,,,45,2011,2019.0,2018.0
+18,45,Jim Gardiner,"May 20, 2019",present,,,45,2019,,2019.0
 285,45,Jim Gardiner,"May 20, 2019",present,,,45,2019,,2020.0
 286,45,Jim Gardiner,"May 20, 2019",present,,,45,2019,,2021.0
 287,45,Jim Gardiner,"May 20, 2019",present,,,45,2019,,2022.0
@@ -293,9 +274,28 @@
 291,46,James Cappleman,"May 16, 2011","May 15, 2023",,,46,2011,2023.0,2020.0
 292,46,James Cappleman,"May 16, 2011","May 15, 2023",,,46,2011,2023.0,2021.0
 293,46,James Cappleman,"May 16, 2011","May 15, 2023",,,46,2011,2023.0,2022.0
+19,46,Angela Clay,"May 15, 2023",present,,,46,2023,,2023.0
+102,47th,Ameya Pawar,"May 16, 2011","May 20, 2019",Democratic,,47,2011,2019.0,2018.0
+4,47th,Matt Martin,"May 20, 2019",Present,N/A,,47,2019,,2019.0
+103,47th,Matt Martin,"May 20, 2019",Present,N/A,,47,2019,,2020.0
+104,47th,Matt Martin,"May 20, 2019",Present,N/A,,47,2019,,2021.0
+105,47th,Matt Martin,"May 20, 2019",Present,N/A,,47,2019,,2022.0
+106,47th,Matt Martin,"May 20, 2019",Present,N/A,,47,2019,,2023.0
 294,48,Harry Osterman,"May 16, 2011","May 15, 2023",,,48,2011,2023.0,2018.0
 295,48,Harry Osterman,"May 16, 2011","May 15, 2023",,,48,2011,2023.0,2019.0
 296,48,Harry Osterman,"May 16, 2011","May 15, 2023",,,48,2011,2023.0,2020.0
 297,48,Harry Osterman,"May 16, 2011","May 15, 2023",,,48,2011,2023.0,2021.0
 298,48,Harry Osterman,"May 16, 2011","May 15, 2023",,,48,2011,2023.0,2022.0
-299,24,Monique Scott,"June 22, 2022",present,,,24,2022,,2023.0
+20,48,Leni Manaa-Hoppenworth,"May 15, 2023",present,,,48,2023,,2023.0
+107,49th,Joe Moore,1991,"May 20, 2019",Democratic,,49,1991,2019.0,2018.0
+5,49th,Maria Hadden,"May 20, 2019",present,N/A,,49,2019,,2019.0
+108,49th,Maria Hadden,"May 20, 2019",present,N/A,,49,2019,,2020.0
+109,49th,Maria Hadden,"May 20, 2019",present,N/A,,49,2019,,2021.0
+110,49th,Maria Hadden,"May 20, 2019",present,N/A,,49,2019,,2022.0
+111,49th,Maria Hadden,"May 20, 2019",present,N/A,,49,2019,,2023.0
+112,50th,Debra Silverstein,2011,present,N/A,,50,2011,,2018.0
+113,50th,Debra Silverstein,2011,present,N/A,,50,2011,,2019.0
+114,50th,Debra Silverstein,2011,present,N/A,,50,2011,,2020.0
+115,50th,Debra Silverstein,2011,present,N/A,,50,2011,,2021.0
+116,50th,Debra Silverstein,2011,present,N/A,,50,2011,,2022.0
+117,50th,Debra Silverstein,2011,present,N/A,,50,2011,,2023.0

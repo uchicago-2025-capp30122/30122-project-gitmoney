@@ -57,27 +57,6 @@ year,category,ward,calls,num_projects,total_cost
 2012,Lighting,48,0,10,729050
 2012,Lighting,49,0,1,600
 2012,Lighting,50,0,1,23760
-2012,Miscellaneous,3,0,1,413
-2012,Miscellaneous,4,0,2,219903
-2012,Miscellaneous,5,0,1,25000
-2012,Miscellaneous,6,0,1,1166
-2012,Miscellaneous,12,0,1,1285
-2012,Miscellaneous,14,0,1,483
-2012,Miscellaneous,20,0,1,193
-2012,Miscellaneous,23,0,2,10925
-2012,Miscellaneous,26,0,1,1200
-2012,Miscellaneous,34,0,1,955
-2012,Miscellaneous,36,0,1,525
-2012,Miscellaneous,38,0,2,196957
-2012,Miscellaneous,39,0,1,264865
-2012,Miscellaneous,40,0,1,1173
-2012,Miscellaneous,42,0,1,979
-2012,Miscellaneous,43,0,2,20184
-2012,Miscellaneous,44,0,4,70886
-2012,Miscellaneous,45,0,1,497
-2012,Miscellaneous,46,0,1,525
-2012,Miscellaneous,47,0,1,820
-2012,Miscellaneous,48,0,1,46663
 2012,Parks & Recreation,1,0,1,605000
 2012,Parks & Recreation,4,0,1,150000
 2012,Parks & Recreation,13,0,1,150000
@@ -225,25 +204,6 @@ year,category,ward,calls,num_projects,total_cost
 2013,Lighting,48,0,1,140000
 2013,Lighting,49,0,14,165750
 2013,Lighting,50,0,4,132359
-2013,Miscellaneous,1,0,1,125000
-2013,Miscellaneous,2,0,3,166519
-2013,Miscellaneous,5,0,2,14117
-2013,Miscellaneous,13,0,4,1928
-2013,Miscellaneous,15,0,1,814
-2013,Miscellaneous,16,0,1,515
-2013,Miscellaneous,17,0,1,11560
-2013,Miscellaneous,27,0,1,20000
-2013,Miscellaneous,28,0,1,928
-2013,Miscellaneous,30,0,2,25000
-2013,Miscellaneous,31,0,2,10703
-2013,Miscellaneous,35,0,4,48000
-2013,Miscellaneous,39,0,2,140000
-2013,Miscellaneous,41,0,2,90000
-2013,Miscellaneous,42,0,5,155913
-2013,Miscellaneous,44,0,2,20488
-2013,Miscellaneous,45,0,5,58546
-2013,Miscellaneous,48,0,1,7819
-2013,Miscellaneous,49,0,9,248266
 2013,Parks & Recreation,1,0,1,450000
 2013,Parks & Recreation,3,0,1,34000
 2013,Parks & Recreation,13,0,1,300000
@@ -397,21 +357,6 @@ year,category,ward,calls,num_projects,total_cost
 2014,Lighting,48,0,3,14600
 2014,Lighting,49,0,7,254800
 2014,Lighting,50,0,2,12000
-2014,Miscellaneous,1,0,1,8900
-2014,Miscellaneous,2,0,1,16343
-2014,Miscellaneous,4,0,2,57771
-2014,Miscellaneous,5,0,2,117522
-2014,Miscellaneous,6,0,2,46980
-2014,Miscellaneous,8,0,1,770
-2014,Miscellaneous,12,0,1,4797
-2014,Miscellaneous,18,0,1,154
-2014,Miscellaneous,20,0,1,35588
-2014,Miscellaneous,39,0,4,13115
-2014,Miscellaneous,45,0,1,2544
-2014,Miscellaneous,46,0,4,35359
-2014,Miscellaneous,47,0,2,3630
-2014,Miscellaneous,48,0,1,10252
-2014,Miscellaneous,49,0,1,145000
 2014,Parks & Recreation,1,0,2,350000
 2014,Parks & Recreation,12,0,1,34850
 2014,Parks & Recreation,19,0,1,30380
@@ -540,10 +485,6 @@ year,category,ward,calls,num_projects,total_cost
 2015,Lighting,47,0,6,454000
 2015,Lighting,48,0,3,368800
 2015,Lighting,50,0,2,37426
-2015,Miscellaneous,5,0,1,2300
-2015,Miscellaneous,20,0,1,12492
-2015,Miscellaneous,34,0,1,150000
-2015,Miscellaneous,42,0,2,19872
 2015,Parks & Recreation,1,0,2,535000
 2015,Parks & Recreation,12,0,1,250000
 2015,Parks & Recreation,13,0,1,115000
@@ -685,9 +626,6 @@ year,category,ward,calls,num_projects,total_cost
 2016,Lighting,48,0,3,32200
 2016,Lighting,49,0,1,500
 2016,Lighting,50,0,3,261168
-2016,Miscellaneous,29,0,1,234912
-2016,Miscellaneous,34,0,1,150000
-2016,Miscellaneous,44,0,1,50000
 2016,Parks & Recreation,5,0,1,70580
 2016,Parks & Recreation,6,0,1,200000
 2016,Parks & Recreation,10,0,2,175000
@@ -864,16 +802,6 @@ year,category,ward,calls,num_projects,total_cost
 2017,Lighting,48,0,2,1500
 2017,Lighting,49,0,5,370200
 2017,Lighting,50,0,9,449682
-2017,Miscellaneous,1,0,1,37711
-2017,Miscellaneous,2,0,1,634
-2017,Miscellaneous,4,0,1,6545
-2017,Miscellaneous,10,0,1,2620
-2017,Miscellaneous,15,0,1,10000
-2017,Miscellaneous,25,0,1,634
-2017,Miscellaneous,26,0,1,25628
-2017,Miscellaneous,39,0,1,10000
-2017,Miscellaneous,43,0,1,634
-2017,Miscellaneous,45,0,1,18000
 2017,Parks & Recreation,4,0,2,14700
 2017,Parks & Recreation,13,0,1,300000
 2017,Parks & Recreation,22,0,1,125000
@@ -1030,11 +958,6 @@ year,category,ward,calls,num_projects,total_cost
 2018,Lighting,48,32,3,16200
 2018,Lighting,49,48,4,52210
 2018,Lighting,50,25,3,506500
-2018,Miscellaneous,2,0,2,700
-2018,Miscellaneous,5,0,1,2100
-2018,Miscellaneous,7,0,1,1200
-2018,Miscellaneous,27,0,2,3270
-2018,Miscellaneous,49,0,2,5338
 2018,Parks & Recreation,1,0,1,150000
 2018,Parks & Recreation,10,0,1,160000
 2018,Parks & Recreation,13,0,2,135000
@@ -1324,21 +1247,6 @@ year,category,ward,calls,num_projects,total_cost
 2019,Lighting,48,265,1,25000
 2019,Lighting,49,224,1,5121
 2019,Lighting,50,373,2,350000
-2019,Miscellaneous,5,0,2,363000
-2019,Miscellaneous,6,0,1,500
-2019,Miscellaneous,8,0,2,405000
-2019,Miscellaneous,12,0,2,95500
-2019,Miscellaneous,13,0,1,500
-2019,Miscellaneous,15,0,1,271000
-2019,Miscellaneous,27,0,3,866000
-2019,Miscellaneous,39,0,1,43500
-2019,Miscellaneous,41,0,1,43500
-2019,Miscellaneous,42,0,1,100000
-2019,Miscellaneous,43,0,2,276500
-2019,Miscellaneous,44,0,1,7480
-2019,Miscellaneous,46,0,1,101000
-2019,Miscellaneous,48,0,1,4472
-2019,Miscellaneous,49,0,2,335000
 2019,Parks & Recreation,1,2,1,250000
 2019,Parks & Recreation,2,2,1,113000
 2019,Parks & Recreation,3,30,0,0
@@ -1690,7 +1598,6 @@ year,category,ward,calls,num_projects,total_cost
 2020,Lighting,48,140,1,500
 2020,Lighting,49,147,0,0
 2020,Lighting,50,251,5,2500
-2020,Miscellaneous,35,0,1,6145
 2020,Parks & Recreation,1,3,1,75559
 2020,Parks & Recreation,2,0,1,197000
 2020,Parks & Recreation,3,6,0,0
@@ -2034,8 +1941,6 @@ year,category,ward,calls,num_projects,total_cost
 2021,Lighting,48,54,3,368900
 2021,Lighting,49,93,1,300000
 2021,Lighting,50,82,8,629700
-2021,Miscellaneous,43,0,1,50000
-2021,Miscellaneous,47,0,1,150000
 2021,Parks & Recreation,1,16,1,324440
 2021,Parks & Recreation,2,3,1,197305
 2021,Parks & Recreation,3,28,0,0
@@ -2386,9 +2291,6 @@ year,category,ward,calls,num_projects,total_cost
 2022,Lighting,48,64,0,0
 2022,Lighting,49,49,2,341545
 2022,Lighting,50,110,2,233437
-2022,Miscellaneous,13,0,1,1338
-2022,Miscellaneous,46,0,1,123880
-2022,Miscellaneous,47,0,1,100000
 2022,Parks & Recreation,1,6,0,0
 2022,Parks & Recreation,2,1,3,115000
 2022,Parks & Recreation,3,23,0,0
@@ -2744,13 +2646,6 @@ year,category,ward,calls,num_projects,total_cost
 2023,Lighting,48,91,0,0
 2023,Lighting,49,70,0,0
 2023,Lighting,50,90,4,327500
-2023,Miscellaneous,13,0,1,2217
-2023,Miscellaneous,26,0,1,39558
-2023,Miscellaneous,33,0,1,27543
-2023,Miscellaneous,37,0,1,19616
-2023,Miscellaneous,43,0,1,8000
-2023,Miscellaneous,46,0,1,11000
-2023,Miscellaneous,48,0,1,50000
 2023,Parks & Recreation,1,2,1,100000
 2023,Parks & Recreation,2,1,0,0
 2023,Parks & Recreation,3,11,0,0
