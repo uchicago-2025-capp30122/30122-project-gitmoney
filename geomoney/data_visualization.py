@@ -117,7 +117,7 @@ if __name__ == "__main__":
 
     # Create a Pydeck Deck with a map style that doesn't require a token
     deck = pdk.Deck(
-        layers=[layer],
+        #layers=[layer],
         initial_view_state=view_state,
         map_style='https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',  # Open source style
         tooltip={"html": "<b>{name}</b><br>Year: {year}<br>Cost: {cost}<br>Category: {category}<br>Description: {description}"}
