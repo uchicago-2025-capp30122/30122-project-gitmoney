@@ -22,11 +22,17 @@ def clean_join_wiki_data():
     alders_each_year = alders_fill_down(all_alderpeople)
     alder_clean = drop_rows_correct_2022(alders_each_year)
     
+    alder_clean = alder_clean.sort_values(["Clean Ward", "filled_year"])
+    
     alder_clean.to_csv(data_file/"all_alderpeople_2018_23.csv")
     
     return alder_clean
 
 ### Associated Functions ###
+
+## If we were to separate this file into separate files I'd propose:##
+
+## SECTION 1: WIKI SCRAPE ##
 
 ### Getnet Function ###
 # Designed to grab & process table data
@@ -392,6 +398,145 @@ def aldermen_and_dates(aldermen_dates_dict):
             
     return all_data
 
+## SECTION 2: WIKI CLEAN ##
+
+def alders_fill_down(all_alderpeople):
+    """
+    Create a dataframe that has a row for each year an alderperson served.
+    
+    Inputs:
+        all_alderpeople: (Pandas Dataframe), every alderperson collected and 
+        information about their term
+    
+    Outputs:
+        alder_each_year: (Pandas Dataframe), every alderperson with an entry 
+        for each year they served
+    """
+    
+    # Create Clean Columns
+    
+    all_alderpeople["Clean Ward"] = \
+        all_alderpeople["Ward"].str.extract('(\\d+)')
+    all_alderpeople["Start Year"] = \
+        all_alderpeople["Start Date"].str.extract('(\\d{4})')
+    all_alderpeople["End Year"] =  \
+        all_alderpeople["End Date"].str.extract('(\\d{4})')
+    all_alderpeople["Start Year"] =  \
+        pd.to_numeric(all_alderpeople['Start Year'])
+    all_alderpeople["End Year"] =  pd.to_numeric(all_alderpeople['End Year'])
+
+    # Create a column based on End Year. We will now create a row with identical 
+    # information for each alderperson, but a unique year in the "End Year for
+    # Fill" column, which will have one entry for year served
+    
+    all_alderpeople["filled_year"] =  all_alderpeople["End Year"]
+    all_alderpeople["filled_year"] =  \
+        all_alderpeople["filled_year"].fillna(2023)
+        
+    # This dataset serves as a placeholder. We will omit the first row later on    
+    alder_each_year = all_alderpeople[0:1]
+
+    for index, row in all_alderpeople.iterrows():
+        start = int(row["Start Year"])
+        end = int(row["filled_year"])
+        for year in range(start, end + 1): 
+            new_row = pd.DataFrame([{'Ward': row["Ward"], \
+                'Alderperson': row["Alderperson"], \
+                'Start Date': row["Start Date"],
+                'End Date': row["End Date"],
+                'Party': row["Party"],
+                'Notes': row["Notes"],
+                'Clean Ward': int(row["Clean Ward"]),
+                'Start Year': row["Start Year"],
+                'End Year': row["End Year"],
+                'filled_year': int(year),
+                }])
+            
+            alder_each_year = pd.concat([alder_each_year, new_row], \
+                ignore_index=True)
+            
+    alder_each_year = alder_each_year[1::]
+    return alder_each_year.reset_index(drop=True)
+
+def drop_rows_correct_2022(alder_each_year):
+    """
+    Drop rows representing serviced before the year 2018. Add in an alderperson 
+    not included on Wikipedia
+    
+    Inputs:
+        alder_each_year: (Pandas Dataframe), every alderperson with an entry 
+        for each year they served
+        
+    Outputs:
+        alder_clean: (Pandas Dataframe), every row has one alderperson and a 
+        year corresponding with an entry between 2018 and 2023. Each ward will 
+        have 6 entries, resulting in 50 rows
+    """
+    
+    # Drop rows with entries before 2018
+    alders_2018_2023 =  \
+        alder_each_year.loc[(alder_each_year['filled_year'] >= 2018)]
+
+    alders_2018_2023.reset_index(drop= True)
+    alders_2018_2023.drop_duplicates(ignore_index= True)
+    
+    # To correct for a single missing alderperson, I add them in here
+    
+    ward_24_corection1 = pd.DataFrame([{'Ward': 24, \
+            'Alderperson': "Monique Scott", \
+            'Start Date': "June 22, 2022",
+            'End Date': "present",
+            'Party': "",
+            'Notes': "",
+            'Clean Ward': 24,
+            'Start Year': 2022,
+            'End Year': None,
+            'filled_year': float(2022),
+            }])
+
+    ward_24_corection2 = pd.DataFrame([{'Ward': "24", \
+            'Alderperson': "Monique Scott", \
+            'Start Date': "June 22, 2022",
+            'End Date': "present",
+            'Party': "",
+            'Notes': "",
+            'Clean Ward': 24,
+            'Start Year': "2022",
+            'End Year': None,
+            'filled_year': float(2023),
+            }])
+
+    alders_2018_2023_fix = pd.concat([alders_2018_2023, ward_24_corection1, \
+        ward_24_corection2], ignore_index=True)    
+    # Find rows where wards have two entries for a year
+    
+    year_count = alders_2018_2023_fix.groupby(["Clean Ward","filled_year"])\
+        .size().rename("count_by_year").reset_index()
+
+    year_count_over = year_count.loc[(year_count['count_by_year'] > 1)]
+    year_count_one = year_count.loc[(year_count['count_by_year'] == 1)]
+    
+    # Find wards and years with more than two entries. Only keep the first entry
+    
+    two_entries = pd.merge(alders_2018_2023_fix, year_count_over, \
+        on=["Clean Ward", "filled_year"])
+    two_entries = two_entries.\
+        drop_duplicates(subset=['Clean Ward', 'filled_year'], keep = 'last')
+    two_entries = two_entries.drop(columns= 'count_by_year')
+    
+    # Find wards with only one entry
+    one_entry = pd.merge(alders_2018_2023_fix, year_count_one, \
+        on=["Clean Ward", "filled_year"])
+    one_entry = one_entry.drop(columns= 'count_by_year')
+    
+    # Join the cleaned up datasets of "one_entry" and "two_entry"
+    
+    alder_clean = pd.concat([two_entries, one_entry], ignore_index=True)
+    
+    return alder_clean
+
+
+## SECTION 3: WIKI JOIN ##
 ### Implementing above bunctions to prepare for join ###
 
 def gather_tables(url):
@@ -465,141 +610,5 @@ def join_table_bullets():
     
     
     return all_alderpeople
-
-### Cleaning Functions ###
-def alders_fill_down(all_alderpeople):
-    """
-    Create a dataframe that has a row for each year an alderperson served.
-    
-    Inputs:
-        all_alderpeople: (Pandas Dataframe), every alderperson collected and 
-        information about their term
-    
-    Outputs:
-        alder_each_year: (Pandas Dataframe), every alderperson with an entry 
-        for each year they served
-    """
-    
-    # Create Clean Columns
-    
-    all_alderpeople["Clean Ward"] = \
-        all_alderpeople["Ward"].str.extract('(\\d+)')
-    all_alderpeople["Start Year"] = \
-        all_alderpeople["Start Date"].str.extract('(\\d{4})')
-    all_alderpeople["End Year"] =  \
-        all_alderpeople["End Date"].str.extract('(\\d{4})')
-    all_alderpeople["Start Year"] =  \
-        pd.to_numeric(all_alderpeople['Start Year'])
-    all_alderpeople["End Year"] =  pd.to_numeric(all_alderpeople['End Year'])
-
-    # Create a column based on End Year. We will now create a row with identical 
-    # information for each alderperson, but a unique year in the "End Year for
-    # Fill" column, which will have one entry for year served
-    
-    all_alderpeople["End Year for Fill"] =  all_alderpeople["End Year"]
-    all_alderpeople["End Year for Fill"] =  \
-        all_alderpeople["End Year for Fill"].fillna(2023)
-        
-    # This dataset serves as a placeholder. We will omit the first row later on    
-    alder_each_year = all_alderpeople[0:1]
-
-    for index, row in all_alderpeople.iterrows():
-        start = int(row["Start Year"])
-        end = int(row["End Year for Fill"])
-        for year in range(start, end + 1): 
-            new_row = pd.DataFrame([{'Ward': row["Ward"], \
-                'Alderperson': row["Alderperson"], \
-                'Start Date': row["Start Date"],
-                'End Date': row["End Date"],
-                'Party': row["Party"],
-                'Notes': row["Notes"],
-                'Clean Ward': int(row["Clean Ward"]),
-                'Start Year': row["Start Year"],
-                'End Year': row["End Year"],
-                'End Year for Fill': int(year),
-                }])
-            
-            alder_each_year = pd.concat([alder_each_year, new_row], \
-                ignore_index=True)
-            
-    alder_each_year = alder_each_year[1::]
-    return alder_each_year.reset_index(drop=True)
-
-def drop_rows_correct_2022(alder_each_year):
-    """
-    Drop rows representing serviced before the year 2018. Add in an alderperson 
-    not included on Wikipedia
-    
-    Inputs:
-        alder_each_year: (Pandas Dataframe), every alderperson with an entry 
-        for each year they served
-        
-    Outputs:
-        alder_clean: (Pandas Dataframe), every row has one alderperson and a 
-        year corresponding with an entry between 2018 and 2023. Each ward will 
-        have 6 entries, resulting in 50 rows
-    """
-    
-    # Drop rows with entries before 2018
-    alders_2018_2023 =  \
-        alder_each_year.loc[(alder_each_year['End Year for Fill'] >= 2018)]
-
-    alders_2018_2023.reset_index(drop= True)
-    alders_2018_2023.drop_duplicates(ignore_index= True)
-    
-    # To correct for a single missing alderperson, I add them in here
-    
-    ward_24_corection1 = pd.DataFrame([{'Ward': 24, \
-            'Alderperson': "Monique Scott", \
-            'Start Date': "June 22, 2022",
-            'End Date': "present",
-            'Party': "",
-            'Notes': "",
-            'Clean Ward': 24,
-            'Start Year': 2022,
-            'End Year': None,
-            'End Year for Fill': float(2022),
-            }])
-
-    ward_24_corection2 = pd.DataFrame([{'Ward': "24", \
-            'Alderperson': "Monique Scott", \
-            'Start Date': "June 22, 2022",
-            'End Date': "present",
-            'Party': "",
-            'Notes': "",
-            'Clean Ward': 24,
-            'Start Year': "2022",
-            'End Year': None,
-            'End Year for Fill': float(2023),
-            }])
-
-    alders_2018_2023_fix = pd.concat([alders_2018_2023, ward_24_corection1, \
-        ward_24_corection2], ignore_index=True)    
-    # Find rows where wards have two entries for a year
-    
-    year_count = alders_2018_2023_fix.groupby(["Clean Ward","End Year for Fill"])\
-        .size().rename("count_by_year").reset_index()
-
-    year_count_over = year_count.loc[(year_count['count_by_year'] > 1)]
-    year_count_one = year_count.loc[(year_count['count_by_year'] == 1)]
-    
-    # Find wards and years with more than two entries. Only keep the first entry
-    
-    two_entries = pd.merge(alders_2018_2023_fix, year_count_over, \
-        on=["Clean Ward", "End Year for Fill"])
-    two_entries = two_entries.\
-        drop_duplicates(subset=['Clean Ward', 'End Year for Fill'], keep = 'last')
-    two_entries = two_entries.drop(columns= 'count_by_year')
-    
-    # Find wards with only one entry
-    one_entry = pd.merge(alders_2018_2023_fix, year_count_one, \
-        on=["Clean Ward", "End Year for Fill"])
-    one_entry = one_entry.drop(columns= 'count_by_year')
-    
-    # Join the cleaned up datasets of "one_entry" and "two_entry"
-    
-    alder_clean = pd.concat([two_entries, one_entry], ignore_index=True)
-    
-    return alder_clean
             
 
