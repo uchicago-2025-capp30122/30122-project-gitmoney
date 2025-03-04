@@ -4,15 +4,25 @@ import pandas as pd
 import re
 import json
 from lxml.cssselect import CSSSelector
-
+import os
+import pathlib
 ### Main Function ###
 
-def clean_join_data(all_alderpeople):
+data_file = pathlib.Path(__file__).parent.parent / "data/"
+
+def clean_join_wiki_data():
+    """
+    Main function to collect, join, and clean wikipedia data
+    
+    outputs: 
+        alder_clean: clean dataset with each ward's alderperson between 
+        2018 and 2023
+    """
     all_alderpeople = join_table_bullets()
     alders_each_year = alders_fill_down(all_alderpeople)
     alder_clean = drop_rows_correct_2022(alders_each_year)
     
-    alder_clean.to_csv("../data/all_alderpeople.csv")
+    alder_clean.to_csv(data_file/"all_alderpeople_2018_23.csv")
     
     return alder_clean
 
