@@ -22,6 +22,8 @@ def clean_join_wiki_data():
     alders_each_year = alders_fill_down(all_alderpeople)
     alder_clean = drop_rows_correct_2022(alders_each_year)
     
+    alder_clean = alder_clean.sort_values(["Clean Ward", "filled_year"])
+    
     alder_clean.to_csv(data_file/"all_alderpeople_2018_23.csv")
     
     return alder_clean
@@ -496,16 +498,16 @@ def alders_fill_down(all_alderpeople):
     # information for each alderperson, but a unique year in the "End Year for
     # Fill" column, which will have one entry for year served
     
-    all_alderpeople["End Year for Fill"] =  all_alderpeople["End Year"]
-    all_alderpeople["End Year for Fill"] =  \
-        all_alderpeople["End Year for Fill"].fillna(2023)
+    all_alderpeople["filled_year"] =  all_alderpeople["End Year"]
+    all_alderpeople["filled_year"] =  \
+        all_alderpeople["filled_year"].fillna(2023)
         
     # This dataset serves as a placeholder. We will omit the first row later on    
     alder_each_year = all_alderpeople[0:1]
 
     for index, row in all_alderpeople.iterrows():
         start = int(row["Start Year"])
-        end = int(row["End Year for Fill"])
+        end = int(row["filled_year"])
         for year in range(start, end + 1): 
             new_row = pd.DataFrame([{'Ward': row["Ward"], \
                 'Alderperson': row["Alderperson"], \
@@ -516,7 +518,7 @@ def alders_fill_down(all_alderpeople):
                 'Clean Ward': int(row["Clean Ward"]),
                 'Start Year': row["Start Year"],
                 'End Year': row["End Year"],
-                'End Year for Fill': int(year),
+                'filled_year': int(year),
                 }])
             
             alder_each_year = pd.concat([alder_each_year, new_row], \
@@ -542,7 +544,7 @@ def drop_rows_correct_2022(alder_each_year):
     
     # Drop rows with entries before 2018
     alders_2018_2023 =  \
-        alder_each_year.loc[(alder_each_year['End Year for Fill'] >= 2018)]
+        alder_each_year.loc[(alder_each_year['filled_year'] >= 2018)]
 
     alders_2018_2023.reset_index(drop= True)
     alders_2018_2023.drop_duplicates(ignore_index= True)
@@ -558,7 +560,7 @@ def drop_rows_correct_2022(alder_each_year):
             'Clean Ward': 24,
             'Start Year': 2022,
             'End Year': None,
-            'End Year for Fill': float(2022),
+            'filled_year': float(2022),
             }])
 
     ward_24_corection2 = pd.DataFrame([{'Ward': "24", \
@@ -570,14 +572,14 @@ def drop_rows_correct_2022(alder_each_year):
             'Clean Ward': 24,
             'Start Year': "2022",
             'End Year': None,
-            'End Year for Fill': float(2023),
+            'filled_year': float(2023),
             }])
 
     alders_2018_2023_fix = pd.concat([alders_2018_2023, ward_24_corection1, \
         ward_24_corection2], ignore_index=True)    
     # Find rows where wards have two entries for a year
     
-    year_count = alders_2018_2023_fix.groupby(["Clean Ward","End Year for Fill"])\
+    year_count = alders_2018_2023_fix.groupby(["Clean Ward","filled_year"])\
         .size().rename("count_by_year").reset_index()
 
     year_count_over = year_count.loc[(year_count['count_by_year'] > 1)]
@@ -586,14 +588,14 @@ def drop_rows_correct_2022(alder_each_year):
     # Find wards and years with more than two entries. Only keep the first entry
     
     two_entries = pd.merge(alders_2018_2023_fix, year_count_over, \
-        on=["Clean Ward", "End Year for Fill"])
+        on=["Clean Ward", "filled_year"])
     two_entries = two_entries.\
-        drop_duplicates(subset=['Clean Ward', 'End Year for Fill'], keep = 'last')
+        drop_duplicates(subset=['Clean Ward', 'filled_year'], keep = 'last')
     two_entries = two_entries.drop(columns= 'count_by_year')
     
     # Find wards with only one entry
     one_entry = pd.merge(alders_2018_2023_fix, year_count_one, \
-        on=["Clean Ward", "End Year for Fill"])
+        on=["Clean Ward", "filled_year"])
     one_entry = one_entry.drop(columns= 'count_by_year')
     
     # Join the cleaned up datasets of "one_entry" and "two_entry"
