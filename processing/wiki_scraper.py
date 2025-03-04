@@ -30,6 +30,10 @@ def clean_join_wiki_data():
 
 ### Associated Functions ###
 
+## If we were to separate this file into separate files I'd propose:##
+
+## SECTION 1: WIKI SCRAPE ##
+
 ### Getnet Function ###
 # Designed to grab & process table data
 
@@ -394,81 +398,8 @@ def aldermen_and_dates(aldermen_dates_dict):
             
     return all_data
 
-### Implementing above bunctions to prepare for join ###
+## SECTION 2: WIKI CLEAN ##
 
-def gather_tables(url):
-    """
-    Scrape tables from Wikipedia
-    
-    Inputs:
-        - "url": (str), link to Wikipedia page of alderpeople
-    
-    Returns:
-        list: A list of dictionaries, where each dictionary contains information about
-        an alderperson. The keys in each dictionary are:
-        - "Ward": The ward number
-        - "Alderperson": The name of the alderperson
-        - "Start Date": The start date of their term
-        - "End Date": The end date of their term (or "Present" if still in office)
-        - "Party": The political party affiliation of the alderperson
-        - "Notes": Any additional notes about the alderperson or their term
-    """
-    
-    # Call the function and store the scraped data
-    scraped_data = scrape_wikipedia_tables(url)
-    
-    return scraped_data
-
-def gather_bullets(url):
-    """
-    Scrape bullets from Wikipedia
-    
-    Inputs:
-        - "url": (str), link to Wikipedia page of alderpeople
-    
-    Returns:
-        list: A list of dictionaries, where each dictionary contains information 
-        about an alderperson. The keys in each dictionary are:
-        - "Ward": The ward number
-        - "Alderperson": The name of the alderperson
-        - "Start Date": The start date of their term
-        - "End Date": The end date of their term (or "Present" if still in office)
-        - "Party": The political party affiliation of the alderperson
-        - "Notes": Any additional notes about the alderperson or their term
-    """
-    
-    alderperson_dict = find_ward(url)
-    alder_dates = find_alder_link(alderperson_dict)
-    bullet_data = aldermen_and_dates(alder_dates)
-    
-    return bullet_data
-
-### Join Function ###
-
-def join_table_bullets():
-    """
-    Concaenate two lists of dictionaries together and use them to create a 
-    database of alderpeople in Chicago. 
-    
-    outputs:
-        all_alderpeople: (Pandas Dataframe), every alderperson collected and 
-        information about their term
-    """
-    url = 'https://en.wikipedia.org/wiki/List_of_Chicago_alderpersons_since_1923'
-    full_wards = []
-    
-    scraped_tables = gather_tables(url)
-    scraped_bullets = gather_bullets(url)
-    
-    full_wards.extend(scraped_tables)
-    full_wards.extend(scraped_bullets)
-            
-    all_alderpeople = pd.DataFrame(full_wards)
-    
-    
-    return all_alderpeople
-
-### Cleaning Functions ###
 def alders_fill_down(all_alderpeople):
     """
     Create a dataframe that has a row for each year an alderperson served.
@@ -603,5 +534,81 @@ def drop_rows_correct_2022(alder_each_year):
     alder_clean = pd.concat([two_entries, one_entry], ignore_index=True)
     
     return alder_clean
+
+
+## SECTION 3: WIKI JOIN ##
+### Implementing above bunctions to prepare for join ###
+
+def gather_tables(url):
+    """
+    Scrape tables from Wikipedia
+    
+    Inputs:
+        - "url": (str), link to Wikipedia page of alderpeople
+    
+    Returns:
+        list: A list of dictionaries, where each dictionary contains information about
+        an alderperson. The keys in each dictionary are:
+        - "Ward": The ward number
+        - "Alderperson": The name of the alderperson
+        - "Start Date": The start date of their term
+        - "End Date": The end date of their term (or "Present" if still in office)
+        - "Party": The political party affiliation of the alderperson
+        - "Notes": Any additional notes about the alderperson or their term
+    """
+    
+    # Call the function and store the scraped data
+    scraped_data = scrape_wikipedia_tables(url)
+    
+    return scraped_data
+
+def gather_bullets(url):
+    """
+    Scrape bullets from Wikipedia
+    
+    Inputs:
+        - "url": (str), link to Wikipedia page of alderpeople
+    
+    Returns:
+        list: A list of dictionaries, where each dictionary contains information 
+        about an alderperson. The keys in each dictionary are:
+        - "Ward": The ward number
+        - "Alderperson": The name of the alderperson
+        - "Start Date": The start date of their term
+        - "End Date": The end date of their term (or "Present" if still in office)
+        - "Party": The political party affiliation of the alderperson
+        - "Notes": Any additional notes about the alderperson or their term
+    """
+    
+    alderperson_dict = find_ward(url)
+    alder_dates = find_alder_link(alderperson_dict)
+    bullet_data = aldermen_and_dates(alder_dates)
+    
+    return bullet_data
+
+### Join Function ###
+
+def join_table_bullets():
+    """
+    Concaenate two lists of dictionaries together and use them to create a 
+    database of alderpeople in Chicago. 
+    
+    outputs:
+        all_alderpeople: (Pandas Dataframe), every alderperson collected and 
+        information about their term
+    """
+    url = 'https://en.wikipedia.org/wiki/List_of_Chicago_alderpersons_since_1923'
+    full_wards = []
+    
+    scraped_tables = gather_tables(url)
+    scraped_bullets = gather_bullets(url)
+    
+    full_wards.extend(scraped_tables)
+    full_wards.extend(scraped_bullets)
+            
+    all_alderpeople = pd.DataFrame(full_wards)
+    
+    
+    return all_alderpeople
             
 
