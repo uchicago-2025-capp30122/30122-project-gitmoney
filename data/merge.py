@@ -2,6 +2,7 @@ import pandas as pd
 
 def group_menu():
     menu = pd.read_csv("menu_money.csv")
+    menu = menu[menu['category'] != 'Miscellaneous']
     group_menu_project_num = menu.groupby(['year','ward','category']).size()\
     .reset_index(name='num_projects')
     menu['cost'] = menu['cost'].replace(r'\$|,','',regex=True)
@@ -21,4 +22,4 @@ def group_menu():
     merge_311_menu = merge_311_menu.rename(columns={'Count':'calls'})
     merge_311_menu[['ward','calls','num_projects','total_cost']] = \
     merge_311_menu[['ward','calls','num_projects','total_cost']].astype(int)
-    merge_311_menu.to_csv("calls_money",index=False)
+    merge_311_menu.to_csv("calls_money.csv",index=False)
