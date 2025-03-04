@@ -11,6 +11,7 @@ dependencies = [
     "cssselect>=1.2.0",
     "dash>=2.18.2",
     "geopandas>=1.0.1",
+    "geopolars>=0.1.0a4",
     "h11>=0.14.0",
     "httpcore>=1.0.7",
     "httpx>=0.28.1",
