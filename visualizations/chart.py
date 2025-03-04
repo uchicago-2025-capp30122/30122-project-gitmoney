@@ -1,15 +1,16 @@
+# Final altair 
 import csv
 import pathlib
-import matplotlib.pyplot as plt
-from collections import defaultdict
+import altair as alt
+import pandas as pd
 
-# Define the CSV file path
-csv_file = pathlib.Path.cwd().parent.parent / "30122-project-gitmoney" / "data" / "calls_money"
+# CSV file path
+csv_file = pathlib.Path.cwd().parent.parent / "30122-project-gitmoney" / "data" / "calls_money.csv"
 print(f"File path: {csv_file}")
 
 def plot_calls_by_year_and_ward(csv_file: pathlib.Path):
     """
-    Plot four stacked bar charts: calls and money spent by year and ward, categorized.
+    Plot four separate stacked bar charts: calls and money spent by year and ward, categorized.
 
     Parameters:
         csv_file (Path): Path to CSV file with year, ward, category, calls, and total_cost
@@ -17,79 +18,63 @@ def plot_calls_by_year_and_ward(csv_file: pathlib.Path):
     Returns:
         None (displays four plots)
     """
-    # Load CSV data with error handling
-    
-    with open(csv_file, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f)
-        data = [{k.strip(): float(v) if k in ('calls', 'total_cost') else int(v) if k in ('year', 'ward') else v 
-                    for k, v in row.items()} for row in reader]
+    # Load CSV data directly into a pandas DataFrame
+    df = pd.read_csv(csv_file)
 
+    # Convert 'year' and 'ward' columns to integer type, 'calls' and 'total_cost' to float
+    df['year'] = df['year'].astype(int)
+    df['ward'] = df['ward'].astype(int)
+    df['calls'] = df['calls'].astype(float)
+    df['total_cost'] = df['total_cost'].astype(float)
 
-    # Single-pass aggregation
-    calls_by_year = defaultdict(lambda: defaultdict(int))
-    calls_by_ward = defaultdict(lambda: defaultdict(int))
-    money_by_year = defaultdict(lambda: defaultdict(float))
-    money_by_ward = defaultdict(lambda: defaultdict(float))
+    # Filter data for years 2019-2023
+    df = df[(df['year'] >= 2019) & (df['year'] <= 2023)]
 
-    for entry in data:
-        year = entry['year']
-        ward = entry['ward']
-        category = entry['category']
-        calls = entry['calls']
-        cost = entry['total_cost']
+    # Get unique years and wards
+    years = sorted(df['year'].unique())
+    wards = sorted(df['ward'].unique())
 
-        if 2018 <= year <= 2023:
-            calls_by_year[year][category] += calls
-            money_by_year[year][category] += cost
-        calls_by_ward[ward][category] += calls
-        money_by_ward[ward][category] += cost
+    # Aggregating calls and money by year, ward, and category
+    calls_by_year = df.groupby(['year', 'category'])['calls'].sum().unstack()
+    money_by_year = df.groupby(['year', 'category'])['total_cost'].sum().unstack()
+    calls_by_ward = df.groupby(['ward', 'category'])['calls'].sum().unstack()
+    money_by_ward = df.groupby(['ward', 'category'])['total_cost'].sum().unstack()
 
-    # Extract sorted keys
-    years = sorted(calls_by_year.keys())
-    wards = sorted(calls_by_ward.keys())
-    categories = sorted(set().union(*[set(calls_by_year[y].keys()) for y in years]))
-
-    #  8-color palette 
+    # Define the color palette for the categories
     color_palette = [
-        '#1f77b4',  # Blue
-        '#ff7f0e',  # Orange
-        '#2ca02c',  # Green
-        '#d62728',  # Red
-        '#9467bd',  # Purple
-        '#8c564b',  # Brown
-        '#e377c2',  # Pink
-        '#17becf'   # Teal
+        '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', 
+        '#ffcc00', '#e377c2', '#7f7f7f', '#17becf', '#75701F'
     ]
-    if len(categories) > len(color_palette):
-        print(f"Warning: {len(categories)} categories exceed palette size ({len(color_palette)}). Colors will repeat.")
+    categories = df['category'].unique()
     category_colors = {cat: color_palette[i % len(color_palette)] for i, cat in enumerate(categories)}
 
-    # plotting function
-    def plot_stacked_bars(x_values, data_dict, title, x_label, y_label):
-        plt.figure(figsize=(14, 8))
-        bottom = [0] * len(x_values)
-        for category in categories:
-            values = [data_dict[x].get(category, 0) for x in x_values]
-            plt.bar(x_values, values, bottom=bottom, label=category, color=category_colors[category],
-                    edgecolor='black', linewidth=0.5)
-            bottom = [b + v for b, v in zip(bottom, values)]  
-        
-        plt.title(title, fontsize=16, fontweight='bold', pad=15)
-        plt.xlabel(x_label, fontsize=12, fontweight='bold')
-        plt.ylabel(y_label, fontsize=12, fontweight='bold')
-        plt.xticks(x_values, rotation=45, fontsize=10)
-        plt.yticks(fontsize=10)
-        plt.grid(axis='y', linestyle='--', alpha=0.5)
-        plt.legend(title='Categories', title_fontsize=12, fontsize=10, loc='upper left', bbox_to_anchor=(1, 1))
-        plt.tight_layout()
-        plt.show()
+    # Function to plot the stacked bar chart using Altair
+    def plot_stacked_bars(x_values, data, title, x_label, y_label, rotate_x=False):
+        melted_data = data.reset_index().melt(id_vars=data.index.name, var_name='category', value_name='value')
+        chart = alt.Chart(melted_data).mark_bar().encode(
+            x=alt.X(f'{data.index.name}:O', title=x_label, axis=alt.Axis(labelAngle=-90 if rotate_x else 0)),
+            y=alt.Y('value:Q', title=y_label, stack='zero'),
+            color=alt.Color('category:N', scale=alt.Scale(domain=list(category_colors.keys()), range=list(category_colors.values()))),
+            tooltip=[data.index.name, 'category', alt.Tooltip('value:Q', format='.2f')]
+        ).properties(
+            title=title,
+            width=600,
+            height=400
+        )
+        return chart
 
     # Plot all four charts
-    plot_stacked_bars(years, calls_by_year, '311 Calls by Year and Category (2018-2023)', 'Year', 'Number of 311 Calls')
-    plot_stacked_bars(wards, calls_by_ward, '311 Calls by Ward and Category', 'Ward', 'Number of 311 Calls')
-    plot_stacked_bars(years, money_by_year, 'Money Spent by Year and Category (2018-2023)', 'Year', 'Total Money Spent ($)')
-    plot_stacked_bars(wards, money_by_ward, 'Money Spent by Ward and Category', 'Ward', 'Total Money Spent ($)')
+    charts = [
+        plot_stacked_bars(years, calls_by_year, '311 Calls by Year and Category (2019-2023)', 'Year', 'Number of 311 Calls', rotate_x=False),
+        plot_stacked_bars(wards, calls_by_ward, '311 Calls by Ward and Category (2019-2023)', 'Ward', 'Number of 311 Calls', rotate_x=True),
+        plot_stacked_bars(years, money_by_year, 'Money Spent by Year and Category (2019-2023)', 'Year', 'Total Money Spent ($)', rotate_x=False),
+        plot_stacked_bars(wards, money_by_ward, 'Money Spent by Ward and Category (2019-2023)', 'Ward', 'Total Money Spent ($)', rotate_x=True)
+    ]
 
-# Run with real data
+    # Display all charts
+    for chart in charts:
+        chart.show()
+
+# Run the real data
 if __name__ == "__main__":
     plot_calls_by_year_and_ward(csv_file)
