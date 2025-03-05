@@ -7,16 +7,17 @@ import altair as alt
 import webbrowser
 
 cwd = Path(os.getcwd()).parent
-file_cm_fp = cwd/'data/calls_money.csv'
+file_cm_fp = cwd/'data/calls_money_pivot_with_alder.csv'
 file_wards_fp = cwd/'data/wards.csv'
 
 data = pd.read_csv(file_cm_fp)
 data = data[(data['year'] > 2017) & (data['year'] < 2024)]
-
-ward_year = data.groupby(['ward','category']).agg({
+data = data.rename(columns={'Clean Ward':'ward', 'Alderperson':'alderperson'})
+data["alderpeople"] = data.groupby('ward')['alderperson'] \
+.transform(lambda x: ', '.join(sorted(set(x))))
+ward_year = data.groupby(['ward','category','alderpeople']).agg({
     'calls':"sum",
     'total_cost':"sum"}).reset_index()
-
 ward_year["calls_pct"] = ward_year["calls"] / ward_year.groupby("ward")["calls"].transform("sum") * 100
 ward_year["cost_pct"] = (ward_year["total_cost"] / ward_year.groupby("ward")["total_cost"].transform("sum")) * 100
 ward_year["calls_cost_dif"] = abs(ward_year["calls_pct"] - ward_year["cost_pct"])
@@ -31,6 +32,7 @@ colors = {'Beautification':'red','Bike Infrastructure':'blue',
           'Streets & Transportation':'black'}
 ward_year['Color'] = ward_year['category'].map(colors)
 ward_year['cost'] = ward_year['total_cost'].apply(lambda x: f"${x:,.0f}")
+print(ward_year)
 
 # with altair
 
@@ -58,7 +60,7 @@ chart = alt.layer(
         x = alt.X('cost_pct',title = "% Menu Money Spent"),
         y = alt.Y('calls_pct',title = "% 311 Calls"),
         color = 'category',
-        tooltip = ['ward','category','cost','calls']
+        tooltip = ['ward','alderpeople','category','cost','calls']
         ),
         line1,
         line2,
