@@ -1,12 +1,25 @@
 import processing.wiki_scraper as wiki
+import pytest
 import httpx
+from processing.wiki_scraper import scrape_wikipedia_tables  
 
 url = 'https://en.wikipedia.org/wiki/List_of_Chicago_alderpersons_since_1923'
 
 
 def test_scrape_wikipedia_tables(url):
-    ## Teme, write a test to ensure data is fetched correctly
-    pass
+
+    # Make an HTTP request
+    response = httpx.get(url)
+    assert response.status_code == 200, f"Failed to fetch the Wikipedia page. Status code: {response.status_code}"
+
+    # Call the function 
+    results = scrape_wikipedia_tables(url)
+
+    # Verify the structure of the returned data
+    expected_keys = {"Ward", "Alderperson", "Start Date", "End Date", "Party", "Notes"}
+    for row in results:
+        assert isinstance(row, dict), "Each item in the list should be a dictionary."
+        assert set(row.keys()) == expected_keys, f"Unexpected keys in the dictionary: {row.keys()}"
 
 def test_find_alder_link():
     resp= httpx.get(url)
