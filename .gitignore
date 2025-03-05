@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Libby adds
+.DS_Store
+
 # C extensions
 *.so
 
