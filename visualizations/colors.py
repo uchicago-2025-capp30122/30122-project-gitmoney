@@ -1,3 +1,5 @@
+import pandas as pd
+
 cat_colors = {"Beautification": str("#8B648B"), # purple
 "Bike Infrastructure":  str("#F8C8F1"), # pink
 "Lighting": str("#E89545"), # orange
@@ -6,3 +8,8 @@ cat_colors = {"Beautification": str("#8B648B"), # purple
 "Schools & Libraries": str('#cdcb44'), # gross yellow
 "Security Cameras": str("#294896"), # dark blue
 "Streets & Transportation": str("#BE5151")} # red
+
+
+cat_colors_horizontal = pd.DataFrame([list(cat_colors.keys()), list(cat_colors.values())])
+
+cat_colors_df = cat_colors_horizontal.transpose().rename(columns={0: "category", 1: "color"})

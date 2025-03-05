@@ -1,4 +1,3 @@
-import httpx
 import processing.wiki_scraper as wiki
 import pytest
 import httpx
