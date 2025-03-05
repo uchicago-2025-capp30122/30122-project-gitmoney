@@ -36,8 +36,8 @@ sc_cat_dict = {'GRAF':'Beautification',
 def raw_311_menu_to_joined_call_money():
     cleaned_311 = csv_to_cleaned_311()
     grouped_311 = group_311(cleaned_311)
-    group_menu(grouped_311)
-
+    merge_311_menu = group_menu(grouped_311)
+    merge_311_menu.to_csv(data_file/"calls_money.csv",index=False)
 
 def csv_to_cleaned_311():
     """
@@ -88,4 +88,4 @@ def group_menu(calls):
     merge_311_menu = merge_311_menu.rename(columns={'Count':'calls'})
     merge_311_menu[['ward','calls','num_projects','total_cost']] = \
     merge_311_menu[['ward','calls','num_projects','total_cost']].astype(int)
-    merge_311_menu.to_csv(data_file/"calls_money.csv",index=False)
+    return merge_311_menu
