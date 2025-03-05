@@ -4,6 +4,7 @@ import pathlib
 import altair as alt
 import pandas as pd
 
+
 # CSV file path
 csv_file = pathlib.Path.cwd().parent.parent / "30122-project-gitmoney" / "data" / "calls_money.csv"
 print(f"File path: {csv_file}")
