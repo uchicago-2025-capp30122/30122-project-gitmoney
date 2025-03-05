@@ -109,8 +109,6 @@ chart = alt.layer(
     labelLimit=500
 ).interactive()
 
-
-
 chart.save('money_calls_scatter.html')
 
 
