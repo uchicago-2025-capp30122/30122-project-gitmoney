@@ -151,7 +151,7 @@ def street_searcher(main_street, possible_cross = None):
             for street in cross_list:
                 tcross = street['T_CROSS'].find(possible_cross)
                 fcross = street['F_CROSS'].find(possible_cross)
-                if tcross != -1 or fcross != -1:
+                if tcross not in [-1, 0] or fcross not in [-1, 0]:
                     rlist.append(street)
         except KeyError:
             rlist.append([])        
@@ -166,12 +166,12 @@ def street_searcher(main_street, possible_cross = None):
                 for street in cross_list:
                     tcross = street['T_CROSS'].find(possible_cross[0])
                     fcross = street['F_CROSS'].find(possible_cross[1])
-                    if tcross and fcross not in [-1, 0]:
+                    if tcross not in [-1, 0] or fcross not in [-1, 0]:
                         rlist.append(street)
                     else:
                         fcross = street['T_CROSS'].find(possible_cross[0])
                         tcross = street['F_CROSS'].find(possible_cross[1])
-                    if tcross and fcross not in [-1, 0]:
+                    if tcross not in [-1, 0] or fcross not in [-1, 0]:
                         rlist.append(street)
             except KeyError:
                 rlist.append([])
@@ -185,12 +185,12 @@ def street_searcher(main_street, possible_cross = None):
                     for street in cross_list:
                         tcross = street['T_CROSS'].find(possible_cross[0])
                         fcross = street['F_CROSS'].find(possible_cross[1])
-                        if tcross and fcross not in [-1, 0]:
+                        if tcross not in [-1, 0] and fcross not in [-1, 0]:
                             rlist.append(street)
                         else:
                             fcross = street['T_CROSS'].find(possible_cross[0])
                             tcross = street['F_CROSS'].find(possible_cross[1])
-                        if tcross and fcross not in [-1, 0]:
+                        if tcross not in [-1, 0] and fcross not in [-1, 0]:
                             rlist.append(street)
                 except KeyError:
                     rlist.append([])
@@ -229,7 +229,7 @@ if __name__ == "__main__":
     final_menu_money = []
 
     for i, row in enumerate(new_menu_money_data):
-        print(f"Processing row {i}: {row}")
+        print(f"Processing row {i}")
         menu_addrs = ast.literal_eval(row['addresses'])
         if len(menu_addrs) == 0:
             continue
