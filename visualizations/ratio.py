@@ -137,4 +137,3 @@ plt.title('Ward Menu Money Spending and 311 Calls by Category')
 plt.xlabel('% Menu Money Spent')
 plt.ylabel('% 311 calls')
 # plt.show()
-
