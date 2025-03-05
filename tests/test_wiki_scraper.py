@@ -1,5 +1,5 @@
-import httpx
 import processing.wiki_scraper as wiki
+import httpx
 
 url = 'https://en.wikipedia.org/wiki/List_of_Chicago_alderpersons_since_1923'
 
