@@ -5,7 +5,6 @@ from typing import List
 import altair as alt
 import pandas as pd
 
-# CSV file path (moved inside if __name__ check for better encapsulation)
 def plot_calls_by_year_and_ward(csv_file: pathlib.Path) -> None:
     """
     Plot four stacked bar charts: calls and money spent by year and ward, categorized.
@@ -17,7 +16,7 @@ def plot_calls_by_year_and_ward(csv_file: pathlib.Path) -> None:
         None (displays four plots)
     """
     # Define constants
-    YEAR_RANGE = range(2019, 2024)  # 2019-2023 inclusive
+    YEAR_RANGE = range(2019, 2024)  
     CAT_COLORS = {
         "Beautification": "#8B648B",
         "Bike Infrastructure": "#F8C8F1",
@@ -90,7 +89,7 @@ def plot_calls_by_year_and_ward(csv_file: pathlib.Path) -> None:
     charts = [create_chart(aggregations[key], title, x_label, y_label, rotate)
              for key, title, x_label, y_label, rotate in chart_configs]
     
-    # Use Altair's concatenation if available, otherwise show individually
+    # Altair's concatenation (Remove later)
     '''
     try:
         alt.vconcat(*charts).show()
