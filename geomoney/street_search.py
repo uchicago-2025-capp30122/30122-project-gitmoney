@@ -166,23 +166,25 @@ def street_searcher(main_street, possible_cross = None):
                 for street in cross_list:
                     tcross = street['T_CROSS'].find(possible_cross[0])
                     fcross = street['F_CROSS'].find(possible_cross[1])
-                    if tcross not in [-1, 0] or fcross not in [-1, 0]:
+                    if tcross not in [-1, 0] and fcross not in [-1, 0]:
                         rlist.append(street)
-                    else:
-                        fcross = street['T_CROSS'].find(possible_cross[0])
-                        tcross = street['F_CROSS'].find(possible_cross[1])
-                    if tcross not in [-1, 0] or fcross not in [-1, 0]:
+                    fcross = street['T_CROSS'].find(possible_cross[1])
+                    tcross = street['F_CROSS'].find(possible_cross[0])
+                    if tcross not in [-1, 0] and fcross not in [-1, 0]:
                         rlist.append(street)
             except KeyError:
                 rlist.append([])
         else:
             for main_st in main_street:
+
+
                 try:
                     if not starts_with_directional_prefix(main_st):
                         cross_list = streets_basic[main_st]
                     else:
                         cross_list = streets[main_st]  
                     for street in cross_list:
+
                         tcross = street['T_CROSS'].find(possible_cross[0])
                         fcross = street['F_CROSS'].find(possible_cross[1])
                         if tcross not in [-1, 0] and fcross not in [-1, 0]:
@@ -190,8 +192,8 @@ def street_searcher(main_street, possible_cross = None):
                         else:
                             fcross = street['T_CROSS'].find(possible_cross[0])
                             tcross = street['F_CROSS'].find(possible_cross[1])
-                        if tcross not in [-1, 0] and fcross not in [-1, 0]:
-                            rlist.append(street)
+                            if tcross not in [-1, 0] and fcross not in [-1, 0]:
+                                rlist.append(street)
                 except KeyError:
                     rlist.append([])
     return rlist
@@ -266,13 +268,59 @@ if __name__ == "__main__":
                 row['cross_streets'] = []
         final_menu_money.append(row)
     
+    # Unpack values from the 'cross_streets' column and add those columns to the end of each row
+    unpacked_final_menu_money = []
+    for row in final_menu_money:
+        cross_streets = row.get('cross_streets', [])
+        if cross_streets:
+            for cross_street in cross_streets:
+                if isinstance(cross_street, list):
+                    new_row = {
+                        'year': row['year'],
+                        'ward': row['ward'],
+                        'cost': row['cost'],
+                        'category': row['category'],
+                        'program': row['program'],
+                        'description': row['description'],
+                        'FNODE_ID': '',
+                        'TNODE_ID': '',
+                        'OBJECTID': '',
+                        'TRANS_ID': '',
+                        'PRE_DIR': '',
+                        'STREET_NAM': '',
+                        'STREET_TYP': '',
+                        'F_CROSS': '',
+                        'T_CROSS': '',
+                        'MIN_ADDR': '',
+                        'MAX_ADDR': ''
+                        }
+                else:
+                    new_row = {
+                        'year': row['year'],
+                        'ward': row['ward'],
+                        'cost': row['cost'],
+                        'category': row['category'],
+                        'program': row['program'],
+                        'description': row['description'],
+                        'FNODE_ID': cross_street.get('FNODE_ID', ''),
+                        'TNODE_ID': cross_street.get('TNODE_ID', ''),
+                        'OBJECTID': cross_street.get('OBJECTID', ''),
+                        'TRANS_ID': cross_street.get('TRANS_ID', ''),
+                        'PRE_DIR': cross_street.get('PRE_DIR', ''),
+                        'STREET_NAM': cross_street.get('STREET_NAM', ''),
+                        'STREET_TYP': cross_street.get('STREET_TYP', ''),
+                        'F_CROSS': cross_street.get('F_CROSS', ''),
+                        'T_CROSS': cross_street.get('T_CROSS', ''),
+                        'MIN_ADDR': cross_street.get('MIN_ADDR', ''),
+                        'MAX_ADDR': cross_street.get('MAX_ADDR', '')
+                        }
+                unpacked_final_menu_money.append(new_row)
+    
+    # Determine the fieldnames for the CSV file
+    fieldnames = ['year', 'ward', 'cost', 'category', 'program', 'description', 'FNODE_ID', 'TNODE_ID', 'OBJECTID', 'TRANS_ID', 'PRE_DIR', 'STREET_NAM', 'STREET_TYP', 'F_CROSS', 'T_CROSS', 'MIN_ADDR', 'MAX_ADDR']
+    
     with open(final_menu_money_fp, 'w', encoding='utf-8') as newfile:
-        csvwriter = csv.DictWriter(newfile, fieldnames=final_menu_money[0].keys())
+        csvwriter = csv.DictWriter(newfile, fieldnames=fieldnames)
         csvwriter.writeheader()
-        for row in final_menu_money:
+        for row in unpacked_final_menu_money:
             csvwriter.writerow(row)
-
-        
-
-    
-    

@@ -125,16 +125,15 @@ def convert_street_abbreviation(street_name):
     """
     # Define a dictionary for abbreviation replacements
     replacements = {
-        ' AV ': ' AVE ',
-        ' AV': ' AVE'
+        r'\bAV\b': 'AVE'
     }
     
     # Replace abbreviations with full forms, ensuring no double replacements
     for abbr, full in replacements.items():
-        if abbr in street_name and not street_name.endswith(full):
-            street_name = street_name.replace(abbr, full)
+        street_name = re.sub(abbr, full, street_name)
     
     return street_name
+
 
 
 if __name__ == "__main__":
