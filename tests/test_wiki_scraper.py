@@ -1,5 +1,4 @@
 import processing.wiki_scraper as wiki
-import pytest
 import httpx
 from processing.wiki_scraper import scrape_wikipedia_tables  
 
