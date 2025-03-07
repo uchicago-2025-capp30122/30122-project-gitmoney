@@ -5,8 +5,17 @@ import csv
 import json
 import re
 import ast
-import pandas as pd
 
+
+def convert_cost(cost):
+    try:
+        # First remove any currency symbols and commas
+        cost_str = cost.replace('$', '').replace(',', '')
+        cost_float = float(cost_str)
+    except (ValueError, TypeError):
+        # If conversion fails, set to 0
+        cost_float = 0.0
+    return cost_float
 def load_csv(path_to_csv: Path):
     """
     Read a .csv file from a filepath. This is used to load menu_money and 
@@ -219,22 +228,16 @@ def extract_house_number(text):
 
 if __name__ == "__main__":
 
-    streets_fp = Path(__file__).parent.parent / 'data/streets.csv'
-    menu_money = Path(__file__).parent.parent / 'data/menu_money.csv'
-    new_menu_money = Path(__file__).parent.parent / 'data/new_menu_money.csv'
-    final_menu_money_fp = Path(__file__).parent.parent / 'data/final_menu_money.csv'
-    aldermanic_fp = Path(__file__).parent.parent / 'data/calls_money_pivot_with_alder.csv'
+    streets_fp = Path.cwd() / 'data/streets.csv'
+    menu_money = Path.cwd() / 'data/menu_money.csv'
+    new_menu_money = Path.cwd()/ 'data/new_menu_money.csv'
+    final_menu_money_fp = Path.cwd() / 'data/final_menu_money_converted.csv'
     street_data = load_csv(streets_fp)
     menu_money_data = load_csv(menu_money)
     cross_dict = generate_cross_streets(street_data)
     cross_dict_basic = generate_cross_streets(street_data, True)
     new_menu_money_data = load_csv(new_menu_money)
-    final_menu_money = []
-    aldermanic_data = load_csv(aldermanic_fp)
-    
-    
-
-
+    final_menu_money = [] 
     for i, row in enumerate(new_menu_money_data):
         print(f"Processing row {i}")
         menu_addrs = ast.literal_eval(row['addresses'])
@@ -339,21 +342,11 @@ if __name__ == "__main__":
         'F_CROSS',
         'T_CROSS',
         'MIN_ADDR',
-        'MAX_ADDR',
-        "",
-        "Clean Ward",
-        "Alderperson",
-        "Start Date",
-        "End Date",
-        "filled_year",
-        "year","ward",
-        "category",
-        "calls",
-        "num_projects",
-        "total_cost"
+        'MAX_ADDR'
         ]
 
-    aldermanic_df = pd.DataFrame(aldermanic_data)
-    menu_df = pd.DataFrame(unpacked_final_menu_money)
-    aldermanic_menu_df = menu_df.merge(aldermanic_df, on=['year','ward','category'], how='left')
-    aldermanic_menu_df.csv(final_menu_money_fp, index=False)
+with open(final_menu_money_fp, 'w', encoding='utf-8') as csvfile:
+    csvwriter = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    csvwriter.writeheader()
+    for row in unpacked_final_menu_money:
+        csvwriter.writerow(row)
