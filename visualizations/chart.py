@@ -1,4 +1,4 @@
-# Final Version 
+# Final Version
 import csv
 import pathlib
 from typing import List
@@ -52,7 +52,7 @@ def plot_calls_by_year_and_ward(csv_file: pathlib.Path) -> None:
     }
 
     def create_chart(data: pd.DataFrame, title: str, x_label: str, y_label: str, rotate_x: bool = False) -> alt.Chart:
-        """Create a single stacked bar chart with consistent styling."""
+       
         melted_data = data.reset_index().melt(
             id_vars=data.index.name,
             var_name='category',
