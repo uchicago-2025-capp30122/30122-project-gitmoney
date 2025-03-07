@@ -1,6 +1,10 @@
-import processing.wiki_scraper as wiki
+import os
+import pathlib
+import sys
+sys.path.insert(1, 'processing')
+import wiki_scraper as wiki
 import httpx
-from processing.wiki_scraper import scrape_wikipedia_tables  
+
 
 url = 'https://en.wikipedia.org/wiki/List_of_Chicago_alderpersons_since_1923'
 
@@ -12,7 +16,7 @@ def test_scrape_wikipedia_tables(url):
     assert response.status_code == 200, f"Failed to fetch the Wikipedia page. Status code: {response.status_code}"
 
     # Call the function 
-    results = scrape_wikipedia_tables(url)
+    results = wiki.scrape_wikipedia_tables(url)
 
     # Verify the structure of the returned data
     expected_keys = {"Ward", "Alderperson", "Start Date", "End Date", "Party", "Notes"}
@@ -22,7 +26,8 @@ def test_scrape_wikipedia_tables(url):
 
 def test_find_alder_link():
     resp= httpx.get(url)
-    assert resp.status_code == 200
+    assert resp.status_code == 200, f"Failed to fetch the Wikipedia page. \
+        Status code: {resp.status_code}"
     
     aldermen_dict = wiki.find_ward(url)
     dates_dict = wiki.find_alder_link(aldermen_dict)
@@ -39,6 +44,9 @@ def test_clean_join_wiki_data():
     years = alder_data.groupby(['filled_year']).size().reset_index()
     wards = alder_data.groupby(['Clean Ward']).size().reset_index()
     
-    assert len(alder_data) == 300
-    assert len(years) == 6
-    assert len(wards) == 50
+    assert len(alder_data) == 300, f"There are {len(alder_data)} \
+        in your data. Not 300"
+    assert len(years) == 6,  f"There are {len(years)} \
+        in your data. Not 6"
+    assert len(wards) == 50,  f"There are {len(wards)} \
+        in your data. Not 50"

@@ -1,13 +1,13 @@
 import pandas as pd
 
-cat_colors = {"Beautification": str("#8B648B"), # purple
-"Bike Infrastructure":  str("#F8C8F1"), # pink
-"Lighting": str("#E89545"), # orange
-"Parks & Recreation":  str("#5DB7B7"), # light blue 
-"Plants, Gardens, & Sustainability": str('#82B65B'), #green
-"Schools & Libraries": str('#cdcb44'), # gross yellow
-"Security Cameras": str("#294896"), # dark blue
-"Streets & Transportation": str("#BE5151")} # red
+cat_colors = {"Beautification": str("#c9a1be"), # purple
+"Bike Infrastructure":  str("#e1ae7d"), # orange
+"Lighting": str("#f3da76"), # yellow
+"Parks & Recreation":  str("#9ccdc9"), # light blue 
+"Plants, Gardens, & Sustainability": str('#87be81'), #green
+"Schools & Libraries": str('#ffbac1'), # pink
+"Security Cameras": str("#82a0c2"), # dark blue
+"Streets & Transportation": str("#d37171")} # red
 
 
 cat_colors_horizontal = pd.DataFrame([list(cat_colors.keys()), list(cat_colors.values())])
