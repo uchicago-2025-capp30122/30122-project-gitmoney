@@ -144,9 +144,8 @@ def street_searcher(main_street, possible_cross = None):
             cross_list = streets[main_street]
             for street in cross_list:
                 addr_num = extract_house_number(main_street)
-                cross_list = streets[main_street.replace(addr_num, '').strip()]
                 if street['MIN_ADDR'] <= addr_num <= street['MAX_ADDR']:
-                    rlist.append(addr_num + street)
+                    rlist.append(f"{addr_num} {street}")
         except KeyError:
             rlist.append([])
         
