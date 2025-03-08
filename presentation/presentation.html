@@ -163,6 +163,7 @@
         <section class="chart-section">
             <h2>Findings</h2>
             <p>Below are our key findings, visualized through charts that highlight calls and spending patterns by year and ward.</p>
+<<<<<<< HEAD
             <div class="chart-container">
                 <h3>311 Calls by Year and Category (2019-2023)</h3>
                 <iframe src="charts/chart_1.html"></iframe>
@@ -178,6 +179,44 @@
             <div class="chart-container">
                 <h3>Money Spent by Ward and Category (2019-2023)</h3>
                 <iframe src="charts/chart_4.html"></iframe>
+=======
+            <div class="chart-grid">
+                <div class="chart-container">
+                    <h3>311 Calls by Year and Category (2019-2023)</h3>
+                    <iframe src="charts/chart_1.html"></iframe>
+                </div>
+                <div class="chart-container">
+                    <h3>311 Calls by Ward and Category (2019-2023)</h3>
+                    <iframe src="charts/chart_2.html"></iframe>
+                </div>
+                <div class="chart-container">
+                    <h3>Money Spent by Year and Category (2019-2023)</h3>
+                    <iframe src="charts/chart_3.html"></iframe>
+                </div>
+                <div class="chart-container">
+                    <h3>Money Spent by Ward and Category (2019-2023)</h3>
+                    <iframe src="charts/chart_4.html"></iframe>
+                </div>
+                <style>
+                    .chart-container {
+                        width: 100%;
+                        height: 1000px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                    }
+            
+                    .chart-container iframe {
+                        width: 90%; 
+                        height: 100%;
+                        border: none;
+                    }
+                </style>
+                <div class="chart-container">
+                    <iframe src="charts/money_calls_scatter.html"></iframe>
+                </div>
+>>>>>>> 8471d14cd7e86ea6de4915eeb46c2f515a4712e8
             </div>
         </section>
 

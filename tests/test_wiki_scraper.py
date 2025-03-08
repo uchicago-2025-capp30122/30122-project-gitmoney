@@ -1,8 +1,6 @@
-import pytest
 import processing.wiki_scraper as wiki
 import httpx
-from processing.wiki_scraper import scrape_wikipedia_tables
-
+from processing.wiki_scraper import scrape_wikipedia_tables  
 
 url = 'https://en.wikipedia.org/wiki/List_of_Chicago_alderpersons_since_1923'
 
@@ -11,7 +9,7 @@ def test_scrape_wikipedia_tables():
     response = httpx.get(url)
     assert response.status_code == 200, f"Failed to fetch the Wikipedia page. Status code: {response.status_code}"
 
-    # Call the function
+    # Call the function 
     results = scrape_wikipedia_tables(url)
 
     # Verify the content of the returned data
@@ -27,7 +25,8 @@ def test_scrape_wikipedia_tables():
 
 def test_find_alder_link():
     resp= httpx.get(url)
-    assert resp.status_code == 200
+    assert resp.status_code == 200, f"Failed to fetch the Wikipedia page. \
+        Status code: {resp.status_code}"
     
     aldermen_dict = wiki.find_ward(url)
     dates_dict = wiki.find_alder_link(aldermen_dict)
@@ -47,4 +46,3 @@ def test_clean_join_wiki_data():
     assert len(alder_data) == 300
     assert len(years) == 6
     assert len(wards) == 50
-    

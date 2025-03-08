@@ -6,6 +6,16 @@ import json
 import re
 import ast
 
+
+def convert_cost(cost):
+    try:
+        # First remove any currency symbols and commas
+        cost_str = cost.replace('$', '').replace(',', '')
+        cost_float = float(cost_str)
+    except (ValueError, TypeError):
+        # If conversion fails, set to 0
+        cost_float = 0.0
+    return cost_float
 def load_csv(path_to_csv: Path):
     """
     Read a .csv file from a filepath. This is used to load menu_money and 
@@ -136,7 +146,7 @@ def street_searcher(main_street, possible_cross = None):
                 addr_num = extract_house_number(main_street)
                 cross_list = streets[main_street.replace(addr_num, '').strip()]
                 if street['MIN_ADDR'] <= addr_num <= street['MAX_ADDR']:
-                    rlist.append(street)
+                    rlist.append(addr_num + street)
         except KeyError:
             rlist.append([])
         
@@ -218,18 +228,16 @@ def extract_house_number(text):
 
 if __name__ == "__main__":
 
-    cwd = os.getcwd()
-    streets_fp = Path(cwd) / 'data/streets.csv'
-    menu_money = Path(cwd) / 'data/menu_money.csv'
-    new_menu_money = Path(cwd) / 'data/new_menu_money.csv'
-    final_menu_money_fp = Path(cwd) / 'data/final_menu_money.csv'
+    streets_fp = Path.cwd() / 'data/streets.csv'
+    menu_money = Path.cwd() / 'data/menu_money.csv'
+    new_menu_money = Path.cwd()/ 'data/new_menu_money.csv'
+    final_menu_money_fp = Path.cwd() / 'data/final_menu_money_converted.csv'
     street_data = load_csv(streets_fp)
     menu_money_data = load_csv(menu_money)
     cross_dict = generate_cross_streets(street_data)
     cross_dict_basic = generate_cross_streets(street_data, True)
     new_menu_money_data = load_csv(new_menu_money)
-    final_menu_money = []
-
+    final_menu_money = [] 
     for i, row in enumerate(new_menu_money_data):
         print(f"Processing row {i}")
         menu_addrs = ast.literal_eval(row['addresses'])
@@ -317,10 +325,28 @@ if __name__ == "__main__":
                 unpacked_final_menu_money.append(new_row)
     
     # Determine the fieldnames for the CSV file
-    fieldnames = ['year', 'ward', 'cost', 'category', 'program', 'description', 'FNODE_ID', 'TNODE_ID', 'OBJECTID', 'TRANS_ID', 'PRE_DIR', 'STREET_NAM', 'STREET_TYP', 'F_CROSS', 'T_CROSS', 'MIN_ADDR', 'MAX_ADDR']
-    
-    with open(final_menu_money_fp, 'w', encoding='utf-8') as newfile:
-        csvwriter = csv.DictWriter(newfile, fieldnames=fieldnames)
-        csvwriter.writeheader()
-        for row in unpacked_final_menu_money:
-            csvwriter.writerow(row)
+    fieldnames = [
+        'year',
+        'ward',
+        'cost',
+        'category',
+        'program',
+        'description',
+        'FNODE_ID',
+        'TNODE_ID',
+        'OBJECTID',
+        'TRANS_ID',
+        'PRE_DIR',
+        'STREET_NAM',
+        'STREET_TYP',
+        'F_CROSS',
+        'T_CROSS',
+        'MIN_ADDR',
+        'MAX_ADDR'
+        ]
+
+with open(final_menu_money_fp, 'w', encoding='utf-8') as csvfile:
+    csvwriter = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    csvwriter.writeheader()
+    for row in unpacked_final_menu_money:
+        csvwriter.writerow(row)
