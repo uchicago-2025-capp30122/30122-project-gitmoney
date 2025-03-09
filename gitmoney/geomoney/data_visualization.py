@@ -64,7 +64,7 @@ def create_data_df():
                                 right_on=['Clean Ward', 'year', 'category'],
                                 how='left')
     geo_mm_df = geo_mm_df.drop_duplicates()
-    geo_mm_df = geo_mm_df[geo_mm_df['year'].isin([2018, 2019, 2020, 2021, 2022, 2023])]
+    geo_mm_df = geo_mm_df[geo_mm_df['year'].isin([2019, 2020, 2021, 2022, 2023])]
     
     # IMPORTANT: Make sure we're working with WGS84 (EPSG:4326) for web maps
     geo_mm_df = geo_mm_df.to_crs(epsg=4326)
