@@ -9,7 +9,17 @@ import numpy as np
 import random
 
 def cost_to_color(cost_value, min_cost, max_cost):
-    """Map cost value to a color on a gradient scale"""
+    """
+    Map cost value to a color on a gradient scale
+    
+    Args:
+    cost_value (float): The cost value to map to a color.
+    min_cost (float): The minimum cost value in the dataset.
+    max_cost (float): The maximum cost value in the dataset.
+
+    Returns:
+    list: A list of RGBA values representing the color.
+    """
     cost_range = max_cost - min_cost
     if cost_range == 0:  # Avoid division by zero
         normalized = 0
@@ -25,6 +35,16 @@ def cost_to_color(cost_value, min_cost, max_cost):
 
 
 def convert_cost(cost):
+    """
+    Convert a cost string to a float, removing currency symbols and commas
+    
+    Args:
+    cost (str or float): The cost value to convert.
+
+    Returns:
+    float: The cost value as a float.
+
+    """
     try:
         # First remove any currency symbols and commas
         if isinstance(cost, str):
@@ -38,6 +58,12 @@ def convert_cost(cost):
     return cost_float
 
 def create_data_df():
+    """
+    Load the data and perform a spatial join between the menu money and streets data
+
+    Returns:
+    GeoDataFrame: A GeoDataFrame containing the joined data.
+    """
 
     # load the data
     mm_csv = pathlib.Path.cwd() / 'gitmoney/data/final_menu_money.csv' 
@@ -73,6 +99,15 @@ def create_data_df():
     return geo_mm_df
 
 def create_visualization(geo_mm_df):
+    """
+    Create a Pydeck visualization of the extracted menu money streets on a map
+
+    Args:
+    geo_mm_df (GeoDataFrame): The GeoDataFrame containing the menu money-streets data.
+
+    No return value, but saves the visualization to an HTML file.
+    """
+
     # calculate mean latitude and longitude for the viewport
     mean_lat = geo_mm_df.geometry.centroid.y.mean()
     mean_lon = geo_mm_df.geometry.centroid.x.mean()
@@ -173,5 +208,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    

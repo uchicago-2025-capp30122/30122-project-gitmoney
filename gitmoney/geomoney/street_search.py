@@ -27,7 +27,8 @@ def load_csv(path_to_csv: Path):
 
     Args:
     - path_to_csv (Path): a constructed filepath to the .csv
-    Returns a List of rows in dict format
+        
+    Returns: a List of rows in dict format
     """
 
     # initialize return list, open and read the csv.
@@ -43,6 +44,14 @@ def generate_cross_streets(streets_data, basic = False):
     """ 
     This function generates a dictionary in which the street name indexes a
     list of all cross street names. 
+
+    Args:
+    - streets_data (list of dicts): This is the data from the streets.csv file
+    - basic (bool): If True, the dictionary will not have street dir or suffix
+
+    Returns:
+    - street_dict (dict): This is the dictionary with street names as keys
+        and lists of cross streets as values.
     """
     
     # if basic is True, the dictionary will not have street dir or suffix
@@ -103,6 +112,12 @@ def generate_cross_streets(streets_data, basic = False):
 def starts_with_directional_prefix(text):
     """
     Check if the given text starts with an optional directional prefix [NSEW]?
+
+    Args:
+    - text (str): The text to check
+
+    Returns:
+    - bool: True if the text starts with an optional directional prefix, False otherwise
     """
     # define the regex pattern to match the optional directional prefix
     pattern = r'^[NSEW]?\s'
@@ -111,6 +126,7 @@ def starts_with_directional_prefix(text):
     if re.match(pattern, text):
         return True
     return False
+
 
 def street_searcher(main_street, possible_cross = None):
     """
@@ -122,6 +138,10 @@ def street_searcher(main_street, possible_cross = None):
         in streets.json to access a list of cross streets 
     - possible_cross (str uppercase): This is the name of the cross street 
         being searched.
+
+    Returns:
+    - rlist (list of dicts): This is a list of dictionaries containing the
+        cross streets. If no cross streets are found, the list will be empty.
     """
 
     # generates the return list and the json filepath for streets.json
@@ -256,6 +276,12 @@ def street_searcher(main_street, possible_cross = None):
 def extract_house_number(text):
     """
     Extract the house number from the given address text.
+
+    Args:
+    - text (str): The address text to extract the house number from
+
+    Returns:
+    - str: The extracted house number
     """
     # Define a pattern to match the house number at the beginning of the string
     pattern = r'^\d+'
@@ -283,6 +309,9 @@ def street_search(new_menu_money_data, streets_fp):
     - new_menu_money_data (list of dicts): The data to be processed
     - streets_fp (Path): The filepath to the streets.json file
 
+    Returns:
+    - unpacked_final_menu_money (list of dicts): The processed data
+    - fieldnames (list): The fieldnames for the CSV file
     """
     # return-list
     final_menu_money = [] 

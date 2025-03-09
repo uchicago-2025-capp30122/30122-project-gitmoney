@@ -77,6 +77,14 @@ def extract_street_names(text):
 def convert_street_number_suffix(street_name):
     """
     Convert street number suffix to the correct ordinal form only for street names.
+
+    For example, "1 ST" should be converted to "1ST".
+
+    Args:
+    street_name (str): The street name to process.
+
+    Returns:
+    str: The street name with the correct ordinal form for numbered streets.
     """
     # special pattern for numbered streets (where ST refers to STREET)
     numbered_street_pattern = r'\b(\d+)\s+(ST|PL)\b'
@@ -124,6 +132,12 @@ def extract_single_addresses(text):
 def convert_street_abbreviation(street_name):
     """
     Convert street abbreviation to full form, ensuring no double replacements.
+
+    Args:
+    street_name (str): The street name to process.
+
+    Returns:
+    str: The street name with all abbreviations replaced with full forms.
     """
     # define a dictionary for abbreviation replacements
     replacements = {
