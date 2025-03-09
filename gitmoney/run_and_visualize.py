@@ -14,23 +14,23 @@ def process_geo_data():
 def main(args):
     cwd = pathlib.Path.cwd()
     
-    # Process geo data 
+    # process geo data 
     if args.all or args.geo or not (cwd / 'data/final_menu_money.csv').exists():
         process_geo_data()
     
-    # Process 311 data 
+    # process 311 data 
     if args.all or args.calls or not (cwd / 'data/calls_money.csv').exists():
         menu_311.raw_311_menu_to_joined_call_money()
     
-    # Process wiki data 
+    # process wiki data 
     if args.all or args.wiki or not (cwd / 'data/all_alderpeople_2018_23.csv').exists():
         wiki.clean_join_wiki_data()
     
-    # Join all data 
+    # process all data 
     if args.all or args.join or not (cwd / 'data/calls_money_pivot_with_alder.csv').exists():
         join_data.join_calls_alders()
     
-    # Always rewrite the visualization
+    # rewrite the map visualization
     geomoney.data_visualization.main()
 
 if __name__ == '__main__':
