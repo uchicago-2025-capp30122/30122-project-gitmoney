@@ -1,5 +1,4 @@
 import geomoney
-import geomoney.menu_masher
 import pathlib
 
 def process_data():
@@ -14,5 +13,5 @@ if __name__ == '__main__':
     cwd = pathlib.Path.cwd()
     if not (cwd / 'data/final_menu_money.csv').exists():
         process_data()
-    main()  
+    main()
     
