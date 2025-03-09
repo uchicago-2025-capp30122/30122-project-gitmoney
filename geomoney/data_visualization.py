@@ -158,7 +158,7 @@ if __name__ == "__main__":
     )
 
     # Save the deck to an HTML file for direct viewing
-    deck.to_html('path_layer_direct.html', open_browser=True)
+    deck.to_html('visualizations/gitmoney_map.html', open_browser=True)
     
     # Also create the Dash app
     deck_html = deck.to_html(as_string=True)
