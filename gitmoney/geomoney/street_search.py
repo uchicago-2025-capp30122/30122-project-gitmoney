@@ -9,12 +9,12 @@ import ast
 
 def convert_cost(cost):
     try:
-        # First remove any currency symbols and commas
+        # first remove any currency symbols and commas
         cost_str = cost.replace('$', '').replace(',', '')
         cost_float = float(cost_str)
 
     except (ValueError, TypeError):
-        # If conversion fails, set to 0
+        # if conversion fails, set to 0
         cost_float = 0.0
 
     return cost_float
@@ -30,7 +30,7 @@ def load_csv(path_to_csv: Path):
     Returns a List of rows in dict format
     """
 
-    # Initialize return list, open and read the csv.
+    # initialize return list, open and read the csv.
     data = []
     with open(path_to_csv, 'r', encoding="utf-8") as filereader:
         csvreader = csv.DictReader(filereader)
@@ -45,11 +45,12 @@ def generate_cross_streets(streets_data, basic = False):
     list of all cross street names. 
     """
     
-    # For each row, make a list containing all segments with same street name
+    # if basic is True, the dictionary will not have street dir or suffix
     if basic:
         outpath = Path(os.getcwd()) / "gitmoney/data/streets_basics.json"
         street_dict = dict()
 
+        # for each row, make a list containing all segments with same street name
         for row in streets_data:
             street_name = row['STREET_NAM']
             row_necessities = {'FNODE_ID': row['FNODE_ID'],
@@ -63,12 +64,14 @@ def generate_cross_streets(streets_data, basic = False):
                             'T_CROSS': row['T_CROSS'].replace('|', ' '),
                             'MIN_ADDR': min(row['L_F_ADD'],row['R_F_ADD'],row['L_T_ADD'],row['R_T_ADD']),
                             'MAX_ADDR': max(row['L_F_ADD'],row['R_F_ADD'],row['L_T_ADD'],row['R_T_ADD'])}
+            
+            # append the dict to the return-list
             if street_name in street_dict:
                 street_dict[street_name].append(row_necessities)
             else:
                 street_dict[street_name] = [row_necessities]
                 
-        # Write everything to a jsonfile
+        # write everything to a jsonfile
         with open(outpath, 'w', encoding='utf-8') as jsonfile:
             json.dump(street_dict, jsonfile, indent=True)
     else:
@@ -101,10 +104,10 @@ def starts_with_directional_prefix(text):
     """
     Check if the given text starts with an optional directional prefix [NSEW]?
     """
-    # Define the regex pattern to match the optional directional prefix at the start of the string
+    # define the regex pattern to match the optional directional prefix
     pattern = r'^[NSEW]?\s'
     
-    # Use re.match to check if the text starts with the pattern
+    # use re.match to check if the text starts with the pattern
     if re.match(pattern, text):
         return True
     return False
@@ -121,95 +124,134 @@ def street_searcher(main_street, possible_cross = None):
         being searched.
     """
 
-    # Generates the return list and the json filepath for streets.json
+    # generates the return list and the json filepath for streets.json
     rlist = []
     json_fp = Path(os.getcwd()) / "gitmoney/data/streets.json"
 
-    # Opens streets.json and reads the json
+    # opens streets.json and reads the json
     with open(json_fp, 'r', encoding="utf-8") as jsonfile:
         streets = json.load(jsonfile)
 
     json_fp_basic = Path(os.getcwd()) / "gitmoney/data/streets_basics.json"
 
-    # Opens streets.json and reads the json
+    # opens streets.json and reads the json
     with open(json_fp_basic, 'r', encoding="utf-8") as jsonfile:
         streets_basic = json.load(jsonfile)
 
 
-    # Searches each street in the list of cross streets -- both to and from --
+    # searches each street in the list of cross streets -- both to and from --
     # for matches, which are appended to the return list
 
     if not possible_cross:
         try:
+            # check if the street name starts with a number (single address)
             addr_num = extract_house_number(main_street)
+
+            # remove the address number from the street name
             main_street_truncated = main_street.replace(addr_num, '')
+
+            # use the truncated street name to make basic list of cross streets
             cross_list = streets[main_street_truncated.strip()]
+
+            # check the address number against address numbers for that block
             for street in cross_list:
                 min_addr = int(street['MIN_ADDR'])
                 if min_addr == 0:
                     continue
                 max_addr = int(street['MAX_ADDR'])
+                #append the street if the address number is within the range
                 if min_addr <= int(addr_num) <= max_addr:
                     rlist.append(street)
+
+        # raise exceptions if the street name is not found in the json
         except (KeyError, ValueError) as e:
             rlist.append([])
-    # Use the main street name to retrieve the list of cross streets
-    
+
+    # if one main and one cross street are given
     elif isinstance(possible_cross, str):
+        # check if the street name starts with a direction prefix
         try:
+            # make the list of cross streets
             if not starts_with_directional_prefix(main_street):
                 cross_list = streets_basic[main_street]
             else:
                 cross_list = streets[main_street]
+
+            # search the list of cross streets for the cross street
             for street in cross_list:
                 tcross = street['T_CROSS'].find(possible_cross)
                 fcross = street['F_CROSS'].find(possible_cross)
+
+                # append either side of the intersection
                 if tcross not in [-1, 0] or fcross not in [-1, 0]:
                     rlist.append(street)
-        except KeyError:
-            rlist.append([])        
 
+        # raise exceptions if the street name is not found in the json
+        except KeyError:
+            rlist.append([])
+
+    # if one main and two cross streets are given
     elif isinstance(possible_cross, list):
         if isinstance(main_street, str):
+            # check if the street name starts with a direction prefix
             try:
+                # make the list of cross streets
                 if not starts_with_directional_prefix(main_street):
                     cross_list = streets_basic[main_street]
                 else:
                     cross_list = streets[main_street]
+
+                # search the list of cross streets for the cross street
                 for street in cross_list:
                     tcross = street['T_CROSS'].find(possible_cross[0])
                     fcross = street['F_CROSS'].find(possible_cross[1])
+                    
+                    # check if both cross streets are found
                     if tcross not in [-1, 0] and fcross not in [-1, 0]:
                         rlist.append(street)
+
+                    # check if both cross streets are found in reverse order
                     fcross = street['T_CROSS'].find(possible_cross[1])
                     tcross = street['F_CROSS'].find(possible_cross[0])
                     if tcross not in [-1, 0] and fcross not in [-1, 0]:
                         rlist.append(street)
+
+            # raise exceptions if the street name is not found in the json
             except KeyError:
                 rlist.append([])
+
+        # if four streets are given, two main and two cross streets
         else:
             for main_st in main_street:
-
-
                 try:
+                    # make the list of cross streets
                     if not starts_with_directional_prefix(main_st):
                         cross_list = streets_basic[main_st]
                     else:
                         cross_list = streets[main_st]  
-                    for street in cross_list:
 
+                    # search the list of cross streets for the cross street
+                    for street in cross_list:
                         tcross = street['T_CROSS'].find(possible_cross[0])
                         fcross = street['F_CROSS'].find(possible_cross[1])
+
+                        # check if both cross streets are found
                         if tcross not in [-1, 0] and fcross not in [-1, 0]:
                             rlist.append(street)
+                        # check if both cross streets are found in reverse order
                         else:
                             fcross = street['T_CROSS'].find(possible_cross[0])
                             tcross = street['F_CROSS'].find(possible_cross[1])
                             if tcross not in [-1, 0] and fcross not in [-1, 0]:
                                 rlist.append(street)
+                
+                # raise exceptions if the street name is not found in the json
                 except KeyError:
                     rlist.append([])
+    
+    # all matches are returned
     return rlist
+
 
 def extract_house_number(text):
     """
@@ -228,13 +270,33 @@ def extract_house_number(text):
     # If no match is found, return an empty string
     return '0'
 
+
 def street_search(new_menu_money_data, streets_fp):
+    """
+    This function runs the street_searcher function on the new_menu_money_data
+    and returns a list of dictionaries with the cross streets appended. It then
+    unpacks the cross streets and appends them to the end of each row in the
+    new_menu_money_data list (making tidy data). The function also returns the
+    fieldnames for the CSV file.
+
+    Args:
+    - new_menu_money_data (list of dicts): The data to be processed
+    - streets_fp (Path): The filepath to the streets.json file
+
+    """
+    # return-list
     final_menu_money = [] 
+
+    # run street_searcher on each row in the new_menu_money_data
     for i, row in enumerate(new_menu_money_data):
         print(f"Processing row {i}")
         menu_addrs = ast.literal_eval(row['addresses'])
+
+        # check the length of the list of addresses, skip if empty
         if len(menu_addrs) == 0:
             continue
+
+        # if one address is given
         elif len(menu_addrs) == 1:
             main_street = menu_addrs[0]
             cross_streets = street_searcher(main_street)
@@ -242,6 +304,8 @@ def street_search(new_menu_money_data, streets_fp):
                 row['cross_streets'] = cross_streets
             else:
                 row['cross_streets'] = []
+
+        # if two addresses are given
         elif len(menu_addrs) == 2:
             main_street = menu_addrs[0]
             cross_street = menu_addrs[1]
@@ -250,6 +314,8 @@ def street_search(new_menu_money_data, streets_fp):
                 row['cross_streets'] = cross_streets
             else:
                 row['cross_streets'] = []
+
+        # if three addresses are given
         elif len(menu_addrs) == 3:
             main_street = menu_addrs[0]
             cross_street = menu_addrs[1:]
@@ -258,6 +324,8 @@ def street_search(new_menu_money_data, streets_fp):
                 row['cross_streets'] = cross_streets
             else:
                 row['cross_streets'] = []
+        
+        # if four addresses are given
         elif len(menu_addrs) == 4:
             main_street = [menu_addrs[0], menu_addrs[2]]
             cross_street = [menu_addrs[1], menu_addrs[3]]
@@ -266,13 +334,22 @@ def street_search(new_menu_money_data, streets_fp):
                 row['cross_streets'] = cross_streets
             else:
                 row['cross_streets'] = []
+
         final_menu_money.append(row)
     
-    # Unpack values from the 'cross_streets' column and add those columns to the end of each row
+    # return-list
     unpacked_final_menu_money = []
+
+    # unpack values from the 'cross_streets' column 
+    # and add those columns to the end of each row to make tidy data
     for row in final_menu_money:
+
+        # check if the cross_streets column is empty
         cross_streets = row.get('cross_streets', [])
+
+        # if the cross_streets column is not empty
         if cross_streets:
+            # for each cross street, append a new row to the return-list
             for cross_street in cross_streets:
                 if isinstance(cross_street, list):
                     new_row = {
@@ -339,19 +416,24 @@ def street_search(new_menu_money_data, streets_fp):
     return unpacked_final_menu_money, fieldnames
 
 def main():
+
+    # define the filepaths
     final_menu_money_fp = Path.cwd() / 'gitmoney/data/final_menu_money.csv'
     streets_fp = Path.cwd() / 'gitmoney/data/streets.csv'
     menu_money = Path.cwd() / 'gitmoney/data/menu_money.csv'
     new_menu_money = Path.cwd()/ 'gitmoney/data/new_menu_money.csv'
     
+    # load the data
     street_data = load_csv(streets_fp)
     menu_money_data = load_csv(menu_money)
     cross_dict = generate_cross_streets(street_data)
     cross_dict_basic = generate_cross_streets(street_data, True)
     new_menu_money_data = load_csv(new_menu_money)
 
+    # run the street_search function
     unpacked_final_menu_money, fieldnames = street_search(new_menu_money_data, streets_fp)
 
+    # write the data to a new CSV file
     with open(final_menu_money_fp, 'w', encoding='utf-8') as csvfile:
         csvwriter = csv.DictWriter(csvfile, fieldnames=fieldnames)
         csvwriter.writeheader()
