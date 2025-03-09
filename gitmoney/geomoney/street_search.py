@@ -47,7 +47,7 @@ def generate_cross_streets(streets_data, basic = False):
     
     # For each row, make a list containing all segments with same street name
     if basic:
-        outpath = Path(os.getcwd()) / "data/streets_basics.json"
+        outpath = Path(os.getcwd()) / "gitmoney/data/streets_basics.json"
         street_dict = dict()
 
         for row in streets_data:
@@ -72,7 +72,7 @@ def generate_cross_streets(streets_data, basic = False):
         with open(outpath, 'w', encoding='utf-8') as jsonfile:
             json.dump(street_dict, jsonfile, indent=True)
     else:
-        outpath = Path(os.getcwd()) / "data/streets.json"
+        outpath = Path(os.getcwd()) / "gitmoney/data/streets.json"
         street_dict = dict()
 
         for row in streets_data:
@@ -123,13 +123,13 @@ def street_searcher(main_street, possible_cross = None):
 
     # Generates the return list and the json filepath for streets.json
     rlist = []
-    json_fp = Path(os.getcwd()) / "data/streets.json"
+    json_fp = Path(os.getcwd()) / "gitmoney/data/streets.json"
 
     # Opens streets.json and reads the json
     with open(json_fp, 'r', encoding="utf-8") as jsonfile:
         streets = json.load(jsonfile)
 
-    json_fp_basic = Path(os.getcwd()) / "data/streets_basics.json"
+    json_fp_basic = Path(os.getcwd()) / "gitmoney/data/streets_basics.json"
 
     # Opens streets.json and reads the json
     with open(json_fp_basic, 'r', encoding="utf-8") as jsonfile:
@@ -141,24 +141,20 @@ def street_searcher(main_street, possible_cross = None):
 
     if not possible_cross:
         try:
-            # Extract the house number as an integer
-            addr_num_str = extract_house_number(main_street)
-            addr_num = int(addr_num_str)
-            
-            # Extract just the street name part (remove house number)
-            street_name = main_street[len(addr_num_str):].strip()
-            
-            # Look up the street in the streets dictionary
-            cross_list = streets[street_name]
-            
+            addr_num = extract_house_number(main_street)
+            main_street_truncated = main_street.replace(addr_num, '')
+            cross_list = streets[main_street_truncated.strip()]
             for street in cross_list:
                 min_addr = int(street['MIN_ADDR'])
+                if min_addr == 0:
+                    continue
                 max_addr = int(street['MAX_ADDR'])
-                if min_addr <= addr_num <= max_addr:
+                if min_addr <= int(addr_num) <= max_addr:
                     rlist.append(street)
-        except (KeyError, ValueError):
+                    print(f"Found {main_street} at {addr_num} between {street['MIN_ADDR']} and {street['MAX_ADDR']}")
+        except (KeyError, ValueError) as e:
+            print(f"Error processing {main_street}: {e}")
             rlist.append([])
-        
     # Use the main street name to retrieve the list of cross streets
     
     elif isinstance(possible_cross, str):
@@ -232,7 +228,7 @@ def extract_house_number(text):
         return match.group()
     
     # If no match is found, return an empty string
-    return ''
+    return '0'
 
 
 if __name__ == "__main__":
@@ -249,8 +245,6 @@ if __name__ == "__main__":
     final_menu_money = [] 
     for i, row in enumerate(new_menu_money_data):
         print(f"Processing row {i}")
-        if i >= 100:
-            break
         menu_addrs = ast.literal_eval(row['addresses'])
         if len(menu_addrs) == 0:
             continue

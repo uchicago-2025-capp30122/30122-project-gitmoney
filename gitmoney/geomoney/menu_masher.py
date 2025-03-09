@@ -154,7 +154,7 @@ if __name__ == "__main__":
     for row in menu_money:
         loc_string = row['description']
         row['addresses'] = extract_street_names(loc_string)
-        if len(row) == 1:
+        if len(row['addresses']) == 1:
             row['addresses'] = extract_single_addresses(loc_string)
         new_menu_money.append(row)
 
