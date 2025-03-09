@@ -158,7 +158,7 @@ def create_visualization(geo_mm_df):
     )
     output_fp = pathlib.Path.cwd() / 'gitmoney/visualizations/gitmoney_map.html'
     # Save the deck to an HTML file for direct viewing
-    deck.to_html(output_fp, open_browser=True)
+    deck.to_html(output_fp, open_browser=False)
     
     # Also create the Dash app
     deck_html = deck.to_html(as_string=True)
