@@ -3,6 +3,7 @@ import geomoney.menu_masher
 import processing.wiki_scraper as wiki
 import processing.process_311_and_menu_money as menu_311
 import gitmoney.processing.join_alder_311_menudata as join_data
+from visualizations.ratio import create_ratio
 import pathlib
 
 def process_geo_data():
@@ -32,3 +33,8 @@ if __name__ == '__main__':
 
 
     main()
+
+
+# Creat visualizations
+    if not (cwd / 'visualizations/money_calls_scatter.html').exists():
+        create_ratio()
