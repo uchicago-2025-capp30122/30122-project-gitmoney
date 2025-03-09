@@ -342,7 +342,7 @@ def street_search(new_menu_money_data, streets_fp):
 
 
 if __name__ == "__main__":
-    final_menu_money_fp = Path.cwd() / 'gitmoney/data/final_menu_money1.csv'
+    final_menu_money_fp = Path.cwd() / 'gitmoney/data/final_menu_money.csv'
     streets_fp = Path.cwd() / 'gitmoney/data/streets.csv'
     menu_money = Path.cwd() / 'gitmoney/data/menu_money.csv'
     new_menu_money = Path.cwd()/ 'gitmoney/data/new_menu_money.csv'
