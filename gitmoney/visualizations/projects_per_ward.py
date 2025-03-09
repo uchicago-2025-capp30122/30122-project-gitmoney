@@ -23,6 +23,10 @@ def num_proj_chart_build():
     y='Number Projects, 2019-23',
     #color=alt.Color('color').scale(None),
     tooltip=['Ward', 'Number Projects, 2019-23'],
-).interactive()
+).properties(
+        #title = "Ward Menu Money Spending and 311 Calls by Category",
+        width=600,
+        height=400,
+    ).interactive()
     
     chart.save('charts/num_projects_per_ward.html')
