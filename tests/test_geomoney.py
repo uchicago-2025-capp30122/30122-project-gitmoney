@@ -1,8 +1,18 @@
 # tests for geomoney
 import pytest
-import menu_masher
-import street_search
-import data_visualization
+# Fix the imports
+import sys
+import os
+from pathlib import Path
+
+# Add the project root to the Python path
+sys.path.append(str(Path(__file__).parent.parent))
+
+# Now import the modules directly
+from gitmoney.geomoney import menu_masher
+from gitmoney.geomoney import street_search
+from gitmoney.geomoney import data_visualization
+
 from pathlib import Path
 
 
