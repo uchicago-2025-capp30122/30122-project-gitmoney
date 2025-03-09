@@ -1,22 +1,36 @@
-# Project Name
+# **Menu Money** 
+   
+# **Welocme to Menu Money!**
 
-Pick a Tag
+# **Authors**
+    Libby Seline 
+    Riley Morrison
+    Alex McMurtry 
+    Getnet Dejene
 
-🚩🛑: WORK IN PROGRESS. See wiki for details 
+1. **Abstract**
+    The Menu Money project collects and analyzes Chicago datasets—specifically 
+    311 service call data—alongside web-scraped data on aldermanic expenditures 
+    from the "Menu" program, organized by district. GIS data on Menu program 
+    expenditures has been extracted from the "Menu" program dataset. Data on 
+    aldermen and their tenure has been scraped from Wikipedia. In addition to 
+    aldermanic and Menu money data, 311 call records have been extracted from 
+    the Chicago Data Portal via its API. The project aims to better understand 
+    the relationship between Menu program expenditures and 311 service calls 
+    while providing data visualization to illustrate these insights.
 
-✅🚴: Good to go. Follow instructions to run
+2. **Data Sources:**
 
-🟡🚧: Done but scripts require lots of hand checking so approach with caution. See instructions
+    2.1  JakeJSmith's scraped Alder menu money database with GIS data: 
+        https://github.com/jakejsmith/ChicagoMenuMoney/blob/main/data-dictionary.md
 
-# Goals
+    2.2 Chicago Data Portal (API): 311 service call records
+        https://data.cityofchicago.org/Service-Requests/311-Service-Requests/v6vf-nfxy/about_data
 
-# Data Source
-How can you get the data?
-
-# Regrets
-If you were to re-do the project, would you change anything?
-
-# How to Run
+    3.3 Wikipedia List of Chicago Aldermen:
+        https://en.wikipedia.org/wiki/List_of_Chicago_alderpersons_since_1923
+      
+3.  **How to run the project:**
 
 All of subfunctions of gitmoney can be run using the following command:
 
