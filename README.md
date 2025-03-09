@@ -20,7 +20,7 @@ If you were to re-do the project, would you change anything?
 
 All of subfunctions of gitmoney can be run using the following command:
 
-"uv run gitmoney/run_and_visualize.py".
+"uv run gitmoney/run_and_visualize.py -a".
 
 To overwrite existing data, or to run a specific part, please use the
 following arguments:
