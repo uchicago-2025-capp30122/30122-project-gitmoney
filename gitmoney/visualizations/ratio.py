@@ -96,15 +96,15 @@ def create_ratio():
                 text='text'
             )
     ).properties(
-       #title = "Ward Menu Money Spending and 311 Calls by Category",
-        width=800,
-        height=700,
+        #title = "Ward Menu Money Spending and 311 Calls by Category",
+        width=457,
+        height=400,
     ).configure_axis(
         labelFontSize=15,
         titleFontSize=20,
         grid = False
-    ).configure_title(
-        fontSize=30
+    #).configure_title(
+      #  fontSize=30
     ).configure_legend(
         labelFontSize=18,
         titleFontSize=20,
