@@ -14,14 +14,16 @@
     from the "Menu" program, organized by district. GIS data on Menu program 
     expenditures has been extracted from the "Menu" program dataset. Data on 
     aldermen and their tenure has been scraped from Wikipedia. In addition to 
-    aldermanic and Menu money data, 311 call records have been extracted from 
+    aldermanic and Menu program data, 311 call records have been extracted from 
     the Chicago Data Portal via its API. The project aims to better understand 
-    the relationship between Menu program expenditures and 311 service calls 
-    while providing data visualization to illustrate these insights.
+    the relationship between Menu program expenditures and 311 service calls, 
+    while also exploring whether these expenditures address constituents’ 
+    concerns about their community, and provides data visualization to illustrate 
+    these insights.
 
 2. **Data Sources:**
 
-    2.1  JakeJSmith's scraped Alder menu money database with GIS data: 
+    2.1 JakeJSmith's scraped Alder menu money database with GIS data: 
         https://github.com/jakejsmith/ChicagoMenuMoney/blob/main/data-dictionary.md
 
     2.2 Chicago Data Portal (API): 311 service call records
