@@ -141,12 +141,22 @@ def street_searcher(main_street, possible_cross = None):
 
     if not possible_cross:
         try:
-            cross_list = streets[main_street]
+            # Extract the house number as an integer
+            addr_num_str = extract_house_number(main_street)
+            addr_num = int(addr_num_str)
+            
+            # Extract just the street name part (remove house number)
+            street_name = main_street[len(addr_num_str):].strip()
+            
+            # Look up the street in the streets dictionary
+            cross_list = streets[street_name]
+            
             for street in cross_list:
-                addr_num = extract_house_number(main_street)
-                if street['MIN_ADDR'] <= addr_num <= street['MAX_ADDR']:
-                    rlist.append(f"{addr_num} {street}")
-        except KeyError:
+                min_addr = int(street['MIN_ADDR'])
+                max_addr = int(street['MAX_ADDR'])
+                if min_addr <= addr_num <= max_addr:
+                    rlist.append(street)
+        except (KeyError, ValueError):
             rlist.append([])
         
     # Use the main street name to retrieve the list of cross streets
@@ -230,7 +240,7 @@ if __name__ == "__main__":
     streets_fp = Path.cwd() / 'data/streets.csv'
     menu_money = Path.cwd() / 'data/menu_money.csv'
     new_menu_money = Path.cwd()/ 'data/new_menu_money.csv'
-    final_menu_money_fp = Path.cwd() / 'data/final_menu_money_converted.csv'
+    final_menu_money_fp = Path.cwd() / 'data/final_menu_money1.csv'
     street_data = load_csv(streets_fp)
     menu_money_data = load_csv(menu_money)
     cross_dict = generate_cross_streets(street_data)
@@ -238,6 +248,8 @@ if __name__ == "__main__":
     new_menu_money_data = load_csv(new_menu_money)
     final_menu_money = [] 
     for i, row in enumerate(new_menu_money_data):
+        if i >= 1000:
+            break
         print(f"Processing row {i}")
         menu_addrs = ast.literal_eval(row['addresses'])
         if len(menu_addrs) == 0:
@@ -344,8 +356,8 @@ if __name__ == "__main__":
         'MAX_ADDR'
         ]
 
-with open(final_menu_money_fp, 'w', encoding='utf-8') as csvfile:
-    csvwriter = csv.DictWriter(csvfile, fieldnames=fieldnames)
-    csvwriter.writeheader()
-    for row in unpacked_final_menu_money:
-        csvwriter.writerow(row)
+    with open(final_menu_money_fp, 'w', encoding='utf-8') as csvfile:
+        csvwriter = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        csvwriter.writeheader()
+        for row in unpacked_final_menu_money:
+            csvwriter.writerow(row)

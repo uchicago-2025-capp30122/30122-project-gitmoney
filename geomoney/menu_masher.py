@@ -30,21 +30,25 @@ def exclusions():
             rlst.append(ord + st)
     return rlst
 
-
 def extract_street_names(text):
     """
     Extract street names from the given text.
     """
-    # Remove directional words and parenthetical numbers
+    # Remove directional words and clean up text
     text = re.sub(r'\b(ON|FROM|TO|Dead End)\b\s*', '', text, flags=re.IGNORECASE)
-    text = re.sub(r'\([^)]*\)', '', text)
     
-    # Define patterns to match street names
+    # New pattern to match Chicago-style street names like "W 51 ST (5100 S)"
+    chicago_pattern = r'[NSEW]\s+\d+(?:ST|ND|RD|TH)?\s+(?:ST|AV|AVE?|BLVD|DR|PL|PKWY|RD)\s*(?:\(\d+\s*[NSEW]\))?'
+    
+    # Original patterns
     patterns = [
         r'\b[NSEW]?\s*[A-Z]+(?:\s+[A-Z]+)*\s+(?:RD|AV|AVE?|ST|BLVD|BV|DR|CT|PL|PKY|PKWY|CIR)\b',
         r'\b[NSEW]?\s*\d+(?:ST|ND|RD|TH)?\s+(?:ST|PL)\b',
         r'\b[NSEW]?\s*AVENUE\s+[A-Z]\b'
     ]
+    
+    # Add the Chicago pattern to our list
+    patterns.append(chicago_pattern)
     
     # Store all matches with their positions
     all_matches = []
@@ -62,43 +66,39 @@ def extract_street_names(text):
     seen = set()
     
     for _, street in all_matches:
-        if street not in seen and len(street) > 1 and street:
-            seen.add(street)
-            if re.search(r'\s[NSEW]\s', street):
-                parts = re.split(r'\s+(?=[NSEW]\s)', street)
-                for part in parts:
-                    if part.strip() and part.strip() not in seen and len(part.strip()) > 2:
-                        seen.add(part.strip())
-                        streets.append(convert_street_number_suffix(convert_street_abbreviation(part.strip())))
-            else:
-                streets.append(convert_street_number_suffix(convert_street_abbreviation(street)))
+        # Extract just the street name without parenthetical info
+        clean_street = re.sub(r'\s*\([^)]*\)', '', street).strip()
+        
+        if clean_street not in seen and len(clean_street) > 1:
+            seen.add(clean_street)
+            streets.append(convert_street_number_suffix(convert_street_abbreviation(clean_street)))
     
     return streets
+
 def convert_street_number_suffix(street_name):
     """
-    Convert street number suffix to the correct ordinal form.
+    Convert street number suffix to the correct ordinal form only for street names.
     """
+    # Pattern that targets numbers only when they appear to be part of street names
+    # and don't already have suffixes
+    pattern = r'\b(\d+)(?!\s*(?:ST|ND|RD|TH))\s+(?:ST|AVE?|AVENUE|ROAD|STREET|BOULEVARD|DRIVE|PLACE|BLVD|BV|DR|CT|PL|PKY|PKWY|CIR)\b'
+    
     def ordinal(n):
-        """
-        Convert an integer to its ordinal representation.
-        """
+        """Convert an integer to its ordinal representation."""
         if 10 <= n % 100 <= 20:
             suffix = 'TH'
         else:
             suffix = {1: 'ST', 2: 'ND', 3: 'RD'}.get(n % 10, 'TH')
         return str(n) + suffix
-
-    # Define a pattern to match the street number and type
-    pattern = r'\b(\d+)\b'
     
     # Replace number suffixes with correct ordinal forms
     def replace(match):
         number = int(match.group(1))
-        return ordinal(number)
+        return ordinal(number) + " "
     
-    street_name = re.sub(pattern, replace, street_name)
+    # Apply the replacement once and return the result
+    return re.sub(pattern, replace, street_name)
     
-    return street_name
 
 def extract_single_addresses(text):
     """
