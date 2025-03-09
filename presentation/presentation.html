@@ -69,12 +69,27 @@
         margin-bottom: 10px;
         text-align: center;
       }
+      h3 {
+        font-size: 1.3em;
+        color: #1a2a44;
+        max-width: 800px;
+        margin: 0 auto 15px;
+        text-align: left;
+      }
+      ul {
+        font-size: 1em;
+        color: #2a3b5e;
+        max-width: 800px;
+        margin: 0 auto 15px;
+        text-align: left;
+        padding: 5px 12px;
+      }
       p {
         font-size: 1em;
         color: #2a3b5e;
         max-width: 800px;
         margin: 0 auto 15px;
-        text-align: center;
+        text-align: left;
       }
       .chart-section {
         padding: 15px;
@@ -98,6 +113,13 @@
         color: #4682b4;
         text-align: center;
         margin-bottom: 10px;
+      }
+      .chart-container p {
+        font-size: 1em;
+        color: #2a3b5e;
+        max-width: 800px;
+        margin: 0 auto 15px;
+        text-align: center;
       }
       iframe {
         width: 100%;
@@ -152,53 +174,142 @@
       <section>
         <h2>Introduction</h2>
         <p>
-          Welcome to our analysis of Chicago’s 311 service calls and aldermanic
-          expenditures from 2018 to 2023. We’ve combined public datasets from
-          the Chicago Data Portal with web-scraped alderpeople data from
-          Wikipedia and Menu program expenditures, mapped with GIS ward
-          boundaries.
+          Every year, each representative of the Chicago City Council receives
+          $1.5 million to spend on one or more projects in their ward, and these
+          funds are referred to as
+          <a
+            href="https://github.com/jakejsmith/ChicagoMenuMoney/blob/main/data-dictionary.md"
+          >
+            "menu money."
+          </a>
+          Jake J. Smith set up a dataset with all of these projects from 2012 to
+          2023. We decided to combine data with 311 calls to learn:
+          <b>
+            are these projects being used to address constituents' concerns
+            about their community?</b
+          >
+          <br />
+          <br />
+          Using the
+          <a
+            href="https://data.cityofchicago.org/Administration-Finance/Contracts/rsxa-ify5/about_data"
+            >Chicago Data Portal</a
+          >
+          and web-scraped alderpeople data from
+          <a
+            href="https://en.wikipedia.org/wiki/List_of_Chicago_alderpersons_since_1923"
+          >
+            Wikipedia</a
+          >
+          we ultimately say
+          <b>yes, 311 calls do coincide with Menu Money projects.</b> Explore
+          the charts below to understand why.
         </p>
+        <h3>Key Vocabulary</h3>
+        <p>
+          <b>Ward</b>: One of 50 geographic boundaries inside the city of
+          Chicago.
+        </p>
+        <p>
+          <b>Alderperson</b>: A member on the city council representing a ward
+        </p>
+        <p>
+          <b>Menu Money</b>: Each ward is awarded $1.5 million annually to spend
+          on one or more projects to benefit the community.
+        </p>
+        <p>
+          <b>311 Call</b>: Cities across the country have a 311 line set up so
+          citizens can tell their city about non-emergent problems. This can
+          include grafitti, noise complaints, etc.
+        </p>
+        <p>
+          <b>Category</b>: Menu money projects are predefined. Team Gitmoney
+          mapped these categories to 311 calls. For example:
+        </p>
+        <ul>
+          <li>
+            <u>Beautification</u>: Calls about this could be about graffiti
+            removal, cleaning a vacant lot, weed removal
+          </li>
+          <li>
+            <u>Bike Infrastructure</u>: Concerns about vehicles in bike lanes or
+            trash in bike lanes would fall into this category
+          </li>
+          <li>
+            <u>Lighting</u>: A call about a light out in an alley or a viaduct
+            would be considered a lighting concern
+          </li>
+          <li>
+            <u>Parks & Recreation</u>: A call for a clean and green program
+            request fell into this category
+          </li>
+          <li>
+            <u>Plants, Gardens, & Sustainability</u>: tree removal or tree
+            planting requests fell into this category
+          </li>
+          <li>
+            <u>Schools and Libraries</u>: No 311 calls were in this category
+          </li>
+          <li>
+            <u>Security Cameras</u>: Cameras have been installed to prevent fly
+            dumping — which when trash is disposed of on property without a
+            permit. So, we looked at 311 calls about this for this category.
+          </li>
+          <li>
+            <u>Streets and Transportation</u>: There are 13 different 311
+            categories related to streets and transportation. Calls include
+            complaints about street light outages, potholes, requests for street
+            cleaning, and sign repair requests.
+          </li>
+        </ul>
       </section>
 
-      <section class="chart-section">
-        <h2>Findings</h2>
-        <p>Explore our key insights below through interactive charts.</p>
-        <div class="chart-container">
-          <h3>311 Calls by Year & Category</h3>
-          <iframe src="charts/chart_1.html"></iframe>
-        </div>
-        <div class="chart-container">
-          <h3>311 Calls by Ward & Category</h3>
-          <iframe src="charts/chart_2.html"></iframe>
-        </div>
-        <div class="chart-container">
-          <h3>Funds Spent by Year & Category</h3>
-          <iframe src="charts/chart_3.html"></iframe>
-        </div>
-        <div class="chart-container">
-          <h3>Funds Spent by Ward & Category</h3>
-          <iframe src="charts/chart_4.html"></iframe>
-        </div>
-        <div class="chart-container">
-          <h3>
-            311 calls focus on Streets, Beautification, but Menu Money funds
-            only go to Streets
-          </h3>
-          <iframe src="charts/money_calls_scatter.html"></iframe>
-        </div>
-        <div class="chart-container">
-          <h3>Chicago Ward Map Visualization</h3>
-          <iframe src="../gitmoney/visualizations/gitmoney_map.html"></iframe>
-        </div>
-      </section>
-
+      <!-- 
       <section>
         <h2>Summary</h2>
         <p>Our analysis reveals [insert key findings here].</p>
       </section>
+-->
+      <section class="chart-section">
+        <h2>Findings</h2>
+        <p>Explore our key insights below through interactive charts.</p>
+        <div class="chart-container">
+          <h3>
+            311 calls focus on streets, beautification, but Menu Money funds
+            only go to Streets
+          </h3>
+          <h4>Subhead</h4>
+          <iframe src="charts/money_calls_scatter.html"></iframe>
+        </div>
+        <div class="chart-container">
+          <h3>FINDING</h3>
+          <h4>Chicago Ward Map Visualization</h4>
+          <iframe src="../gitmoney/visualizations/gitmoney_map.html"></iframe>
+        </div>
+        <div class="chart-container">
+          <h3>FINDING</h3>
+          <h4>311 Calls by Year & Category</h4>
+          <iframe src="charts/chart_1.html"></iframe>
+        </div>
+        <div class="chart-container">
+          <h3>FINDING</h3>
+          <h4>311 Calls by Ward & Category</h4>
+          <iframe src="charts/chart_2.html"></iframe>
+        </div>
+        <div class="chart-container">
+          <h3>FINDING</h3>
+          <h4>Funds Spent by Year & Category</h4>
+          <iframe src="charts/chart_3.html"></iframe>
+        </div>
+        <div class="chart-container">
+          <h3>FINDING</h3>
+          <h4>Funds Spent by Ward & Category</h4>
+          <iframe src="charts/chart_4.html"></iframe>
+        </div>
+      </section>
 
       <footer>
-        <p>Presented by Git Money | March 6, 2025</p>
+        <p>Presented by Git Money | March 10, 2025</p>
       </footer>
     </div>
   </body>
