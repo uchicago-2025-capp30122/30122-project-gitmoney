@@ -1,4 +1,4 @@
-from street_search import load_csv
+from .street_search import load_csv
 from pathlib import Path
 import os
 import csv
@@ -143,10 +143,7 @@ def convert_street_abbreviation(street_name):
     
     return street_name
 
-
-
-if __name__ == "__main__":
-
+def main():
     cwd = Path(os.getcwd())
     menu_money_fp = cwd / "gitmoney/data/menu_money.csv"
     json_fp = cwd / "gitmoney/data/streets.json"
@@ -180,3 +177,7 @@ if __name__ == "__main__":
         csvwriter.writeheader()
         for row in new_menu_money:
             csvwriter.writerow(row)
+
+if __name__ == "__main__":
+    main()
+

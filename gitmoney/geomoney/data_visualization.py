@@ -52,7 +52,7 @@ def create_data_df():
     # Create a GeoDataFrame
     streets_gdf = gpd.GeoDataFrame(streets_df, geometry='geometry')
     streets_gdf.crs = 'EPSG:4326'
-    geo_mm_df['cost'] = geo_mm_df['cost'].apply(convert_cost)
+
     # Perform the join operation
     geo_mm_df = streets_gdf.merge(mm_df,
                                   left_on='OBJECTID',
@@ -68,10 +68,10 @@ def create_data_df():
     
     # IMPORTANT: Make sure we're working with WGS84 (EPSG:4326) for web maps
     geo_mm_df = geo_mm_df.to_crs(epsg=4326)
-    
+    geo_mm_df['cost'] = geo_mm_df['cost'].apply(convert_cost)
     return geo_mm_df
 
-def create_visualization(mean_lat, mean_lon):
+def create_visualization(geo_mm_df):
     # Calculate mean latitude and longitude for the viewport
     mean_lat = geo_mm_df.geometry.centroid.y.mean()
     mean_lon = geo_mm_df.geometry.centroid.x.mean()
@@ -156,18 +156,21 @@ def create_visualization(mean_lat, mean_lon):
         map_style='https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',  # Open source style
         tooltip={"html": "<b>{name}</b><br>Year: {year}<br>Cost: {cost}<br>Category: {category}<br>Description: {description} <br>Ward: {ward} <br>Alderman: {alderman} <br>Calls: {calls} <br>Number of Projects: {num_projects}"}
     )
-
+    output_fp = pathlib.Path.cwd() / 'gitmoney/visualizations/gitmoney_map.html'
     # Save the deck to an HTML file for direct viewing
-    deck.to_html('visualizations/gitmoney_map.html', open_browser=True)
+    deck.to_html(output_fp, open_browser=True)
     
     # Also create the Dash app
     deck_html = deck.to_html(as_string=True)
 
-if __name__ == "__main__":
+def main():
     # Load the data
     geo_mm_df = create_data_df()
        
     create_visualization(geo_mm_df)
 
+
+if __name__ == "__main__":
+    main()
 
     

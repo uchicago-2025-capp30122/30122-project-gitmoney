@@ -151,9 +151,7 @@ def street_searcher(main_street, possible_cross = None):
                 max_addr = int(street['MAX_ADDR'])
                 if min_addr <= int(addr_num) <= max_addr:
                     rlist.append(street)
-                    print(f"Found {main_street} at {addr_num} between {street['MIN_ADDR']} and {street['MAX_ADDR']}")
         except (KeyError, ValueError) as e:
-            print(f"Error processing {main_street}: {e}")
             rlist.append([])
     # Use the main street name to retrieve the list of cross streets
     
@@ -340,8 +338,7 @@ def street_search(new_menu_money_data, streets_fp):
         ]
     return unpacked_final_menu_money, fieldnames
 
-
-if __name__ == "__main__":
+def main():
     final_menu_money_fp = Path.cwd() / 'gitmoney/data/final_menu_money.csv'
     streets_fp = Path.cwd() / 'gitmoney/data/streets.csv'
     menu_money = Path.cwd() / 'gitmoney/data/menu_money.csv'
@@ -360,3 +357,7 @@ if __name__ == "__main__":
         csvwriter.writeheader()
         for row in unpacked_final_menu_money:
             csvwriter.writerow(row)
+
+
+if __name__ == "__main__":
+    main()
