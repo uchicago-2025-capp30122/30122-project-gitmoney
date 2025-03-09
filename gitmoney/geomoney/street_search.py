@@ -12,10 +12,14 @@ def convert_cost(cost):
         # First remove any currency symbols and commas
         cost_str = cost.replace('$', '').replace(',', '')
         cost_float = float(cost_str)
+
     except (ValueError, TypeError):
         # If conversion fails, set to 0
         cost_float = 0.0
+
     return cost_float
+
+
 def load_csv(path_to_csv: Path):
     """
     Read a .csv file from a filepath. This is used to load menu_money and 
@@ -30,11 +34,7 @@ def load_csv(path_to_csv: Path):
     data = []
     with open(path_to_csv, 'r', encoding="utf-8") as filereader:
         csvreader = csv.DictReader(filereader)
-        # counter = 0
         for row in csvreader:
-            # counter += 1
-            # if counter >= 100:
-            # break
             data.append(row)
         return data
 
@@ -233,8 +233,6 @@ def extract_house_number(text):
 def street_search(new_menu_money_data, streets_fp):
     final_menu_money = [] 
     for i, row in enumerate(new_menu_money_data):
-        if i >= 100:
-            break
         print(f"Processing row {i}")
         menu_addrs = ast.literal_eval(row['addresses'])
         if len(menu_addrs) == 0:
