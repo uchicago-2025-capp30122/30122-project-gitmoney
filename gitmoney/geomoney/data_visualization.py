@@ -24,13 +24,26 @@ def cost_to_color(cost_value, min_cost, max_cost):
     return [r, g, b, 255]  # RGBA
 
 
-if __name__ == "__main__":
-    # Load the data
-    mm_csv = pathlib.Path.cwd() / 'data/final_menu_money_converted.csv' 
-    streets_csv = pathlib.Path.cwd() / 'data/streets.csv' 
+def convert_cost(cost):
+    try:
+        # First remove any currency symbols and commas
+        if isinstance(cost, str):
+            cost_str = cost.replace('$', '').replace(',', '')
+            cost_float = float(cost_str)
+        else:
+            cost_float = float(cost)
+    except (ValueError, TypeError):
+        # If conversion fails, set to 0
+        cost_float = 0.0
+    return cost_float
+
+def create_data_df():
+        # Load the data
+    mm_csv = pathlib.Path.cwd() / 'gitmoney/data/final_menu_money.csv' 
+    streets_csv = pathlib.Path.cwd() / 'gitmoney/data/streets.csv' 
     mm_df = pd.read_csv(mm_csv).drop_duplicates()
     streets_df = pd.read_csv(streets_csv)
-    aldermanic_fp = pathlib.Path.cwd() / 'data/calls_money_pivot_with_alder.csv'
+    aldermanic_fp = pathlib.Path.cwd() / 'gitmoney/data/calls_money_pivot_with_alder.csv'
     aldermanic_data = pd.read_csv(aldermanic_fp)
     
     # Convert the 'the_geom' column from WKT strings to geometry objects
@@ -39,7 +52,7 @@ if __name__ == "__main__":
     # Create a GeoDataFrame
     streets_gdf = gpd.GeoDataFrame(streets_df, geometry='geometry')
     streets_gdf.crs = 'EPSG:4326'
-    
+    geo_mm_df['cost'] = geo_mm_df['cost'].apply(convert_cost)
     # Perform the join operation
     geo_mm_df = streets_gdf.merge(mm_df,
                                   left_on='OBJECTID',
@@ -56,11 +69,12 @@ if __name__ == "__main__":
     # IMPORTANT: Make sure we're working with WGS84 (EPSG:4326) for web maps
     geo_mm_df = geo_mm_df.to_crs(epsg=4326)
     
+    return geo_mm_df
+
+def create_visualization(mean_lat, mean_lon):
     # Calculate mean latitude and longitude for the viewport
     mean_lat = geo_mm_df.geometry.centroid.y.mean()
     mean_lon = geo_mm_df.geometry.centroid.x.mean()
-
-
     # Prepare data for Pydeck - IMPORTANT: Ensure coordinates are in [longitude, latitude] format
     path_data = []
     zipped = zip(
@@ -104,20 +118,6 @@ if __name__ == "__main__":
                     'num_projects': str(num_projects)
                 })
 
-    # Debugging: Print the path data to verify
-    print(f"Number of paths: {len(path_data)}")
-    if path_data:
-        print(f"Sample path: {path_data[0]['path'][:2]}")
-        print(f"Full first path: {path_data[0]['path']}")
-        
-        # Check the bounds of the first path to make sure it's in a reasonable area
-        min_lon = min(p[0] for p in path_data[0]['path'])
-        max_lon = max(p[0] for p in path_data[0]['path'])
-        min_lat = min(p[1] for p in path_data[0]['path'])
-        max_lat = max(p[1] for p in path_data[0]['path'])
-
-    # Default color for categories not in the mapping
-    default_color = [128, 128, 128, 255]  # Gray
 
     # Add color to each path based on category
     for path in path_data:
@@ -162,3 +162,12 @@ if __name__ == "__main__":
     
     # Also create the Dash app
     deck_html = deck.to_html(as_string=True)
+
+if __name__ == "__main__":
+    # Load the data
+    geo_mm_df = create_data_df()
+       
+    create_visualization(geo_mm_df)
+
+
+    

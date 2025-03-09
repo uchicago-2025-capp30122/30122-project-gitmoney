@@ -230,20 +230,11 @@ def extract_house_number(text):
     # If no match is found, return an empty string
     return '0'
 
-
-if __name__ == "__main__":
-
-    streets_fp = Path.cwd() / 'gitmoney/data/streets.csv'
-    menu_money = Path.cwd() / 'gitmoney/data/menu_money.csv'
-    new_menu_money = Path.cwd()/ 'gitmoney/data/new_menu_money.csv'
-    final_menu_money_fp = Path.cwd() / 'gitmoney/data/final_menu_money1.csv'
-    street_data = load_csv(streets_fp)
-    menu_money_data = load_csv(menu_money)
-    cross_dict = generate_cross_streets(street_data)
-    cross_dict_basic = generate_cross_streets(street_data, True)
-    new_menu_money_data = load_csv(new_menu_money)
+def street_search(new_menu_money_data, streets_fp):
     final_menu_money = [] 
     for i, row in enumerate(new_menu_money_data):
+        if i >= 100:
+            break
         print(f"Processing row {i}")
         menu_addrs = ast.literal_eval(row['addresses'])
         if len(menu_addrs) == 0:
@@ -349,6 +340,22 @@ if __name__ == "__main__":
         'MIN_ADDR',
         'MAX_ADDR'
         ]
+    return unpacked_final_menu_money, fieldnames
+
+
+if __name__ == "__main__":
+    final_menu_money_fp = Path.cwd() / 'gitmoney/data/final_menu_money1.csv'
+    streets_fp = Path.cwd() / 'gitmoney/data/streets.csv'
+    menu_money = Path.cwd() / 'gitmoney/data/menu_money.csv'
+    new_menu_money = Path.cwd()/ 'gitmoney/data/new_menu_money.csv'
+    
+    street_data = load_csv(streets_fp)
+    menu_money_data = load_csv(menu_money)
+    cross_dict = generate_cross_streets(street_data)
+    cross_dict_basic = generate_cross_streets(street_data, True)
+    new_menu_money_data = load_csv(new_menu_money)
+
+    unpacked_final_menu_money, fieldnames = street_search(new_menu_money_data, streets_fp)
 
     with open(final_menu_money_fp, 'w', encoding='utf-8') as csvfile:
         csvwriter = csv.DictWriter(csvfile, fieldnames=fieldnames)

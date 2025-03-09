@@ -68,10 +68,17 @@ def extract_street_names(text):
                 parts = re.split(r'\s+(?=[NSEW]\s)', street)
                 for part in parts:
                     if part.strip() and part.strip() not in seen and len(part.strip()) > 2:
-                        seen.add(part.strip())
-                        streets.append(convert_street_number_suffix(convert_street_abbreviation(part.strip())))
+                        cleaned_street = convert_street_number_suffix(convert_street_abbreviation(part))
+                        if cleaned_street not in seen:
+                            seen.add(cleaned_street)
+                        streets.append(cleaned_street)
+            
+
             else:
-                streets.append(convert_street_number_suffix(convert_street_abbreviation(street)))
+                cleaned_street = convert_street_number_suffix(convert_street_abbreviation(street))
+                if cleaned_street not in seen:
+                    seen.add(cleaned_street)
+                streets.append(cleaned_street)
     
     return streets
 
@@ -79,9 +86,8 @@ def convert_street_number_suffix(street_name):
     """
     Convert street number suffix to the correct ordinal form only for street names.
     """
-    # Pattern that targets numbers only when they appear to be part of street names
-    # and don't already have suffixes
-    pattern = r'\b(\d+)(?!\s*(?:ST|ND|RD|TH))\s+(?:ST|AVE?|AVENUE|ROAD|STREET|BOULEVARD|DRIVE|PLACE|BLVD|BV|DR|CT|PL|PKY|PKWY|CIR)\b'
+    # Special pattern for numbered streets (where ST refers to STREET)
+    numbered_street_pattern = r'\b(\d+)\s+(ST|PL)\b'
     
     def ordinal(n):
         """Convert an integer to its ordinal representation."""
@@ -91,13 +97,16 @@ def convert_street_number_suffix(street_name):
             suffix = {1: 'ST', 2: 'ND', 3: 'RD'}.get(n % 10, 'TH')
         return str(n) + suffix
     
-    # Replace number suffixes with correct ordinal forms
-    def replace(match):
+    # Replace function for numbered streets
+    def numbered_replace(match):
         number = int(match.group(1))
-        return ordinal(number) + " "
+        street_type = match.group(2)
+        return ordinal(number) + " " + street_type
     
-    # Apply the replacement once and return the result
-    return re.sub(pattern, replace, street_name)
+    # First handle numbered streets
+    result = re.sub(numbered_street_pattern, numbered_replace, street_name)
+    
+    return result
     
 
 def extract_single_addresses(text):
