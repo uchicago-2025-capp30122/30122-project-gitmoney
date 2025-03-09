@@ -96,7 +96,7 @@ def create_ratio():
                 text='text'
             )
     ).properties(
-        title = "Ward Menu Money Spending and 311 Calls by Category",
+       #title = "Ward Menu Money Spending and 311 Calls by Category",
         width=800,
         height=700,
     ).configure_axis(
@@ -112,7 +112,7 @@ def create_ratio():
         labelLimit=500
     ).interactive()
 
-    chart.save('money_calls_scatter.html')
+    chart.save('charts/money_calls_scatter.html')
 
 
 # # with matplotlib

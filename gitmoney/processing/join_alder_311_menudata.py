@@ -8,21 +8,6 @@ import processing.wiki_scraper as wiki
 
 data_file = pathlib.Path(__file__).parent.parent / "data/"
 
-# Generate all data
-def generate_data():
-    """
-    Run additional scripts in processing to ensure anyone can generate our 
-    datafiles.
-    inputs:
-        None
-    outputs:
-        None
-    """
-    wiki_data = wiki.clean_join_wiki_data()
-    ## Riley, add 311 cleaner
-    ## Alex, add geo_money
-
-
 def join_calls_alders():
     """
     Joins data with each alderperson to a database with calls for
