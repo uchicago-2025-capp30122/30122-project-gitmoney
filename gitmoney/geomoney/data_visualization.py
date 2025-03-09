@@ -38,7 +38,8 @@ def convert_cost(cost):
     return cost_float
 
 def create_data_df():
-        # Load the data
+
+    # load the data
     mm_csv = pathlib.Path.cwd() / 'gitmoney/data/final_menu_money.csv' 
     streets_csv = pathlib.Path.cwd() / 'gitmoney/data/streets.csv' 
     mm_df = pd.read_csv(mm_csv).drop_duplicates()
@@ -46,14 +47,14 @@ def create_data_df():
     aldermanic_fp = pathlib.Path.cwd() / 'gitmoney/data/calls_money_pivot_with_alder.csv'
     aldermanic_data = pd.read_csv(aldermanic_fp)
     
-    # Convert the 'the_geom' column from WKT strings to geometry objects
+    # convert the 'the_geom' column from WKT strings to geometry objects
     streets_df['geometry'] = streets_df['the_geom'].apply(shapely.wkt.loads)
     
-    # Create a GeoDataFrame
+    # create a GeoDataFrame
     streets_gdf = gpd.GeoDataFrame(streets_df, geometry='geometry')
     streets_gdf.crs = 'EPSG:4326'
 
-    # Perform the join operation
+    # perform the join operation
     geo_mm_df = streets_gdf.merge(mm_df,
                                   left_on='OBJECTID',
                                   right_on='OBJECTID',
@@ -66,16 +67,17 @@ def create_data_df():
     geo_mm_df = geo_mm_df.drop_duplicates()
     geo_mm_df = geo_mm_df[geo_mm_df['year'].isin([2019, 2020, 2021, 2022, 2023])]
     
-    # IMPORTANT: Make sure we're working with WGS84 (EPSG:4326) for web maps
+    # crs to (EPSG:4326) for web maps
     geo_mm_df = geo_mm_df.to_crs(epsg=4326)
     geo_mm_df['cost'] = geo_mm_df['cost'].apply(convert_cost)
     return geo_mm_df
 
 def create_visualization(geo_mm_df):
-    # Calculate mean latitude and longitude for the viewport
+    # calculate mean latitude and longitude for the viewport
     mean_lat = geo_mm_df.geometry.centroid.y.mean()
     mean_lon = geo_mm_df.geometry.centroid.x.mean()
-    # Prepare data for Pydeck - IMPORTANT: Ensure coordinates are in [longitude, latitude] format
+
+    # prepare data for Pydeck
     path_data = []
     zipped = zip(
         geo_mm_df.geometry,
@@ -89,7 +91,8 @@ def create_visualization(geo_mm_df):
         geo_mm_df.num_projects,
         )
     for feature, year, cost, category, description, ward, alder, calls, num_projects in zipped:
-        # Convert WKT string to geometry object if necessary
+        
+        # convert WKT string to geometry object if necessary
         if isinstance(feature, str):
             feature = shapely.wkt.loads(feature)
         
@@ -100,9 +103,9 @@ def create_visualization(geo_mm_df):
         else:
             continue
         
-        # Change this section to use lists instead of tuples for coordinates
+        # change this section to use lists instead of tuples for coordinates
         for linestring in linestrings:
-            # Get coordinates as LISTS instead of tuples, ensure they're in [longitude, latitude] format
+            # get coordinates as LISTS instead of tuples, ensure they're in [longitude, latitude] format
             coords = [[float(lon), float(lat)] for lon, lat in zip(linestring.xy[0], linestring.xy[1])]
             if len(coords) >= 2:  # Only add if we have at least 2 coordinates (a valid line)
                 path_data.append({
@@ -119,29 +122,29 @@ def create_visualization(geo_mm_df):
                 })
 
 
-    # Add color to each path based on category
+    # add color to each path based on category
     for path in path_data:
-        # Map cost to color
+        # cost to color
         cost = float(path['cost'])
         min_cost = geo_mm_df['cost'].min()
         max_cost = geo_mm_df['cost'].max()
         color = cost_to_color(cost, min_cost, max_cost)
         path['color'] = color
 
-    # Update your layer to use the color field
+    # update layer to use the color field
     layer = pdk.Layer(
         'PathLayer',
         data=path_data,
         get_path='path',
-        get_color='color',  # Use the color field from the data
-        get_width=10,  # Increased width for better visibility
+        get_color='color'
+        get_width=10, 
         pickable=True,
         opacity=1.0,
         auto_highlight=True
     )
 
-    # Create a Pydeck Deck with a map style that doesn't require a token
-    # Set the viewport location - slightly zoom out to ensure data is visible
+    # create a Pydeck Deck with a map style that doesn't require a token
+    # set the viewport location - slightly zoom out to ensure data is visible
     view_state = pdk.ViewState(
         latitude=mean_lat,
         longitude=mean_lon,
@@ -149,7 +152,7 @@ def create_visualization(geo_mm_df):
         pitch=0
     )
 
-    # Create a Pydeck Deck with a map style that doesn't require a token
+    # create a Pydeck Deck with the layer and view_state
     deck = pdk.Deck(
         layers=[layer],
         initial_view_state=view_state,
@@ -157,11 +160,9 @@ def create_visualization(geo_mm_df):
         tooltip={"html": "<b>{name}</b><br>Year: {year}<br>Cost: {cost}<br>Category: {category}<br>Description: {description} <br>Ward: {ward} <br>Alderman: {alderman} <br>Calls: {calls} <br>Number of Projects: {num_projects}"}
     )
     output_fp = pathlib.Path.cwd() / 'gitmoney/visualizations/gitmoney_map.html'
-    # Save the deck to an HTML file for direct viewing
-    deck.to_html(output_fp, open_browser=True)
     
-    # Also create the Dash app
-    deck_html = deck.to_html(as_string=True)
+    # save the deck to an HTML file for direct viewing
+    deck.to_html(output_fp, open_browser=False)
 
 def main():
     # Load the data
