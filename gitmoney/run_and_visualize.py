@@ -2,7 +2,7 @@ import geomoney
 import geomoney.menu_masher
 import processing.wiki_scraper as wiki
 import processing.process_311_and_menu_money as menu_311
-import gitmoney.processing.join_alder_311_menudata as join_data
+import processing.join_alder_311_menudata as join_data
 from visualizations.ratio import create_ratio
 import pathlib
 import argparse
@@ -31,6 +31,7 @@ def main(args):
     if args.all or args.join or not (cwd / 'data/calls_money_pivot_with_alder.csv').exists():
         join_data.join_calls_alders()
 
+    # create the ratio visualization
     if args.all or args.ratio or not (cwd / 'data/calls_money_pivot_with_alder.csv').exists():
         create_ratio()
 

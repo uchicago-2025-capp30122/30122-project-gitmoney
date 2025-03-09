@@ -18,6 +18,22 @@ If you were to re-do the project, would you change anything?
 
 # How to Run
 
+All of subfunctions of gitmoney can be run using the following command:
+
+"uv run gitmoney/run_and_visualize.py".
+
+To overwrite existing data, or to run a specific part, please use the
+following arguments:
+
+
+'-a', '--all': to run the full program and overwrite all data
+'-g', '--geo': to run and overwrite the geomoney data files
+'-c', '--calls': to run and overwrite the 311 data files
+'-w', '--wiki': to run the scraper and overwrite wiki data files
+'-j', '--join': to join 311 calls and aldermanic data, overwrite data files
+'-r', '--ratio': to overwrite the ratio .html
+'-g', '--geomoney': to overwrite the geomoney map .html
+
 ## Tools
 * R/RStudio
 * R packages
