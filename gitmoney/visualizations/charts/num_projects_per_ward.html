@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-f7bfc7f22d40349868c07e7d603827b4"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "Ward", "type": "quantitative"}, {"field": "Number Projects, 2019-23", "type": "quantitative"}], "x": {"field": "Ward", "type": "quantitative"}, "y": {"field": "Number Projects, 2019-23", "type": "quantitative"}}, "height": 400, "params": [{"name": "param_1", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-f7bfc7f22d40349868c07e7d603827b4": [{"Ward": 1, "Number Projects, 2019-23": 36}, {"Ward": 2, "Number Projects, 2019-23": 35}, {"Ward": 3, "Number Projects, 2019-23": 35}, {"Ward": 4, "Number Projects, 2019-23": 34}, {"Ward": 5, "Number Projects, 2019-23": 35}, {"Ward": 6, "Number Projects, 2019-23": 35}, {"Ward": 7, "Number Projects, 2019-23": 34}, {"Ward": 8, "Number Projects, 2019-23": 34}, {"Ward": 9, "Number Projects, 2019-23": 34}, {"Ward": 10, "Number Projects, 2019-23": 35}, {"Ward": 11, "Number Projects, 2019-23": 34}, {"Ward": 12, "Number Projects, 2019-23": 34}, {"Ward": 13, "Number Projects, 2019-23": 36}, {"Ward": 14, "Number Projects, 2019-23": 34}, {"Ward": 15, "Number Projects, 2019-23": 34}, {"Ward": 16, "Number Projects, 2019-23": 32}, {"Ward": 17, "Number Projects, 2019-23": 34}, {"Ward": 18, "Number Projects, 2019-23": 34}, {"Ward": 19, "Number Projects, 2019-23": 33}, {"Ward": 20, "Number Projects, 2019-23": 33}, {"Ward": 21, "Number Projects, 2019-23": 35}, {"Ward": 22, "Number Projects, 2019-23": 33}, {"Ward": 23, "Number Projects, 2019-23": 35}, {"Ward": 24, "Number Projects, 2019-23": 35}, {"Ward": 25, "Number Projects, 2019-23": 34}, {"Ward": 26, "Number Projects, 2019-23": 36}, {"Ward": 27, "Number Projects, 2019-23": 35}, {"Ward": 28, "Number Projects, 2019-23": 35}, {"Ward": 29, "Number Projects, 2019-23": 37}, {"Ward": 30, "Number Projects, 2019-23": 34}, {"Ward": 31, "Number Projects, 2019-23": 35}, {"Ward": 32, "Number Projects, 2019-23": 36}, {"Ward": 33, "Number Projects, 2019-23": 37}, {"Ward": 34, "Number Projects, 2019-23": 34}, {"Ward": 35, "Number Projects, 2019-23": 37}, {"Ward": 36, "Number Projects, 2019-23": 36}, {"Ward": 37, "Number Projects, 2019-23": 34}, {"Ward": 38, "Number Projects, 2019-23": 35}, {"Ward": 39, "Number Projects, 2019-23": 37}, {"Ward": 40, "Number Projects, 2019-23": 35}, {"Ward": 41, "Number Projects, 2019-23": 34}, {"Ward": 42, "Number Projects, 2019-23": 35}, {"Ward": 43, "Number Projects, 2019-23": 36}, {"Ward": 44, "Number Projects, 2019-23": 35}, {"Ward": 45, "Number Projects, 2019-23": 34}, {"Ward": 46, "Number Projects, 2019-23": 34}, {"Ward": 47, "Number Projects, 2019-23": 37}, {"Ward": 48, "Number Projects, 2019-23": 38}, {"Ward": 49, "Number Projects, 2019-23": 35}, {"Ward": 50, "Number Projects, 2019-23": 35}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

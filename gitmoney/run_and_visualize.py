@@ -4,6 +4,7 @@ import processing.wiki_scraper as wiki
 import processing.process_311_and_menu_money as menu_311
 import processing.join_alder_311_menudata as join_data
 from visualizations.ratio import create_ratio
+from visualizations.projects_per_ward import num_proj_chart_build
 import pathlib
 import argparse
 
@@ -34,9 +35,13 @@ def main(args):
     # create the ratio visualization
     if args.all or args.ratio or not (cwd / 'data/calls_money_pivot_with_alder.csv').exists():
         create_ratio()
+        
+    # create the number projects visualization
+    if args.all or args.num_projects or not (cwd / 'visualizations/charts/num_projects_per_ward.html').exists():
+        num_proj_chart_build()
 
     # rewrite the map visualization
-    if args.all or args.geomoney or not (cwd / 'visualizations/money_calls_scatter.html').exists():
+    if args.all or args.geomoney or not (cwd / 'visualizations/charts/money_calls_scatter.html').exists():
         geomoney.data_visualization.main()
 
 if __name__ == '__main__':
@@ -53,8 +58,11 @@ if __name__ == '__main__':
     if not (cwd / 'data/calls_money_pivot_with_alder.csv').exists():
         join_data.join_calls_alders()
 
-    if not (cwd / 'visualizations/money_calls_scatter.html').exists():
+    if not (cwd / 'visualizations/charts/money_calls_scatter.html').exists():
         create_ratio()
+
+    if not (cwd / 'visualizations/charts/num_projects_per_ward.html').exists():
+        num_proj_chart_build()
         
     parser = argparse.ArgumentParser(
         description='Process and visualize Chicago 311 calls and menu money data'
@@ -68,6 +76,7 @@ if __name__ == '__main__':
     parser.add_argument('-j', '--join', action='store_true')
     parser.add_argument('-r', '--ratio', action='store_true')
     parser.add_argument('-g', '--geomoney', action='store_true')
+    parser.add_argument('-n', '--num_projects', action='store_true')
     
     
     # parse arguments and run main
