@@ -1,178 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu Money: 311 Calls & Funding Analysis</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            background: linear-gradient(135deg, #87ceeb, #1e90ff);
-            color: #1a2a44;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        .container {
-            max-width: 1400px;
-            margin: 20px auto;
-            padding: 15px;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        header {
-            position: sticky;
-            top: 0;
-            background: #fff;
-            text-align: center;
-            padding: 15px;
-            border-bottom: 2px solid #87ceeb;
-            z-index: 10;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Roboto", Arial, sans-serif;
+        background: linear-gradient(135deg, #87ceeb, #1e90ff);
+        color: #1a2a44;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      .container {
+        max-width: 1400px;
+        margin: 20px auto;
+        padding: 15px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+      header {
+        position: sticky;
+        top: 0;
+        background: #fff;
+        text-align: center;
+        padding: 15px;
+        border-bottom: 2px solid #87ceeb;
+        z-index: 10;
+      }
+      h1 {
+        font-size: 2.2em;
+        color: #1a2a44;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+      }
+      .subtitle {
+        font-size: 1.2em;
+        color: #4682b4;
+        margin: 5px 0;
+      }
+      .team-info {
+        font-size: 1em;
+        color: #5f728f;
+        margin-top: 8px;
+      }
+      section {
+        margin: 20px 0;
+        padding: 15px;
+        background: rgba(246, 249, 252, 0.9);
+        border-radius: 8px;
+      }
+      h2 {
+        font-size: 1.8em;
+        color: #1a2a44;
+        background: linear-gradient(90deg, #4682b4, transparent);
+        padding: 5px 12px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      p {
+        font-size: 1em;
+        color: #2a3b5e;
+        max-width: 800px;
+        margin: 0 auto 15px;
+        text-align: center;
+      }
+      .chart-section {
+        padding: 15px;
+        text-align: center;
+      }
+      .chart-container {
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin: 0 auto 20px;
+        max-width: 900px;
+        transition: transform 0.3s ease;
+      }
+      .chart-container:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      }
+      .chart-container h3 {
+        font-size: 1.3em;
+        color: #4682b4;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      iframe {
+        width: 100%;
+        height: 500px; /* Increased from 450px to 500px */
+        border: none;
+        border-radius: 5px;
+        background: #f0f0f0;
+      }
+      footer {
+        text-align: center;
+        padding: 15px 0;
+        border-top: 2px solid #87ceeb;
+        margin-top: 20px;
+        color: #5f728f;
+      }
+      @media (max-width: 768px) {
         h1 {
-            font-size: 2.2em;
-            color: #1a2a44;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
+          font-size: 1.8em;
         }
         .subtitle {
-            font-size: 1.2em;
-            color: #4682b4;
-            margin: 5px 0;
-        }
-        .team-info {
-            font-size: 1em;
-            color: #5f728f;
-            margin-top: 8px;
-        }
-        section {
-            margin: 20px 0;
-            padding: 15px;
-            background: rgba(246, 249, 252, 0.9);
-            border-radius: 8px;
+          font-size: 1em;
         }
         h2 {
-            font-size: 1.8em;
-            color: #1a2a44;
-            background: linear-gradient(90deg, #4682b4, transparent);
-            padding: 5px 12px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            text-align: center;
+          font-size: 1.5em;
         }
         p {
-            font-size: 1em;
-            color: #2a3b5e;
-            max-width: 800px;
-            margin: 0 auto 15px;
-            text-align: center;
-        }
-        .chart-section {
-            padding: 15px;
-            text-align: center;
+          font-size: 0.9em;
         }
         .chart-container {
-            background: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin: 0 auto 20px;
-            max-width: 900px;
-            transition: transform 0.3s ease;
-        }
-        .chart-container:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-        }
-        .chart-container h3 {
-            font-size: 1.3em;
-            color: #4682b4;
-            text-align: center;
-            margin-bottom: 10px;
+          max-width: 100%;
         }
         iframe {
-            width: 100%;
-            height: 500px; /* Increased from 450px to 500px */
-            border: none;
-            border-radius: 5px;
-            background: #f0f0f0;
-        }
-        footer {
-            text-align: center;
-            padding: 15px 0;
-            border-top: 2px solid #87ceeb;
-            margin-top: 20px;
-            color: #5f728f;
-        }
-        @media (max-width: 768px) {
-            h1 { font-size: 1.8em; }
-            .subtitle { font-size: 1em; }
-            h2 { font-size: 1.5em; }
-            p { font-size: 0.9em; }
-            .chart-container { max-width: 100%; }
-            iframe { height: 400px; } /* Increased from 350px to 400px */
-        }
+          height: 400px;
+        } /* Increased from 350px to 400px */
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>Menu Money</h1>
-            <div class="subtitle">311 Calls & Aldermanic Funding Analysis (2019-2023)</div>
-            <div class="team-info">
-                <strong>Team:</strong> Git Money<br>
-                <strong>Members:</strong> Libby Seline, Riley Morrison, Alex McMurtry, Getnet Dejene
-            </div>
-        </header>
+      <header>
+        <h1>Menu Money</h1>
+        <div class="subtitle">
+          311 Calls & Aldermanic Funding Analysis (2019-2023)
+        </div>
+        <div class="team-info">
+          <strong>Team:</strong> Git Money<br />
+          <strong>Members:</strong> Libby Seline, Riley Morrison, Alex McMurtry,
+          Getnet Dejene
+        </div>
+      </header>
 
-        <section>
-            <h2>Introduction</h2>
-            <p>Welcome to our analysis of Chicago’s 311 service calls and aldermanic expenditures from 2019 to 2023. We’ve combined public datasets from the Chicago Data Portal (via API) with web-scraped alderman data from Wikipedia and Menu program expenditures, mapped with GIS ward boundaries.</p>
-        </section>
+      <section>
+        <h2>Introduction</h2>
+        <p>
+          Welcome to our analysis of Chicago’s 311 service calls and aldermanic
+          expenditures from 2018 to 2023. We’ve combined public datasets from
+          the Chicago Data Portal with web-scraped alderpeople data from
+          Wikipedia and Menu program expenditures, mapped with GIS ward
+          boundaries.
+        </p>
+      </section>
 
-        <section class="chart-section">
-            <h2>Findings</h2>
-            <p>Explore our key insights below through interactive charts.</p>
-            <div class="chart-container">
-                <h3>311 Calls by Year & Category</h3>
-                <iframe src="charts/chart_1.html"></iframe>
-            </div>
-            <div class="chart-container">
-                <h3>311 Calls by Ward & Category</h3>
-                <iframe src="charts/chart_2.html"></iframe>
-            </div>
-            <div class="chart-container">
-                <h3>Funds Spent by Year & Category</h3>
-                <iframe src="charts/chart_3.html"></iframe>
-            </div>
-            <div class="chart-container">
-                <h3>Funds Spent by Ward & Category</h3>
-                <iframe src="charts/chart_4.html"></iframe>
-            </div>
-            <div class="chart-container">
-                <h3>311 calls focus on Streets, Beautification, but Menu Money funds only go to Streets</h3>
-                <iframe src="charts/money_calls_scatter.html"></iframe>
-            </div>
-            <div class="chart-container">
-                <h3>Chicago Ward Map Visualization</h3>
-                <iframe src="../gitmoney/visualizations/gitmoney_map.html"></iframe>
-            </div>
-        </section>
+      <section class="chart-section">
+        <h2>Findings</h2>
+        <p>Explore our key insights below through interactive charts.</p>
+        <div class="chart-container">
+          <h3>311 Calls by Year & Category</h3>
+          <iframe src="charts/chart_1.html"></iframe>
+        </div>
+        <div class="chart-container">
+          <h3>311 Calls by Ward & Category</h3>
+          <iframe src="charts/chart_2.html"></iframe>
+        </div>
+        <div class="chart-container">
+          <h3>Funds Spent by Year & Category</h3>
+          <iframe src="charts/chart_3.html"></iframe>
+        </div>
+        <div class="chart-container">
+          <h3>Funds Spent by Ward & Category</h3>
+          <iframe src="charts/chart_4.html"></iframe>
+        </div>
+        <div class="chart-container">
+          <h3>
+            311 calls focus on Streets, Beautification, but Menu Money funds
+            only go to Streets
+          </h3>
+          <iframe src="charts/money_calls_scatter.html"></iframe>
+        </div>
+        <div class="chart-container">
+          <h3>Chicago Ward Map Visualization</h3>
+          <iframe src="../gitmoney/visualizations/gitmoney_map.html"></iframe>
+        </div>
+      </section>
 
-        <section>
-            <h2>Summary</h2>
-            <p>Our analysis reveals [insert key findings here].</p>
-        </section>
+      <section>
+        <h2>Summary</h2>
+        <p>Our analysis reveals [insert key findings here].</p>
+      </section>
 
-        <footer>
-            <p>Presented by Git Money | March 6, 2025</p>
-        </footer>
+      <footer>
+        <p>Presented by Git Money | March 6, 2025</p>
+      </footer>
     </div>
-</body>
+  </body>
 </html>
