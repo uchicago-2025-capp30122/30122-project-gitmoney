@@ -30,7 +30,7 @@ def plot_calls_by_year_and_ward(csv_file: Path) -> None:
     CHART_HEIGHT = 400
 
     # Define output directory 
-    output_dir = Path.cwd()
+    output_dir = Path.cwd() / "charts"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Load and preprocess data
