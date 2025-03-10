@@ -5,6 +5,7 @@ import processing.process_311_and_menu_money as menu_311
 import processing.join_alder_311_menudata as join_data
 from visualizations.ratio import create_ratio
 from visualizations.projects_per_ward import num_proj_chart_build
+import visualizations.chart as chart
 
 import pathlib
 import argparse
@@ -417,7 +418,9 @@ def main(args):
             or not (cwd / 'gitmoney/visualizations/charts/311_Calls_by_Year_and_Category_2019-2023.html').exists() \
             or not (cwd / 'gitmoney/visualizations/charts/Money_Spent_by_Ward_and_Category_2019-2023.html').exists() \
             or not (cwd / 'gitmoney/visualizations/charts/Money_Spent_by_Year_and_Category_2019-2023.html').exists(): 
-                geomoney.data_visualization.main()
+                chart.plot_calls_by_year_and_ward()
+                chart.create_chart()
+                
 
         # Generate the index page
         index_path = generate_index_page()
