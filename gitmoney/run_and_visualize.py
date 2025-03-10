@@ -6,10 +6,43 @@ import processing.join_alder_311_menudata as join_data
 from visualizations.ratio import create_ratio
 import pathlib
 import argparse
+import webbrowser
+import time
+
 
 def process_geo_data():
     geomoney.menu_masher.main()
     geomoney.street_search.main()
+
+
+
+def open_visualizations(delay=1):
+    """
+    Open all generated HTML visualizations in the default web browser.
+    
+    Args:
+        delay (int): Number of seconds to wait between opening files to avoid overwhelming the browser
+    """
+    cwd = pathlib.Path.cwd()
+    html_files = [
+        cwd / 'visualizations/money_calls_scatter.html',
+        cwd / 'gitmoney/visualizations/gitmoney_map.html',
+        cwd / 'visualizations/chart1.html',
+        cwd / 'visualizations/chart2.html',
+        cwd / 'visualizations/chart3.html',
+        cwd / 'visualizations/chart4.html',
+        # Add any other HTML files here
+    ]
+    
+    print("Opening visualization files in browser...")
+    for html_file in html_files:
+        if html_file.exists():
+            print(f"Opening {html_file}")
+            webbrowser.open(f'file://{html_file.absolute()}')
+            # Short delay to prevent browser from being overwhelmed
+            time.sleep(delay)
+        else:
+            print(f"Warning: {html_file} does not exist")
 
 
 def main(args):
@@ -67,9 +100,13 @@ if __name__ == '__main__':
     parser.add_argument('-w', '--wiki', action='store_true')
     parser.add_argument('-j', '--join', action='store_true')
     parser.add_argument('-r', '--ratio', action='store_true')
-    parser.add_argument('-g', '--geomoney', action='store_true')
+    parser.add_argument('-m', '--geomoney', action='store_true')
+    parser.add_argument('-o', '--open', action='store_true')
     
     
     # parse arguments and run main
     args = parser.parse_args()
     main(args)
+
+    if args.open:
+        open_visualizations()

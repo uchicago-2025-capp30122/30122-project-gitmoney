@@ -34,9 +34,11 @@
       
 3.  **How to run the project:**
 
-All of subfunctions of gitmoney can be run using the following command:
+gitmoney can be run using the following command:
 
 "uv run gitmoney/run_and_visualize.py -a".
+
+This will 
 
 To overwrite existing data, or to run a specific part, please use the
 following arguments:
@@ -48,7 +50,7 @@ following arguments:
 '-w', '--wiki': to run the scraper and overwrite wiki data files
 '-j', '--join': to join 311 calls and aldermanic data, overwrite data files
 '-r', '--ratio': to overwrite the ratio .html
-'-g', '--geomoney': to overwrite the geomoney map .html
+'-m', '--geomoney': to overwrite the geomoney map .html
 
 ## Tools
 * R/RStudio
@@ -66,5 +68,30 @@ install.packages(c("tidyverse", "janitor", "readxl", "skimr"))
 What are they? 
 
 # Formal Methodology
+
+
+To extract streets data, we used regular expressions to extract street
+direction, street name, and street type from the "description" field. 
+For streets that only return one result, we also extract block number
+information.
+
+The vast majority of entries in the data follow one of four formats:
+
+Single address: "317 S CAMPBELL AVE"
+
+Two addresses (intersection): "W ROOSEVELT RD & S WOOD ST"
+
+Three addresses (block): Example "ON ROOSEVELT FROM S LOOMIS ST (1400 W) TO S
+ASHLAND AV (1600 W)" (note: our code does not yet include the logic to include
+connecting segments between the first and last block segment)
+
+Four address (blocks bound by intersections): "E 47TH ST & E 47TH PL &
+S DREXEL BLVD & S COTTAGE GROVE AVE"
+
+To match segments, we used the trans.shp file of all street segments in 
+Chicago to create dictionaries indexed by street names. This creates a
+dictionary that contains every segment named "S COTTAGE GROVE AVE" in Chicago,
+for example. By searching each street for cross streets ("F_CROSS","T_CROSS"),
+we are able to mark out blocks and intersections bounding each project. 
 
 # Kudos
