@@ -1,4 +1,4 @@
-from colors import cat_colors_df
+from visualizations.colors import cat_colors_df
 import pandas as pd
 import altair as alt
 import matplotlib.pyplot as plt

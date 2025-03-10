@@ -194,7 +194,7 @@ def create_visualization(geo_mm_df):
         map_style='https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',  # Open source style
         tooltip={"html": "<b>{name}</b><br>Year: {year}<br>Cost: {cost}<br>Category: {category}<br>Description: {description} <br>Ward: {ward} <br>Alderman: {alderman} <br>Calls: {calls} <br>Number of Projects: {num_projects}"}
     )
-    output_fp = pathlib.Path.cwd() / 'gitmoney/visualizations/gitmoney_map.html'
+    output_fp = pathlib.Path.cwd() / 'gitmoney/visualizations/charts/gitmoney_map.html'
     
     # save the deck to an HTML file for direct viewing
     deck.to_html(output_fp, open_browser=False)
