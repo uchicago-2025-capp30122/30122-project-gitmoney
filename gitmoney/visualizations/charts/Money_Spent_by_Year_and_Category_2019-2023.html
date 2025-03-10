@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axis": {"grid": false, "labelFontSize": 15, "titleFontSize": 20}, "legend": {"labelFontSize": 18, "labelLimit": 500, "orient": "right", "titleFontSize": 20}, "title": {"fontSize": 30}}, "data": {"name": "data-d3b02b6ad9b046f00fedccd1dd85febb"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "category", "scale": {"domain": ["Beautification", "Bike Infrastructure", "Lighting", "Parks & Recreation", "Plants, Gardens, & Sustainability", "Schools & Libraries", "Security Cameras", "Streets & Transportation"], "range": ["#8B648B", "#F8C8F1", "#E89545", "#5DB7B7", "#82B65B", "#cdcb44", "#294896", "#BE5151"]}, "type": "nominal"}, "tooltip": [{"field": "year", "type": "quantitative"}, {"field": "category", "type": "nominal"}, {"field": "value", "format": ".2f", "type": "quantitative"}], "x": {"axis": {"labelAngle": 0}, "field": "year", "title": "Year", "type": "ordinal"}, "y": {"field": "value", "stack": "zero", "title": "Total Money Spent ($)", "type": "quantitative"}}, "height": 400, "params": [{"name": "param_3", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Money Spent by Year and Category (2019-2023)", "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-d3b02b6ad9b046f00fedccd1dd85febb": [{"year": 2019, "category": "Beautification", "value": 475637.0}, {"year": 2020, "category": "Beautification", "value": 218825.0}, {"year": 2021, "category": "Beautification", "value": 961918.0}, {"year": 2022, "category": "Beautification", "value": 637405.0}, {"year": 2023, "category": "Beautification", "value": 468730.0}, {"year": 2019, "category": "Bike Infrastructure", "value": 219000.0}, {"year": 2020, "category": "Bike Infrastructure", "value": 71000.0}, {"year": 2021, "category": "Bike Infrastructure", "value": 452500.0}, {"year": 2022, "category": "Bike Infrastructure", "value": 427500.0}, {"year": 2023, "category": "Bike Infrastructure", "value": 1176263.0}, {"year": 2019, "category": "Lighting", "value": 3456041.0}, {"year": 2020, "category": "Lighting", "value": 6069707.0}, {"year": 2021, "category": "Lighting", "value": 7480645.0}, {"year": 2022, "category": "Lighting", "value": 4894523.0}, {"year": 2023, "category": "Lighting", "value": 5042751.0}, {"year": 2019, "category": "Parks & Recreation", "value": 1110120.0}, {"year": 2020, "category": "Parks & Recreation", "value": 1114975.0}, {"year": 2021, "category": "Parks & Recreation", "value": 2149540.0}, {"year": 2022, "category": "Parks & Recreation", "value": 2190833.0}, {"year": 2023, "category": "Parks & Recreation", "value": 1077081.0}, {"year": 2019, "category": "Plants, Gardens, & Sustainability", "value": 258371.0}, {"year": 2020, "category": "Plants, Gardens, & Sustainability", "value": 190406.0}, {"year": 2021, "category": "Plants, Gardens, & Sustainability", "value": 164000.0}, {"year": 2022, "category": "Plants, Gardens, & Sustainability", "value": 91700.0}, {"year": 2023, "category": "Plants, Gardens, & Sustainability", "value": 160000.0}, {"year": 2019, "category": "Schools & Libraries", "value": 695000.0}, {"year": 2020, "category": "Schools & Libraries", "value": 926233.0}, {"year": 2021, "category": "Schools & Libraries", "value": 89750.0}, {"year": 2022, "category": "Schools & Libraries", "value": 395360.0}, {"year": 2023, "category": "Schools & Libraries", "value": 320634.0}, {"year": 2019, "category": "Security Cameras", "value": 965856.0}, {"year": 2020, "category": "Security Cameras", "value": 1207779.0}, {"year": 2021, "category": "Security Cameras", "value": 4482962.0}, {"year": 2022, "category": "Security Cameras", "value": 1551966.0}, {"year": 2023, "category": "Security Cameras", "value": 34000.0}, {"year": 2019, "category": "Streets & Transportation", "value": 55884972.0}, {"year": 2020, "category": "Streets & Transportation", "value": 56155076.0}, {"year": 2021, "category": "Streets & Transportation", "value": 59008589.0}, {"year": 2022, "category": "Streets & Transportation", "value": 63730102.0}, {"year": 2023, "category": "Streets & Transportation", "value": 58317014.0}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

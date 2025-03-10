@@ -1,22 +1,21 @@
-# Final Version
 import csv
-import pathlib
-from typing import List
-import altair as alt
+import os
+from pathlib import Path
 import pandas as pd
+import altair as alt
 
-def plot_calls_by_year_and_ward(csv_file: pathlib.Path) -> None:
+def plot_calls_by_year_and_ward(csv_file: Path) -> None:
     """
     Plot four stacked bar charts: calls and money spent by year and ward, categorized.
 
     Args:
-        csv_file (pathlib.Path): Path to CSV file with year, ward, category, calls, and total_cost
+        csv_file (Path): Path to CSV file with year, ward, category, calls, and total_cost
 
     Returns:
-        None (displays four plots)
+        None (saves four HTML files in the visualizations directory)
     """
     # Define constants
-    YEAR_RANGE = range(2019, 2024)  
+    YEAR_RANGE = range(2019, 2024)
     CAT_COLORS = {
         "Beautification": "#8B648B",
         "Bike Infrastructure": "#F8C8F1",
@@ -30,7 +29,11 @@ def plot_calls_by_year_and_ward(csv_file: pathlib.Path) -> None:
     CHART_WIDTH = 600
     CHART_HEIGHT = 400
 
-    # Load and preprocess data once
+    # Define output directory 
+    output_dir = Path.cwd() / "charts"
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Load and preprocess data
     df = (pd.read_csv(csv_file)
           .assign(
               year=lambda x: x['year'].astype(int),
@@ -52,32 +55,61 @@ def plot_calls_by_year_and_ward(csv_file: pathlib.Path) -> None:
     }
 
     def create_chart(data: pd.DataFrame, title: str, x_label: str, y_label: str, rotate_x: bool = False) -> alt.Chart:
-       
+        """
+        Create an Altair bar chart.
+
+        Args:
+            data (pd.DataFrame): Aggregated data for the chart.
+            title (str): Chart title.
+            x_label (str): Label for the x-axis.
+            y_label (str): Label for the y-axis.
+            rotate_x (bool): Whether to rotate x-axis labels.
+
+        Returns:
+            alt.Chart: Altair chart object.
+        """
         melted_data = data.reset_index().melt(
             id_vars=data.index.name,
             var_name='category',
             value_name='value'
         )
-        
-        return (alt.Chart(melted_data)
-                .mark_bar()
-                .encode(
-                    x=alt.X(f'{data.index.name}:O', 
-                           title=x_label,
-                           axis=alt.Axis(labelAngle=-90 if rotate_x else 0)),
-                    y=alt.Y('value:Q', title=y_label, stack='zero'),
-                    color=alt.Color('category:N',
-                                  scale=alt.Scale(domain=list(CAT_COLORS.keys()),
-                                                range=list(CAT_COLORS.values()))),
-                    tooltip=[data.index.name, 'category', alt.Tooltip('value:Q', format='.2f')]
-                )
-                .properties(
-                    title=title,
-                    width=CHART_WIDTH,
-                    height=CHART_HEIGHT
-                ))
 
-    # Define chart configurations
+        chart = (alt.Chart(melted_data)
+                 .mark_bar()
+                 .encode(
+                     x=alt.X(f'{data.index.name}:O',
+                             title=x_label,
+                             axis=alt.Axis(labelAngle=-90 if rotate_x else 0)),
+                     y=alt.Y('value:Q', title=y_label, stack='zero'),
+                     color=alt.Color('category:N',
+                                   scale=alt.Scale(domain=list(CAT_COLORS.keys()),
+                                                 range=list(CAT_COLORS.values()))),
+                     tooltip=[data.index.name, 'category', alt.Tooltip('value:Q', format='.2f')]
+                 )
+                 .properties(
+                     title=title,
+                     width=CHART_WIDTH,
+                     height=CHART_HEIGHT
+                 )
+                 .configure_axis(
+                     labelFontSize=15,
+                     titleFontSize=20,
+                     grid=False
+                 )
+                 .configure_title(
+                     fontSize=30
+                 )
+                 .configure_legend(
+                     labelFontSize=18,
+                     titleFontSize=20,
+                     orient='right',
+                     labelLimit=500
+                 )
+                 .interactive())
+
+        return chart
+
+    # Define chart configurations with filenames based on titles
     chart_configs = [
         ('calls_by_year', '311 Calls by Year and Category (2019-2023)', 'Year', 'Number of 311 Calls', False),
         ('calls_by_ward', '311 Calls by Ward and Category (2019-2023)', 'Ward', 'Number of 311 Calls', True),
@@ -85,19 +117,18 @@ def plot_calls_by_year_and_ward(csv_file: pathlib.Path) -> None:
         ('money_by_ward', 'Money Spent by Ward and Category (2019-2023)', 'Ward', 'Total Money Spent ($)', True)
     ]
 
-    # Generate and display charts
-    charts = [create_chart(aggregations[key], title, x_label, y_label, rotate)
-             for key, title, x_label, y_label, rotate in chart_configs]
-    
-    # Altair's concatenation (Remove later)
-    '''
-    try:
-        alt.vconcat(*charts).show()
-    except AttributeError:'''
-    for chart in charts:
-        chart.show()
+    # Generate and save charts as HTML files with titles as filenames
+    for key, title, x_label, y_label, rotate in chart_configs:
+        # Convert title to a valid filename: replace spaces with underscores, remove parentheses
+        filename = title.replace(' ', '_').replace('(', '').replace(')', '') + '.html'
+        filepath = output_dir / filename
+        chart = create_chart(aggregations[key], title, x_label, y_label, rotate)
+        chart.save(str(filepath))
+        print(f"Saved {filepath}")
 
 if __name__ == "__main__":
-    csv_file = pathlib.Path.cwd().parent.parent / "30122-project-gitmoney" / "data" / "calls_money.csv"
+    # Define the CSV file path relative to the visualizations directory
+    cwd = Path(os.getcwd())
+    csv_file = cwd.parent.parent / "gitmoney" / "data" / "calls_money.csv"
     print(f"File path: {csv_file}")
     plot_calls_by_year_and_ward(csv_file)
