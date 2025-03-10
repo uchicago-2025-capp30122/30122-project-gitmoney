@@ -325,27 +325,27 @@ def generate_index_page():
           <iframe src="charts/money_calls_scatter.html"></iframe>
         </div>
         <div class="chart-container">
-          <h3>FINDING</h3>
+          <h3>Menu Money projects are well dispersed across Chicago, though skirt industrial zones, highways, train lines</h3>
           <h4>Menu Money Project Locations (2019-2023)</h4>
           <iframe src="charts/gitmoney_map.html"></iframe>
         </div>
         <div class="chart-container">
-          <h3>FINDING</h3>
+          <h3>311 calls declined between 2019 and 2023, though beautification, streets were the most common complaint categories in all years</h3>
           <h4>311 Calls by Year & Category (2019-2023)</h4>
           <iframe src="charts/311_Calls_by_Year_and_Category_2019-2023.html"></iframe>
         </div>
         <div class="chart-container">
-          <h3>FINDING</h3>
+          <h3>311 call volume varied widely by ward, though category ratios were largely similar</h3>
           <h4>311 Calls by Ward & Category (2019-2023)</h4>
           <iframe src="charts/311_Calls_by_Ward_and_Category_2019-2023.html"></iframe>
         </div>
         <div class="chart-container">
-          <h3>FINDING</h3>
+          <h3>Per ward spending went largely unchanged between 2019 and 2023, with the bulk of funds going towards streets</h3>
           <h4>Funds Spent by Year & Category (2019-2023)</h4>
           <iframe src="charts/Money_Spent_by_Year_and_Category_2019-2023.html"></iframe>
         </div>
         <div class="chart-container">
-          <h3>FINDING</h3>
+          <h3>Streets dominated funding in all but a few wards, which spent on lighting, security camera projects</h3>
           <h4>Funds Spent by Ward & Category (2019-2023)</h4>
           <iframe src="charts/Money_Spent_by_Ward_and_Category_2019-2023.html"></iframe>
         </div>
