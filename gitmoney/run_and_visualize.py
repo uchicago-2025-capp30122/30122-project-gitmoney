@@ -222,10 +222,10 @@ def generate_index_page():
           >
           <br />
           <br />
-          Using the
+          After perusing data from
           <a
             href="https://data.cityofchicago.org/Administration-Finance/Contracts/rsxa-ify5/about_data"
-            >Chicago Data Portal</a
+            >Chicago's 311 Data Portal</a
           >
           and web-scraped alderpeople data from
           <a
@@ -233,24 +233,25 @@ def generate_index_page():
           >
             Wikipedia</a
           >
-          we ultimately remain unsure. Given that the streets category is a
-          major concern that constituents believe their representatives can
-          solve (given all the calls), it seems plausible that alderpeople are
-          responding to those concerns with the elevated quantities of funding
-          towards streets projects. They might not be hearing those concerns by
-          keeping an eye on the data portal like us, but it seems likely that
-          concerns over 311 correlate with concerns they hear via constituent
-          emails and visits.
+          we're still not certain. Given that the streets category is a 
+          major concern that constituents believe their representatives can 
+          solve (evidenced by all the calls), it seems plausible that 
+          alderpeople are responding to those concerns with the elevated 
+          quantities of funding towards streets projects. They might not be 
+          hearing those concerns by keeping an eye on the data portal like us, 
+          but it seems likely that concerns over 311 correlate with concerns 
+          they hear via constituent emails and visits.
 
           <br />
           <br />
-          What remains a mystery is why the elevated numbers of calls about
-          beautification, in large part requests for graffiti removal, aren't
-          also being addressed proportionally with menu money. While we do see
-          many menu money projects devoted to murals and clean ups, they aren't
-          funded to nearly the same degree as street and transportation
-          projects. Perhaps further qualitative research can be done to better
-          understand how alder people make their decisions around funding.
+          What remains a mystery is why the elevated numbers of calls about 
+          beautification, in large part requests for graffiti removal, aren't 
+          also being addressed proportionally with menu money. While we do see 
+          many menu money projects devoted to murals and neighborhood clean ups, 
+          they aren't funded to nearly the same degree as street and 
+          transportation projects. Perhaps further qualitative research can be 
+          done to better understand how alder people make their decisions around 
+          funding.
         </p>
         <h3>Key Vocabulary</h3>
         <p>
