@@ -5,6 +5,7 @@ import processing.process_311_and_menu_money as menu_311
 import processing.join_alder_311_menudata as join_data
 from visualizations.ratio import create_ratio
 from visualizations.projects_per_ward import num_proj_chart_build
+
 import pathlib
 import argparse
 
@@ -33,7 +34,7 @@ def main(args):
         join_data.join_calls_alders()
 
     # create the ratio visualization
-    if args.all or args.ratio or not (cwd / 'data/calls_money_pivot_with_alder.csv').exists():
+    if args.all or args.ratio or not (cwd / 'visualizations/charts/money_calls_scatter.html').exists():
         create_ratio()
         
     # create the number projects visualization
@@ -41,8 +42,19 @@ def main(args):
         num_proj_chart_build()
 
     # rewrite the map visualization
-    if args.all or args.geomoney or not (cwd / 'visualizations/charts/money_calls_scatter.html').exists():
-        geomoney.data_visualization.main()
+    if args.all or args.build_viz:
+         # create the ratio visualization
+        if not (cwd / 'visualizations/charts/money_calls_scatter.html').exists():
+            create_ratio()
+        if not (cwd / 'visualizations/charts/num_projects_per_ward.html').exists():
+            num_proj_chart_build()
+        if not (cwd / 'visualizations/charts/visualizations/charts/gitmoney_map.html').exists():
+            geomoney.data_visualization.main()
+        if not (cwd / 'visualizations/charts/311_Calls_by_Ward_and_Category_2019-2023.html').exists() \
+            or not (cwd / 'visualizations/charts/311_Calls_by_Year_and_Category_2019-2023.html').exists() \
+            or not (cwd / 'visualizations/charts/Money_Spent_by_Ward_and_Category_2019-2023.html').exists() \
+            or not (cwd / 'visualizations/charts/Money_Spent_by_Year_and_Category_2019-2023.html').exists(): 
+                geomoney.data_visualization.main()
 
 if __name__ == '__main__':
     cwd = pathlib.Path.cwd()
@@ -57,12 +69,21 @@ if __name__ == '__main__':
 
     if not (cwd / 'data/calls_money_pivot_with_alder.csv').exists():
         join_data.join_calls_alders()
-
+        
     if not (cwd / 'visualizations/charts/money_calls_scatter.html').exists():
         create_ratio()
-
+    
     if not (cwd / 'visualizations/charts/num_projects_per_ward.html').exists():
         num_proj_chart_build()
+        
+    if not (cwd / 'visualizations/charts/visualizations/charts/gitmoney_map.html').exists():
+        geomoney.data_visualization.main()
+    
+    if not (cwd / 'visualizations/charts/311_Calls_by_Ward_and_Category_2019-2023.html').exists() \
+        or not (cwd / 'visualizations/charts/311_Calls_by_Year_and_Category_2019-2023.html').exists() \
+        or not (cwd / 'visualizations/charts/Money_Spent_by_Ward_and_Category_2019-2023.html').exists() \
+        or not (cwd / 'visualizations/charts/Money_Spent_by_Year_and_Category_2019-2023.html').exists(): 
+            geomoney.data_visualization.main()
         
     parser = argparse.ArgumentParser(
         description='Process and visualize Chicago 311 calls and menu money data'
@@ -74,10 +95,10 @@ if __name__ == '__main__':
     parser.add_argument('-c', '--calls', action='store_true')
     parser.add_argument('-w', '--wiki', action='store_true')
     parser.add_argument('-j', '--join', action='store_true')
-    parser.add_argument('-r', '--ratio', action='store_true')
-    parser.add_argument('-g', '--geomoney', action='store_true')
-    parser.add_argument('-n', '--num_projects', action='store_true')
-    
+    #parser.add_argument('-r', '--ratio', action='store_true')
+    p#arser.add_argument('-g', '--geomoney', action='store_true')
+    #parser.add_argument('-n', '--num_projects', action='store_true')
+    parser.add_argument('-b', '--build_viz', action='store_true')    
     
     # parse arguments and run main
     args = parser.parse_args()
