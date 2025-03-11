@@ -3,30 +3,49 @@ import pandas as pd
 import altair as alt
 import matplotlib.pyplot as plt
 import csv
+from colors import year_colors_df
 
 def num_proj_chart_build():
     # Read in and clean data
     calls_money = pd.read_csv("../data/calls_money.csv")
 
-    calls_money["year"] = pd.to_numeric(calls_money["year"])
+    # Create good dataframe with sorted years and colors
+    calls_money_19_23 = calls_money.query('year >= 2019 and year <= 2023')
 
-    calls_money_18_23 = calls_money.query('year >= 2019 and year <= 2023')
+    calls_money_19_23= calls_money_19_23.sort_values(by='year', ascending=False)
 
-    calls_money_18_23 = calls_money_18_23.merge(cat_colors_df, on="category").rename(columns={"ward": "Ward"})
+    calls_money_19_23['year'] = calls_money_19_23['year'].astype(str)
+
+    calls_money_19_23 = calls_money_19_23.merge(year_colors_df, on=["year"])
     
-    # Create good dataframe
+    # Group data by year, total projects
     
-    num_projects_ward = pd.DataFrame(calls_money_18_23.groupby(['Ward']).size().rename('Number Projects, 2019-23').reset_index())
+    num_projects_ward_year = pd.DataFrame(calls_money_19_23.\
+        groupby(['ward', 'year', 'color']).size().\
+            rename('Number Projects in Year').reset_index())
+    num_projects_ward_total = pd.DataFrame(calls_money_19_23.\
+        groupby(['ward']).size().rename('Total Projects, 2019-23').\
+            reset_index())
+        
+    num_projects_ward = num_projects_ward_year.\
+        merge(num_projects_ward_total, on=["ward"]).\
+            rename(columns={"ward": "Ward", "year": "Year"})
+
+    # Create Chart
     
     chart = alt.Chart(num_projects_ward).mark_bar().encode(
-    x='Ward',
-    y='Number Projects, 2019-23',
-    #color=alt.Color('color').scale(None),
-    tooltip=['Ward', 'Number Projects, 2019-23'],
-).properties(
-        #title = "Ward Menu Money Spending and 311 Calls by Category",
-        width=600,
-        height=400,
-    ).interactive()
+        x='Ward',
+        y='Total Projects, 2019-23',
+        color=alt.Color('Year', \
+            scale=alt.Scale(domain=num_projects_ward['Year'].tolist(), \
+                range=num_projects_ward['color'].tolist())),
+        order=alt.Order(
+        'Year',
+        sort='ascending'),
+        tooltip=['Ward', 'Year', 'Number Projects in Year', 'Total Projects, 2019-23'],
+    ).properties(
+            width=600,
+            height=400,
+        ).interactive()
     
     chart.save('charts/num_projects_per_ward.html')
