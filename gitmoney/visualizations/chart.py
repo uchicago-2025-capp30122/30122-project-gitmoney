@@ -32,7 +32,7 @@ def plot_calls_by_year_and_ward(csv_file: Path) -> None:
         csv_file (Path): Path to CSV file with year, ward, category, calls, and total_cost
 
     Returns:
-        None (saves four HTML files in the visualizations directory)
+       Aggregations: Dictionary with calls and costs of projects by year and ward
     """
 
     # Load and preprocess data
