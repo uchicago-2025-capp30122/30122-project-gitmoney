@@ -12,6 +12,7 @@ import pathlib
 import argparse
 import webbrowser
 import time
+import pandas as pd
 
 
 def process_geo_data():
@@ -379,56 +380,87 @@ def generate_index_page():
 
 def main(args):
     cwd = pathlib.Path.cwd()
+    print("Begin Git-ting Money!")
     
     # process geo data 
-    if args.all or args.geo or not (cwd / 'gitmoney/data/final_menu_money.csv').exists():
-        print((cwd / 'gitmoney/data/final_menu_money.csv').exists())
+    if args.all or args.geo or not (cwd / 'gitmoney/data/geo/final_menu_money.csv').exists():
+        print("Processing Geo Data")
+        print((cwd / 'gitmoney/data/geo/final_menu_money.csv').exists())
         print(cwd)
         process_geo_data()
+        print("End Processing Geo Data")
+        print()
     
     # process 311 data 
-    if args.all or args.calls or not (cwd / 'gitmoney/data/calls_money.csv').exists():
+    if args.all or args.calls or not (cwd / 'gitmoney/data/clean_csvs/calls_money.csv').exists():
+        print("Processing 311 & Menu Money Data")
         menu_311.raw_311_menu_to_joined_call_money()
+        print("End Processing 311 & Menu Money Data")
+        print()
     
     # process wiki data 
-    if args.all or args.wiki or not (cwd / 'gitmoney/data/all_alderpeople_2018_23.csv').exists():
+    if args.all or args.wiki or not (cwd / 'gitmoney/data/clean_csvs/all_alderpeople_2018_23.csv').exists():
+        print("Processing Wikipedia Data")
         wiki.clean_join_wiki_data()
+        print("End Processing Wikipedia Data")
+        print()
     
     # process all data 
-    if args.all or args.join or not (cwd / 'gitmoney/data/calls_money_pivot_with_alder.csv').exists():
+    if args.all or args.join or not (cwd / 'gitmoney/data/clean_csvs/calls_money_pivot_with_alder.csv').exists():
+        print("Processing 311 & Menu Money & Wikipedia Join")
         join_data.join_calls_alders()
+        print("End Processing 311 & Menu Money & Wikipedia Join")
+        print()
 
     # create the ratio visualization
     if args.all or args.ratio or not (cwd / 'gitmoney/visualizations/charts/money_calls_scatter.html').exists():
+        print("Create Ratio Graph")
         create_ratio()
+        print("Done with Ratio Graph")
+        print()
         
     # create the number projects visualization
     if args.all or args.num_projects or not (cwd / 'gitmoney/visualizations/charts/num_projects_per_ward.html').exists():
+        print("Create Number of Projects Graph")
         num_proj_chart_build()
+        print("Done with Projects Graph")
+        print()
 
     # rewrite the map visualization
     if args.all or args.build_viz:
          # create the ratio visualization
         if not (cwd / 'gitmoney/visualizations/charts/money_calls_scatter.html').exists():
+            print("Create Ratio Graph")
             create_ratio()
+            print("Done with Ratio Graph")
+            print()
         if not (cwd / 'gitmoney/visualizations/charts/num_projects_per_ward.html').exists():
+            print("Create Number of Projects Graph")
             num_proj_chart_build()
+            print("Done with Projects Graph")
+            print()
         if not (cwd / 'gitmoney/visualizations/charts/gitmoney_map.html').exists():
+            print("Build Map")
             data_visualization.main()
+            print("End Building Map")
+            print()
         if not (cwd / 'gitmoney/visualizations/charts/311_Calls_by_Ward_and_Category_2019-2023.html').exists() \
             or not (cwd / 'gitmoney/visualizations/charts/311_Calls_by_Year_and_Category_2019-2023.html').exists() \
             or not (cwd / 'gitmoney/visualizations/charts/Money_Spent_by_Ward_and_Category_2019-2023.html').exists() \
             or not (cwd / 'gitmoney/visualizations/charts/Money_Spent_by_Year_and_Category_2019-2023.html').exists(): 
-                chart.plot_calls_by_year_and_ward()
-                chart.create_chart()
+                print("Create 311 & Menu Money Charts by Categories, Years")
+                chart.combined()
+                #chart.plot_calls_by_year_and_ward('gitmoney/data/clean_csvs/calls_money.csv')
+                #chart.create_chart('gitmoney/data/clean_csvs/calls_money.csv')
+                print("Done with Charts!")
+                print()
                 
-
-        # Generate the index page
-        index_path = generate_index_page()
-        
-        # Open it in the browser
-        print(f"Opening index page: {index_path}")
-        webbrowser.open(f'file://{index_path.absolute()}')
+                # Generate the index page
+                index_path = generate_index_page()
+                    
+                # Open it in the browser
+                print(f"Opening index page: {index_path}")
+                webbrowser.open(f'file://{index_path.absolute()}')
         
 
 
