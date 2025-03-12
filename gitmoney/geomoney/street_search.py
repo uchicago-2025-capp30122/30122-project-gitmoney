@@ -318,7 +318,7 @@ def street_search(new_menu_money_data, streets_fp):
 
     # run street_searcher on each row in the new_menu_money_data
     for i, row in enumerate(new_menu_money_data):
-        print(f"Processing row {i} of {len(new_menu_money_data)}")
+        print("Processing rows")
         menu_addrs = ast.literal_eval(row['addresses'])
 
         # check the length of the list of addresses, skip if empty
