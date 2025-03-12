@@ -87,7 +87,7 @@ def plot_calls_by_year_and_ward(csv_file: Path) -> None:
                      tooltip=[data.index.name, 'category', alt.Tooltip('value:Q', format='.2f')]
                  )
                  .properties(
-                     title=title,
+                     #title=title,
                      width=CHART_WIDTH,
                      height=CHART_HEIGHT
                  )

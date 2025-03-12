@@ -1,13 +1,18 @@
-from visualizations.colors import cat_colors_df
 import pandas as pd
 import altair as alt
 import matplotlib.pyplot as plt
 import csv
-from colors import year_colors_df
+from gitmoney.visualizations.colors import year_colors_df
+import sys
+import os
+from pathlib import Path
+
+data_file = Path(__file__).parent.parent / "data/"
+chart_file = Path(__file__).parent.parent / "visualizations/charts"
 
 def num_proj_chart_build():
     # Read in and clean data
-    calls_money = pd.read_csv("../data/calls_money.csv")
+    calls_money = pd.read_csv(data_file/"calls_money.csv")
 
     # Create good dataframe with sorted years and colors
     calls_money_19_23 = calls_money.query('year >= 2019 and year <= 2023')
@@ -44,8 +49,8 @@ def num_proj_chart_build():
         sort='ascending'),
         tooltip=['Ward', 'Year', 'Number Projects in Year', 'Total Projects, 2019-23'],
     ).properties(
-            width=600,
-            height=400,
+            width=750,
+            height=450,
         ).interactive()
     
-    chart.save('charts/num_projects_per_ward.html')
+    chart.save(chart_file/'num_projects_per_ward.html')

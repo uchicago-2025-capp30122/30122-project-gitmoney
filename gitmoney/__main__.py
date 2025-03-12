@@ -1,11 +1,12 @@
-import geomoney
-import geomoney.menu_masher
-import processing.wiki_scraper as wiki
-import processing.process_311_and_menu_money as menu_311
-import processing.join_alder_311_menudata as join_data
-from visualizations.ratio import create_ratio
-from visualizations.projects_per_ward import num_proj_chart_build
-import visualizations.chart as chart
+from gitmoney.geomoney import menu_masher
+from gitmoney.geomoney import street_search
+from gitmoney.geomoney import data_visualization
+import gitmoney.processing.wiki_scraper as wiki
+import gitmoney.processing.process_311_and_menu_money as menu_311
+import gitmoney.processing.join_alder_311_menudata as join_data
+from gitmoney.visualizations.ratio import create_ratio
+from gitmoney.visualizations.projects_per_ward import num_proj_chart_build
+import gitmoney.visualizations.chart as chart
 
 import pathlib
 import argparse
@@ -14,8 +15,8 @@ import time
 
 
 def process_geo_data():
-    geomoney.menu_masher.main()
-    geomoney.street_search.main()
+    menu_masher.main()
+    street_search.main()
 
 
 def generate_index_page():
