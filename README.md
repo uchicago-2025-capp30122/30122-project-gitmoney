@@ -61,18 +61,6 @@ here - https://data.cityofchicago.org/Service-Requests/311-Service-Requests/v6vf
 From there, you should be able to incorporate the most recent data into
 the analyses.
 
-## Tools
-* R/RStudio
-* R packages
-> * tidyverse:  for data manipulation
-> * janitor: for cleaning
-> * readxl: for working with Excel files
-> * skimr # for initially understanding data -- > skim function
-
-Run this code in the R Console to install packages
-```
-install.packages(c("tidyverse", "janitor", "readxl", "skimr"))
-```
 ## Files
 What are they? 
 '-a', '--all': to run the full program and overwrite all data <br>
