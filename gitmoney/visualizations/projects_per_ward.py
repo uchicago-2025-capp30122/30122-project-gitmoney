@@ -12,7 +12,7 @@ chart_file = Path(__file__).parent.parent / "visualizations/charts"
 
 def num_proj_chart_build():
     # Read in and clean data
-    calls_money = pd.read_csv(data_file/"calls_money.csv")
+    calls_money = pd.read_csv(data_file/"clean_csvs/calls_money.csv")
 
     # Create good dataframe with sorted years and colors
     calls_money_19_23 = calls_money.query('year >= 2019 and year <= 2023')
