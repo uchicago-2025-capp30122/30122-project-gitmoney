@@ -1,6 +1,13 @@
-import processing.wiki_scraper as wiki
+# tests for geomoney
+import pytest
+# Fix the imports
+import sys
+import os
+from pathlib import Path
+# Add the project root to the Python path
+sys.path.append(str(Path(__file__).parent.parent))
+import gitmoney.processing.wiki_scraper as wiki
 import httpx
-from processing.wiki_scraper import scrape_wikipedia_tables  
 
 url = 'https://en.wikipedia.org/wiki/List_of_Chicago_alderpersons_since_1923'
 
@@ -10,7 +17,7 @@ def test_scrape_wikipedia_tables():
     assert response.status_code == 200, f"Failed to fetch the Wikipedia page. Status code: {response.status_code}"
 
     # Call the function 
-    results = scrape_wikipedia_tables(url)
+    results = wiki.scrape_wikipedia_tables(url)
 
     # Verify the content of the returned data
     assert len(results) > 0, "No data was scraped from the Wikipedia page."

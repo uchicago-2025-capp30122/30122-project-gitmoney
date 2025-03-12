@@ -4,7 +4,6 @@ import json
 import os
 import pathlib
 import csv
-import processing.wiki_scraper as wiki
 
 data_file = pathlib.Path(__file__).parent.parent / "data/"
 
@@ -38,5 +37,9 @@ def join_calls_alders():
     joined_clean = joined_clean.reset_index(drop=True)
     
     joined_clean.to_csv(data_file/"calls_money_pivot_with_alder.csv")
+    
+    return joined_clean
+    
+    
     
 
