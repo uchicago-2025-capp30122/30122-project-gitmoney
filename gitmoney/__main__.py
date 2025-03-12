@@ -477,7 +477,6 @@ if __name__ == '__main__':
     parser.add_argument('-w', '--wiki', action='store_true')
     parser.add_argument('-j', '--join', action='store_true')
     parser.add_argument('-r', '--ratio', action='store_true')
-    parser.add_argument('-m', '--geomoney', action='store_true')
     parser.add_argument('-n', '--num_projects', action='store_true')
     parser.add_argument('-b', '--build_viz', action='store_true')    
     
