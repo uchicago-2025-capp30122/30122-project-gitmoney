@@ -34,11 +34,12 @@
       
 3.  **How to run the project:**
 
-gitmoney can be run using the following command:
+gitmoney can be run using the following commands:
 
-'''
-"uv run gitmoney/run_and_visualize.py -a".
-'''
+```
+uv sync
+uv run gitmoney/run_and_visualize.py -a
+```
 
 This will 
 
