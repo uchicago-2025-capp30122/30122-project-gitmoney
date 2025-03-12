@@ -52,6 +52,11 @@ following arguments:
 '-r', '--ratio': to overwrite the ratio .html
 '-m', '--geomoney': to overwrite the geomoney map .html
 
+If you would like to run it with the most recent 311 data, download that 
+here - https://data.cityofchicago.org/Service-Requests/311-Service-Requests/v6vf-nfxy/about_data. Then move it into the gitmoney/data/raw_csvs folder.
+From there, you should be able to incorporate the most recent data into
+the analyses.
+
 ## Tools
 * R/RStudio
 * R packages
