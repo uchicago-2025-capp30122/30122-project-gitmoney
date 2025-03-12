@@ -171,7 +171,7 @@ def create_visualization(geo_mm_df):
         'PathLayer',
         data=path_data,
         get_path='path',
-        get_color='color'
+        get_color='color',
         get_width=10, 
         pickable=True,
         opacity=1.0,
