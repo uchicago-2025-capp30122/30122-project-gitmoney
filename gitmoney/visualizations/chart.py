@@ -4,19 +4,9 @@ from pathlib import Path
 import pandas as pd
 import altair as alt
 
-def plot_calls_by_year_and_ward(csv_file: Path) -> None:
-    """
-    Plot four stacked bar charts: calls and money spent by year and ward, categorized.
-
-    Args:
-        csv_file (Path): Path to CSV file with year, ward, category, calls, and total_cost
-
-    Returns:
-        None (saves four HTML files in the visualizations directory)
-    """
-    # Define constants
-    YEAR_RANGE = range(2019, 2024)
-    CAT_COLORS = {
+# Define constants
+YEAR_RANGE = range(2019, 2024)
+CAT_COLORS = {
         "Beautification": "#8B648B",
         "Bike Infrastructure": "#F8C8F1",
         "Lighting": "#E89545",
@@ -26,12 +16,24 @@ def plot_calls_by_year_and_ward(csv_file: Path) -> None:
         "Security Cameras": "#294896",
         "Streets & Transportation": "#BE5151"
     }
-    CHART_WIDTH = 600
-    CHART_HEIGHT = 400
+CHART_WIDTH = 600
+CHART_HEIGHT = 400
 
     # Define output directory 
-    output_dir = Path.cwd() / "charts"
-    output_dir.mkdir(parents=True, exist_ok=True)
+output_dir = Path.cwd() / "gitmoney/visualizations/charts"
+output_dir.mkdir(parents=True, exist_ok=True)
+
+
+def plot_calls_by_year_and_ward(csv_file: Path) -> None:
+    """
+    Plot four stacked bar charts: calls and money spent by year and ward, categorized.
+
+    Args:
+        csv_file (Path): Path to CSV file with year, ward, category, calls, and total_cost
+
+    Returns:
+       Aggregations: Dictionary with calls and costs of projects by year and ward
+    """
 
     # Load and preprocess data
     df = (pd.read_csv(csv_file)
@@ -53,8 +55,10 @@ def plot_calls_by_year_and_ward(csv_file: Path) -> None:
         'calls_by_ward': df.groupby(['ward', 'category'])['calls'].sum().unstack(),
         'money_by_ward': df.groupby(['ward', 'category'])['total_cost'].sum().unstack()
     }
+    
+    return aggregations
 
-    def create_chart(data: pd.DataFrame, title: str, x_label: str, y_label: str, rotate_x: bool = False) -> alt.Chart:
+def create_chart(data: pd.DataFrame, title: str, x_label: str, y_label: str, rotate_x: bool = False) -> alt.Chart:
         """
         Create an Altair bar chart.
 
@@ -87,7 +91,7 @@ def plot_calls_by_year_and_ward(csv_file: Path) -> None:
                      tooltip=[data.index.name, 'category', alt.Tooltip('value:Q', format='.2f')]
                  )
                  .properties(
-                     title=title,
+                     #title=title,
                      width=CHART_WIDTH,
                      height=CHART_HEIGHT
                  )
@@ -108,6 +112,12 @@ def plot_calls_by_year_and_ward(csv_file: Path) -> None:
                  .interactive())
 
         return chart
+    
+def combined():
+    """
+    Aggregate data and create charts
+    """
+    aggregations = plot_calls_by_year_and_ward('gitmoney/data/clean_csvs/calls_money.csv')
 
     # Define chart configurations with filenames based on titles
     chart_configs = [

@@ -5,6 +5,7 @@ __pycache__/
 
 # Libby adds
 .DS_Store
+gitmoney/data/raw_csvs/311_Service_Requests_raw.csv
 
 # C extensions
 *.so

@@ -4,7 +4,6 @@ import json
 import os
 import pathlib
 import csv
-import processing.wiki_scraper as wiki
 
 data_file = pathlib.Path(__file__).parent.parent / "data/"
 
@@ -14,8 +13,8 @@ def join_calls_alders():
     """
     
     # Read in data
-    calls_money = pd.read_csv(data_file/"calls_money.csv")
-    alders = pd.read_csv(data_file/"all_alderpeople_2018_23.csv")
+    calls_money = pd.read_csv(data_file/"clean_csvs/calls_money.csv")
+    alders = pd.read_csv(data_file/"clean_csvs/all_alderpeople_2018_23.csv")
     
     # Ensure joining columns are of same type
     calls_money['year']=calls_money['year'].astype(int)
@@ -37,6 +36,10 @@ def join_calls_alders():
     joined_clean= joined_clean.sort_values(["Clean Ward", "year",])
     joined_clean = joined_clean.reset_index(drop=True)
     
-    joined_clean.to_csv(data_file/"calls_money_pivot_with_alder.csv")
+    joined_clean.to_csv(data_file/"clean_csvs/calls_money_pivot_with_alder.csv")
+    
+    return joined_clean
+    
+    
     
 

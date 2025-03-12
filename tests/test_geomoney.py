@@ -606,14 +606,14 @@ def test_street_search(test_streets_data, test_streets_data_answers):
     """
     Test function to verify that street_search.street_search correctly processes street data.
     """
-    streets_fp = Path.cwd() / 'gitmoney/data/streets.csv'
+    streets_fp = Path.cwd() / 'gitmoney/data/geo/streets.csv'
     assert test_streets_data_answers == street_search.street_search(test_streets_data, streets_fp)
 
 def test_data_visualization():
     """
     Test function to verify that data_visualization functions correctly.
     """
-    html_fp = Path.cwd() / 'gitmoney/visualizations/gitmoney_map.html'
+    html_fp = Path.cwd() / 'gitmoney/visualizations/charts/gitmoney_map.html'
     geo_mm_df = data_visualization.create_data_df()
     assert geo_mm_df is not None
     data_visualization.create_visualization(geo_mm_df)

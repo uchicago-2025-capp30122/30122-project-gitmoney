@@ -7,9 +7,9 @@ import altair as alt
 import webbrowser
 
 def create_ratio():
-    cwd = Path(os.getcwd()).parent
-    file_cm_fp = cwd/'data/calls_money_pivot_with_alder.csv'
-    file_wards_fp = cwd/'data/wards.csv'
+    cwd = Path(os.getcwd())
+    file_cm_fp = cwd/'gitmoney/data/clean_csvs/calls_money_pivot_with_alder.csv'
+    file_wards_fp = cwd/'gitmoney/data/geo/wards.csv'
 
     data = pd.read_csv(file_cm_fp)
     data = data[(data['year'] > 2017) & (data['year'] < 2024)]
@@ -33,9 +33,7 @@ def create_ratio():
             str('#82B65B'), str('#cdcb44'), str("#294896"), str("#BE5151")] 
 
 
-    # ward_year['Color'] = ward_year['category'].map(cat_colors)
     ward_year['cost'] = ward_year['total_cost'].apply(lambda x: f"${x:,.0f}")
-    print(ward_year)
 
     # with altair
 
@@ -112,31 +110,5 @@ def create_ratio():
         labelLimit=500
     ).interactive()
 
-    chart.save('charts/money_calls_scatter.html')
+    chart.save(cwd/'gitmoney/visualizations/charts/money_calls_scatter.html')
 
-
-# # with matplotlib
-# scatter = plt.scatter(ward_year['cost_pct'],ward_year['calls_pct'],
-#             c=ward_year['Color'])
-
-# categories = ward_year['category'].unique()
-# for category in categories:
-#     plt.scatter([],[],c=colors[category],label=category)
-# x=[0,80]
-# y=[20,70]
-# a=[20,100]
-# b=[0,50]
-# plt.plot(x,y)
-# plt.plot(a,b)
-
-# plt.legend(title='Category')
-
-
-# plt.text(60,15,"Overfunded",fontsize=15)
-# plt.text(15,55,"Underfunded",fontsize=15)
-# plt.text(40,30,"Proportional",fontsize=15)
-
-# plt.title('Ward Menu Money Spending and 311 Calls by Category')
-# plt.xlabel('% Menu Money Spent')
-# plt.ylabel('% 311 calls')
-# # plt.show()
