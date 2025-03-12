@@ -154,9 +154,9 @@ def convert_street_abbreviation(street_name):
 def main():
     # paths to the data files
     cwd = Path(os.getcwd())
-    menu_money_fp = cwd / "gitmoney/data/menu_money.csv"
-    json_fp = cwd / "gitmoney/data/streets.json"
-    new_money_menu_fp = cwd / "gitmoney/data/new_menu_money.csv"
+    menu_money_fp = cwd / "gitmoney/data/geo/menu_money.csv"
+    json_fp = cwd / "gitmoney/data/geo/streets.json"
+    new_money_menu_fp = cwd / "gitmoney/data/geo/new_menu_money.csv"
     menu_money = load_csv(menu_money_fp)
 
     # process the data

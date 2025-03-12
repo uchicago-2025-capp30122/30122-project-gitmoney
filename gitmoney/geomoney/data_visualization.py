@@ -66,11 +66,11 @@ def create_data_df():
     """
 
     # load the data
-    mm_csv = pathlib.Path.cwd() / 'gitmoney/data/final_menu_money.csv' 
-    streets_csv = pathlib.Path.cwd() / 'gitmoney/data/streets.csv' 
+    mm_csv = pathlib.Path.cwd() / 'gitmoney/data/geo/final_menu_money.csv' 
+    streets_csv = pathlib.Path.cwd() / 'gitmoney/data/geo/streets.csv' 
     mm_df = pd.read_csv(mm_csv).drop_duplicates()
     streets_df = pd.read_csv(streets_csv)
-    aldermanic_fp = pathlib.Path.cwd() / 'gitmoney/data/calls_money_pivot_with_alder.csv'
+    aldermanic_fp = pathlib.Path.cwd() / 'gitmoney/data/clean_csvs/calls_money_pivot_with_alder.csv'
     aldermanic_data = pd.read_csv(aldermanic_fp)
     
     # convert the 'the_geom' column from WKT strings to geometry objects

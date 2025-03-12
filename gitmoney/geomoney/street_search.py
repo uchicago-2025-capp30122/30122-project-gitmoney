@@ -56,7 +56,7 @@ def generate_cross_streets(streets_data, basic = False):
     
     # if basic is True, the dictionary will not have street dir or suffix
     if basic:
-        outpath = Path(os.getcwd()) / "gitmoney/data/streets_basics.json"
+        outpath = Path(os.getcwd()) / "gitmoney/data/geo/streets_basics.json"
         street_dict = dict()
 
         # for each row, make a list containing all segments with same street name
@@ -84,7 +84,7 @@ def generate_cross_streets(streets_data, basic = False):
         with open(outpath, 'w', encoding='utf-8') as jsonfile:
             json.dump(street_dict, jsonfile, indent=True)
     else:
-        outpath = Path(os.getcwd()) / "gitmoney/data/streets.json"
+        outpath = Path(os.getcwd()) / "gitmoney/data/geo/streets.json"
         street_dict = dict()
 
         for row in streets_data:
@@ -146,13 +146,13 @@ def street_searcher(main_street, possible_cross = None):
 
     # generates the return list and the json filepath for streets.json
     rlist = []
-    json_fp = Path(os.getcwd()) / "gitmoney/data/streets.json"
+    json_fp = Path(os.getcwd()) / "gitmoney/data/geo/streets.json"
 
     # opens streets.json and reads the json
     with open(json_fp, 'r', encoding="utf-8") as jsonfile:
         streets = json.load(jsonfile)
 
-    json_fp_basic = Path(os.getcwd()) / "gitmoney/data/streets_basics.json"
+    json_fp_basic = Path(os.getcwd()) / "gitmoney/data/geo/streets_basics.json"
 
     # opens streets.json and reads the json
     with open(json_fp_basic, 'r', encoding="utf-8") as jsonfile:
@@ -318,7 +318,7 @@ def street_search(new_menu_money_data, streets_fp):
 
     # run street_searcher on each row in the new_menu_money_data
     for i, row in enumerate(new_menu_money_data):
-        print(f"Processing row {i}")
+        print(f"Processing row {i} of {len(new_menu_money_data)}")
         menu_addrs = ast.literal_eval(row['addresses'])
 
         # check the length of the list of addresses, skip if empty
@@ -447,10 +447,10 @@ def street_search(new_menu_money_data, streets_fp):
 def main():
 
     # define the filepaths
-    final_menu_money_fp = Path.cwd() / 'gitmoney/data/final_menu_money.csv'
-    streets_fp = Path.cwd() / 'gitmoney/data/streets.csv'
-    menu_money = Path.cwd() / 'gitmoney/data/menu_money.csv'
-    new_menu_money = Path.cwd()/ 'gitmoney/data/new_menu_money.csv'
+    final_menu_money_fp = Path.cwd() / 'gitmoney/data/geo/final_menu_money.csv'
+    streets_fp = Path.cwd() / 'gitmoney/data/geo/streets.csv'
+    menu_money = Path.cwd() / 'gitmoney/data/geo/menu_money.csv'
+    new_menu_money = Path.cwd()/ 'gitmoney/data/geo/new_menu_money.csv'
     
     # load the data
     street_data = load_csv(streets_fp)
