@@ -37,13 +37,13 @@ def raw_311_menu_to_joined_call_money():
     cleaned_311 = csv_to_cleaned_311()
     grouped_311 = group_311(cleaned_311)
     merge_311_menu = group_menu(grouped_311)
-    merge_311_menu.to_csv(data_file/"calls_money.csv",index=False)
+    merge_311_menu.to_csv(data_file/"clean_csvs/calls_money.csv",index=False)
 
 def csv_to_cleaned_311():
     """
     Turn the 311 csv into a pandas dataframe with more usable categories
     """
-    df = pd.read_csv(data_file/"311_Service_Requests_raw.csv")
+    df = pd.read_csv(data_file/"raw_csvs/311_Service_Requests_raw.csv")
     df = df[['SR_NUMBER', 'SR_TYPE', 'SR_SHORT_CODE', 'STATUS', 'CREATED_DATE',
              'LAST_MODIFIED_DATE', 'CLOSED_DATE', 'STREET_ADDRESS', 
              'STREET_NUMBER', 'STREET_DIRECTION', 'STREET_NAME', 'DUPLICATE', 
@@ -67,7 +67,7 @@ def group_menu(calls):
     Read in the menu money dataset, clean it and merge it with the 311 dataset.
     Then, export calls_money to the datafile.
     '''
-    menu = pd.read_csv(data_file/"menu_money.csv")
+    menu = pd.read_csv(data_file/"raw_csvs/menu_money.csv")
     menu = menu[menu['category'] != 'Miscellaneous']
     group_menu_project_num = menu.groupby(['year','ward','category']).size()\
     .reset_index(name='num_projects')

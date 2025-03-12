@@ -24,7 +24,7 @@ def clean_join_wiki_data():
     
     alder_clean = alder_clean.sort_values(["Clean Ward", "filled_year"])
     
-    alder_clean.to_csv(data_file/"all_alderpeople_2018_23.csv")
+    alder_clean.to_csv(data_file/"clean_csvs/all_alderpeople_2018_23.csv")
     
     return alder_clean
 
