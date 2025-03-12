@@ -34,38 +34,26 @@
       
 3.  **How to run the project:**
 
-gitmoney can be run using the following command:
+gitmoney can be run using the following commands:
 
-"uv run gitmoney/run_and_visualize.py -a".
+```
+uv sync
+uv run gitmoney/run_and_visualize.py -a
+```
 
 This will 
 
 To overwrite existing data, or to run a specific part, please use the
 following arguments:
+<br>
 
-
-'-a', '--all': to run the full program and overwrite all data
-'-g', '--geo': to run and overwrite the geomoney data files
-'-c', '--calls': to run and overwrite the 311 data files
-'-w', '--wiki': to run the scraper and overwrite wiki data files
-'-j', '--join': to join 311 calls and aldermanic data, overwrite data files
-'-r', '--ratio': to overwrite the ratio .html
-'-m', '--geomoney': to overwrite the geomoney map .html
-
-## Tools
-* R/RStudio
-* R packages
-> * tidyverse:  for data manipulation
-> * janitor: for cleaning
-> * readxl: for working with Excel files
-> * skimr # for initially understanding data -- > skim function
-
-Run this code in the R Console to install packages
-```
-install.packages(c("tidyverse", "janitor", "readxl", "skimr"))
-```
-## Files
-What are they? 
+'-a', '--all': to run the full program and overwrite all data <br>
+'-g', '--geo': to run and overwrite the geomoney data files <br>
+'-c', '--calls': to run and overwrite the 311 data files <br>
+'-w', '--wiki': to run the scraper and overwrite wiki data files <br>
+'-j', '--join': to join 311 calls and aldermanic data, overwrite data files <br>
+'-r', '--ratio': to overwrite the ratio .html <br>
+'-m', '--geomoney': to overwrite the geomoney map .html <br>
 
 # Formal Methodology
 
@@ -95,3 +83,5 @@ for example. By searching each street for cross streets ("F_CROSS","T_CROSS"),
 we are able to mark out blocks and intersections bounding each project. 
 
 # Kudos
+
+Thank you James and CAPP 122 TAs! Couldn't have come this far without you!
