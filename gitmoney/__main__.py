@@ -414,7 +414,7 @@ def main(args):
         if not (cwd / 'gitmoney/visualizations/charts/num_projects_per_ward.html').exists():
             num_proj_chart_build()
         if not (cwd / 'gitmoney/visualizations/charts/gitmoney_map.html').exists():
-            geomoney.data_visualization.main()
+            data_visualization.main()
         if not (cwd / 'gitmoney/visualizations/charts/311_Calls_by_Ward_and_Category_2019-2023.html').exists() \
             or not (cwd / 'gitmoney/visualizations/charts/311_Calls_by_Year_and_Category_2019-2023.html').exists() \
             or not (cwd / 'gitmoney/visualizations/charts/Money_Spent_by_Ward_and_Category_2019-2023.html').exists() \
