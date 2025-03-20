@@ -381,6 +381,18 @@ def generate_index_page():
 def main(args):
     cwd = pathlib.Path.cwd()
     print("Begin Git-ting Money!")
+    print(args)
+    
+    if args.all==False and args.geo==False and args.calls==False and \
+        args.wiki==False and args.join==False and args.ratio==False and \
+            args.num_projects==False and args.build_viz==False:
+        # Generate the index page
+        index_path = generate_index_page()
+                    
+        # Open it in the browser
+        print(f"Opening index page: {index_path}")
+        webbrowser.open(f'file://{index_path.absolute()}')
+        
     
     # process geo data 
     if args.all or args.geo or not (cwd / 'gitmoney/data/geo/final_menu_money.csv').exists():
