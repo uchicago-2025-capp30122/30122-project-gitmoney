@@ -5,7 +5,8 @@ import time
 import polars as pl
 import pandas as pd
 
-app_token = "w1qakhnBp7aseBx9AJX24qTWD"
+app_token = None
+## REPLACE WITH YOUR API TOKEN ##
 
 allowed_short_codes = ['GRAF','SFD','PHF','SIE','SCP','SFB','PCE','SEE','SFA',
                        'SED','SDR','PHB','PBS','SCT','SDP','PCB','SFK','PCC',
