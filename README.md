@@ -33,7 +33,7 @@ gitmoney can be run using the following commands:
 
 ```
 uv sync
-uv run gitmoney/__main__.py -a
+uv run python -m gitmoney -a
 ```
 
 To overwrite existing data, or to run a specific part, please use the following arguments:
