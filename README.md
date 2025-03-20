@@ -10,6 +10,8 @@ Getnet Dejene <br>
 # Abstract <br>
 The Menu Money project collects and analyzes Chicago datasets—specifically 311 service call data—alongside web-scraped data on aldermanic expenditures from the "Menu" program, organized by district. GIS data on Menu program expenditures has been extracted from the "Menu" program dataset. Data on aldermen and their tenure has been scraped from Wikipedia. In addition to aldermanic and Menu program data, 311 call records have been extracted from the Chicago Data Portal. The project aims to better understand the relationship between Menu program expenditures and 311 service calls, while also exploring whether these expenditures address constituents’ concerns about their community, and provides data visualization to illustrate these insights.
 
+More thorough report and video explanation of project can be found in [FINAL.md](https://github.com/uchicago-2025-capp30122/30122-project-gitmoney/blob/main/FINAL.md)
+
 # Data Sources
 
 1. JakeJSmith's scraped Alder menu money database with GIS data: 
@@ -20,6 +22,8 @@ The Menu Money project collects and analyzes Chicago datasets—specifically 311
 
 3. Wikipedia List of Chicago Aldermen:
         https://en.wikipedia.org/wiki/List_of_Chicago_alderpersons_since_1923
+
+For an indepth look at project structure, check this [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1yi3UXYMv0_f-hUMcc4xABlwmBV-wJE8N-mQQlZDRuqU/edit?gid=0#gid=0)
       
 # How to run the project
 ## Step 1: Download Data
@@ -48,7 +52,27 @@ To overwrite existing data, or to run a specific part, please use the following 
 '-m', '--geomoney': to overwrite the geomoney map .html <br>
 <br>
 
+## Test
+To test the project, run the following command
+```
+uv run pytest
+```
+
+Or test individual aspects with
+```
+uv run tests/test_311_menu_money_clean_merge.py
+uv run tests/test_geomoney.py
+uv run tests/test_join_alder_311.py
+uv run tests/test_wiki_scraper.py
+```
+
 # Formal Methodology
+
+## Wiki
+To find alderpeople, we extracted the names from a wikipedia page. If available, we collected names and dates from tables on the page. If unavailable, we retrieved the names of alderpeople by scraping the bulletpoints and going to the personal wikipedia page associated with the link. This worked for all but one alderperson between 2018 and 2023. That person is manually entered into the data. 
+
+## 311
+
 
 ## Geomoney
 To extract streets data, we used regular expressions to extract street
