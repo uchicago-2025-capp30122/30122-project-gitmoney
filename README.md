@@ -37,10 +37,9 @@ gitmoney can be run using the following commands:
 
 ```
 uv sync
-uv run python -m gitmoney -a
+uv run python -m gitmoney
 ```
-
-To overwrite existing data, or to run a specific part, please use the following arguments:
+Running without an argument will open up the webpage without any new data. To overwrite existing data, or to run a specific part, please use the following arguments:
 <br>
 
 '-a', '--all': to run the full program and overwrite all data <br>
